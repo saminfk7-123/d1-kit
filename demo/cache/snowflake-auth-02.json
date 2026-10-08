@@ -1,0 +1,49 @@
+{
+  "kind": "snowflake",
+  "id": "auth-02",
+  "expected": [
+    "auth"
+  ],
+  "cause": {
+    "type": "choice",
+    "choice": "auth",
+    "probabilities": {
+      "auth": 0.9808164088327735,
+      "authorization": 0.000290365634453601,
+      "config": 0.017964277119200543,
+      "build": 0.00018747414401026744,
+      "transient": 0.000741474269561901
+    },
+    "confidence": 0.976020511040967
+  },
+  "causeCorrect": true,
+  "pick": {
+    "line": 8,
+    "text": "│ 390144 (08004): JWT token is invalid. [a1b2c3d4-...]",
+    "confidence": 0.6320857844047199,
+    "candidates": [
+      {
+        "line": 6,
+        "text": "│ Error: could not connect to Snowflake",
+        "probability": 0.2450229621122034
+      },
+      {
+        "line": 8,
+        "text": "│ 390144 (08004): JWT token is invalid. [a1b2c3d4-...]",
+        "probability": 0.7547238562698133
+      },
+      {
+        "line": 12,
+        "text": "##[error]Process completed with exit code 1.",
+        "probability": 0.00025318161798338663
+      }
+    ]
+  },
+  "rootLines": [],
+  "repeatLines": [],
+  "lineMark": "unknown",
+  "needsHuman": false,
+  "tokens": 890,
+  "seconds": 0.5798129159999662,
+  "ranAt": "2026-10-08T11:41:34.650Z"
+}

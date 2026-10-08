@@ -1,0 +1,9 @@
+STEP: Deploy native app (snow app deploy)
+2026-10-10T08:14:40Z + snow app deploy --connection ci
+2026-10-10T08:14:41Z ╭─ Error ──────────────────────────────────────────────────────╮
+2026-10-10T08:14:41Z │ Project definition is not valid.                              │
+2026-10-10T08:14:41Z │ manifest.yml: artifacts.setup_script points to                │
+2026-10-10T08:14:41Z │ 'scripts/setup.sql', but no such file was found in the        │
+2026-10-10T08:14:41Z │ deploy root output/deploy.                                     │
+2026-10-10T08:14:41Z ╰──────────────────────────────────────────────────────────────╯
+2026-10-10T08:14:41Z ##[error]Process completed with exit code 1.

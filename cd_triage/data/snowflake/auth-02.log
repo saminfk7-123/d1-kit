@@ -1,0 +1,12 @@
+STEP: Terraform apply
+2026-10-02T09:41:22Z Initializing provider plugins...
+2026-10-02T09:41:25Z - Using previously-installed snowflake-labs/snowflake v1.0.4
+2026-10-02T09:41:31Z snowflake_warehouse.etl: Refreshing state... [id=ETL_WH]
+2026-10-02T09:41:32Z ╷
+2026-10-02T09:41:32Z │ Error: could not connect to Snowflake
+2026-10-02T09:41:32Z │
+2026-10-02T09:41:32Z │ 390144 (08004): JWT token is invalid. [a1b2c3d4-...]
+2026-10-02T09:41:32Z │
+2026-10-02T09:41:32Z │   with provider["registry.terraform.io/snowflake-labs/snowflake"],
+2026-10-02T09:41:32Z ╵
+2026-10-02T09:41:32Z ##[error]Process completed with exit code 1.

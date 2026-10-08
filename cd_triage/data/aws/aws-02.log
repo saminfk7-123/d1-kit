@@ -1,0 +1,309 @@
+2026-10-08T02:13:01.2213481Z Current runner version: '2.328.0'
+2026-10-08T02:13:01.2241093Z ##[group]Runner Image Provisioner
+2026-10-08T02:13:01.2241907Z Hosted Compute Agent
+2026-10-08T02:13:01.2242410Z Version: 20250912.392
+2026-10-08T02:13:01.2242988Z Commit: d921fda672a98b64f4f82364647e2f10b2267d0b
+2026-10-08T02:13:01.2243601Z Build Date: 2025-09-12T15:23:14Z
+2026-10-08T02:13:01.2244122Z ##[endgroup]
+2026-10-08T02:13:01.2244630Z ##[group]Operating System
+2026-10-08T02:13:01.2245156Z Ubuntu
+2026-10-08T02:13:01.2245573Z 24.04.3
+2026-10-08T02:13:01.2245992Z LTS
+2026-10-08T02:13:01.2246390Z ##[endgroup]
+2026-10-08T02:13:01.2246843Z ##[group]Runner Image
+2026-10-08T02:13:01.2247331Z Image: ubuntu-24.04
+2026-10-08T02:13:01.2247790Z Version: 20250929.60.1
+2026-10-08T02:13:01.2248747Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250929.60/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-08T02:13:01.2250193Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250929.60
+2026-10-08T02:13:01.2251096Z ##[endgroup]
+2026-10-08T02:13:01.2253278Z ##[group]GITHUB_TOKEN Permissions
+2026-10-08T02:13:01.2255380Z Contents: read
+2026-10-08T02:13:01.2255891Z IdToken: write
+2026-10-08T02:13:01.2256362Z Metadata: read
+2026-10-08T02:13:01.2256837Z ##[endgroup]
+2026-10-08T02:13:01.2259021Z Secret source: Actions
+2026-10-08T02:13:01.2259695Z Prepare workflow directory
+2026-10-08T02:13:01.2731468Z Prepare all required actions
+2026-10-08T02:13:01.2770113Z Getting action download info
+2026-10-08T02:13:01.6512804Z Download action repository 'actions/checkout@v4' (SHA:08eba0b27e820071cde6df949e0beb9ba4906955)
+2026-10-08T02:13:01.7748120Z Download action repository 'hashicorp/setup-terraform@v3' (SHA:b9cd54a3c349d3f38e8881555d616ced269862dd)
+2026-10-08T02:13:01.9821557Z Download action repository 'aws-actions/configure-aws-credentials@v4' (SHA:7474bc4690e29a8392af63c5b98e7449536d5c3a)
+2026-10-08T02:13:02.3110482Z Complete job name: deploy-notification
+2026-10-08T02:13:02.3842117Z ##[group]Run actions/checkout@v4
+2026-10-08T02:13:02.3842801Z with:
+2026-10-08T02:13:02.3843169Z   repository: example-org/platform-deploy
+2026-10-08T02:13:02.3843836Z   token: ***
+2026-10-08T02:13:02.3844200Z   ssh-strict: true
+2026-10-08T02:13:02.3844566Z   ssh-user: git
+2026-10-08T02:13:02.3844951Z   persist-credentials: true
+2026-10-08T02:13:02.3845367Z   clean: true
+2026-10-08T02:13:02.3845745Z   sparse-checkout-cone-mode: true
+2026-10-08T02:13:02.3846181Z   fetch-depth: 1
+2026-10-08T02:13:02.3846552Z   fetch-tags: false
+2026-10-08T02:13:02.3846924Z   show-progress: true
+2026-10-08T02:13:02.3847299Z   lfs: false
+2026-10-08T02:13:02.3847655Z   submodules: false
+2026-10-08T02:13:02.3848037Z   set-safe-directory: true
+2026-10-08T02:13:02.3848447Z env:
+2026-10-08T02:13:02.3848780Z   AWS_REGION: ap-northeast-1
+2026-10-08T02:13:02.3849189Z   TF_IN_AUTOMATION: true
+2026-10-08T02:13:02.3849581Z ##[endgroup]
+2026-10-08T02:13:02.4813227Z Syncing repository: example-org/platform-deploy
+2026-10-08T02:13:02.4815401Z ##[group]Getting Git version info
+2026-10-08T02:13:02.4816030Z Working directory is '/home/runner/work/platform-deploy/platform-deploy'
+2026-10-08T02:13:02.4816941Z [command]/usr/bin/git version
+2026-10-08T02:13:02.4931144Z git version 2.51.0
+2026-10-08T02:13:02.4958010Z ##[endgroup]
+2026-10-08T02:13:02.4972361Z Temporarily overriding HOME='/home/runner/work/_temp/5b1d6f0e-1c2a-4f6e-9a0e-3a7f2c9d8e11' before making global git config changes
+2026-10-08T02:13:02.4974218Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-08T02:13:02.4986014Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/platform-deploy/platform-deploy
+2026-10-08T02:13:02.5021337Z Deleting the contents of '/home/runner/work/platform-deploy/platform-deploy'
+2026-10-08T02:13:02.5025680Z ##[group]Initializing the repository
+2026-10-08T02:13:02.5029113Z [command]/usr/bin/git init /home/runner/work/platform-deploy/platform-deploy
+2026-10-08T02:13:02.5113471Z Initialized empty Git repository in /home/runner/work/platform-deploy/platform-deploy/.git/
+2026-10-08T02:13:02.5125902Z [command]/usr/bin/git remote add origin https://github.com/example-org/platform-deploy
+2026-10-08T02:13:02.5163018Z ##[endgroup]
+2026-10-08T02:13:02.5163719Z ##[group]Disabling automatic garbage collection
+2026-10-08T02:13:02.5167432Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-08T02:13:02.5196221Z ##[endgroup]
+2026-10-08T02:13:02.5196876Z ##[group]Setting up auth
+2026-10-08T02:13:02.5203410Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-08T02:13:02.5381002Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-08T02:13:02.5417795Z ##[endgroup]
+2026-10-08T02:13:02.5418486Z ##[group]Fetching the repository
+2026-10-08T02:13:02.5426312Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +4c7e91a0d2b5f3e86a1c9d0b7e2f4a6c8d1e3f50:refs/remotes/origin/main
+2026-10-08T02:13:03.1904527Z From https://github.com/example-org/platform-deploy
+2026-10-08T02:13:03.1906023Z  * [new ref]         4c7e91a0d2b5f3e86a1c9d0b7e2f4a6c8d1e3f50 -> origin/main
+2026-10-08T02:13:03.1937140Z ##[endgroup]
+2026-10-08T02:13:03.1937812Z ##[group]Determining the checkout info
+2026-10-08T02:13:03.1939720Z ##[endgroup]
+2026-10-08T02:13:03.1944553Z [command]/usr/bin/git sparse-checkout disable
+2026-10-08T02:13:03.1991227Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-08T02:13:03.2019114Z ##[group]Checking out the ref
+2026-10-08T02:13:03.2023905Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-10-08T02:13:03.2398116Z Switched to a new branch 'main'
+2026-10-08T02:13:03.2399801Z branch 'main' set up to track 'origin/main'.
+2026-10-08T02:13:03.2412003Z ##[endgroup]
+2026-10-08T02:13:03.2454110Z [command]/usr/bin/git log -1 --format=%H
+2026-10-08T02:13:03.2481239Z 4c7e91a0d2b5f3e86a1c9d0b7e2f4a6c8d1e3f50
+2026-10-08T02:13:03.2662175Z ##[group]Run hashicorp/setup-terraform@v3
+2026-10-08T02:13:03.2662801Z with:
+2026-10-08T02:13:03.2663158Z   terraform_version: 1.9.8
+2026-10-08T02:13:03.2663567Z   terraform_wrapper: true
+2026-10-08T02:13:03.2663973Z   cli_config_credentials_hostname: app.terraform.io
+2026-10-08T02:13:03.2664459Z env:
+2026-10-08T02:13:03.2664783Z   AWS_REGION: ap-northeast-1
+2026-10-08T02:13:03.2665191Z   TF_IN_AUTOMATION: true
+2026-10-08T02:13:03.2665580Z ##[endgroup]
+2026-10-08T02:13:03.6025114Z [command]/usr/bin/unzip -o -q /home/runner/work/_temp/0e3c4b7a-62d1-4e0f-b8a5-77c19f2d4a3e
+2026-10-08T02:13:04.4108225Z [command]/opt/hostedtoolcache/terraform/1.9.8/x64/terraform version
+2026-10-08T02:13:04.4401177Z Terraform v1.9.8
+2026-10-08T02:13:04.4402108Z on linux_amd64
+2026-10-08T02:13:04.4612038Z ##[group]Run aws-actions/configure-aws-credentials@v4
+2026-10-08T02:13:04.4612690Z with:
+2026-10-08T02:13:04.4613083Z   role-to-assume: arn:aws:iam::123456789012:role/gha-cd-deploy
+2026-10-08T02:13:04.4613630Z   role-session-name: GitHubActions
+2026-10-08T02:13:04.4614057Z   aws-region: ap-northeast-1
+2026-10-08T02:13:04.4614455Z   audience: sts.amazonaws.com
+2026-10-08T02:13:04.4614839Z env:
+2026-10-08T02:13:04.4615164Z   AWS_REGION: ap-northeast-1
+2026-10-08T02:13:04.4615565Z   TF_IN_AUTOMATION: true
+2026-10-08T02:13:04.4615942Z ##[endgroup]
+2026-10-08T02:13:04.5320143Z Assuming role with OIDC
+2026-10-08T02:13:05.0917735Z Authenticated as assumedRoleId AROAEXAMPLE7QK2XN4LZD:GitHubActions
+2026-10-08T02:13:05.1066402Z ##[group]Run terraform -chdir=infra/notification init -input=false
+2026-10-08T02:13:05.1067084Z [36;1mterraform -chdir=infra/notification init -input=false[0m
+2026-10-08T02:13:05.1080215Z shell: /usr/bin/bash -e {0}
+2026-10-08T02:13:05.1080601Z env:
+2026-10-08T02:13:05.1080927Z   AWS_REGION: ap-northeast-1
+2026-10-08T02:13:05.1081313Z   TF_IN_AUTOMATION: true
+2026-10-08T02:13:05.1081732Z   AWS_DEFAULT_REGION: ap-northeast-1
+2026-10-08T02:13:05.1082151Z   AWS_ACCESS_KEY_ID: ***
+2026-10-08T02:13:05.1082539Z   AWS_SECRET_ACCESS_KEY: ***
+2026-10-08T02:13:05.1082927Z   AWS_SESSION_TOKEN: ***
+2026-10-08T02:13:05.1083315Z   TERRAFORM_CLI_PATH: /home/runner/work/_temp/3f9a1c0d-0b17-4d54-a1d2-61d8e6b4f2a9
+2026-10-08T02:13:05.1083782Z ##[endgroup]
+2026-10-08T02:13:05.1745210Z [command]/home/runner/work/_temp/3f9a1c0d-0b17-4d54-a1d2-61d8e6b4f2a9/terraform-bin -chdir=infra/notification init -input=false
+2026-10-08T02:13:05.2048119Z Initializing the backend...
+2026-10-08T02:13:05.6127330Z
+2026-10-08T02:13:05.6128040Z Successfully configured the backend "s3"! Terraform will automatically
+2026-10-08T02:13:05.6128630Z use this backend unless the backend configuration changes.
+2026-10-08T02:13:05.8510241Z Initializing provider plugins...
+2026-10-08T02:13:05.8511108Z - Finding hashicorp/aws versions matching "~> 5.70"...
+2026-10-08T02:13:06.0213457Z - Finding hashicorp/archive versions matching "~> 2.6"...
+2026-10-08T02:13:06.1302281Z - Finding latest version of hashicorp/random...
+2026-10-08T02:13:06.3341209Z - Installing hashicorp/aws v5.100.0...
+2026-10-08T02:13:09.8817630Z - Installed hashicorp/aws v5.100.0 (signed by HashiCorp)
+2026-10-08T02:13:09.9952117Z - Installing hashicorp/archive v2.7.1...
+2026-10-08T02:13:10.2440619Z - Installed hashicorp/archive v2.7.1 (signed by HashiCorp)
+2026-10-08T02:13:10.3561302Z - Installing hashicorp/random v3.7.2...
+2026-10-08T02:13:10.5810147Z - Installed hashicorp/random v3.7.2 (signed by HashiCorp)
+2026-10-08T02:13:10.5844518Z Terraform has created a lock file .terraform.lock.hcl to record the provider
+2026-10-08T02:13:10.5845135Z selections it made above. Include this file in your version control repository
+2026-10-08T02:13:10.5845700Z so that Terraform can guarantee to make the same selections by default when
+2026-10-08T02:13:10.5846184Z you run "terraform init" in the future.
+2026-10-08T02:13:10.5846571Z
+2026-10-08T02:13:10.5847008Z Terraform has been successfully initialized!
+2026-10-08T02:13:10.5952311Z
+2026-10-08T02:13:10.5953004Z
+2026-10-08T02:13:10.5953503Z
+2026-10-08T02:13:10.6011470Z ##[group]Run terraform -chdir=infra/notification plan -input=false -no-color -out=tfplan
+2026-10-08T02:13:10.6012215Z [36;1mterraform -chdir=infra/notification plan -input=false -no-color -out=tfplan[0m
+2026-10-08T02:13:10.6025391Z shell: /usr/bin/bash -e {0}
+2026-10-08T02:13:10.6025770Z env:
+2026-10-08T02:13:10.6026097Z   AWS_REGION: ap-northeast-1
+2026-10-08T02:13:10.6026489Z   TF_IN_AUTOMATION: true
+2026-10-08T02:13:10.6026902Z   AWS_DEFAULT_REGION: ap-northeast-1
+2026-10-08T02:13:10.6027321Z   TERRAFORM_CLI_PATH: /home/runner/work/_temp/3f9a1c0d-0b17-4d54-a1d2-61d8e6b4f2a9
+2026-10-08T02:13:10.6027776Z ##[endgroup]
+2026-10-08T02:13:10.6643119Z [command]/home/runner/work/_temp/3f9a1c0d-0b17-4d54-a1d2-61d8e6b4f2a9/terraform-bin -chdir=infra/notification plan -input=false -no-color -out=tfplan
+2026-10-08T02:13:12.1031778Z data.archive_file.notifier_zip: Reading...
+2026-10-08T02:13:12.1048102Z data.archive_file.notifier_zip: Read complete after 0s [id=6a1f0c93d2e84b7a51c6f09e3b2d7a8c4e1f5d60]
+2026-10-08T02:13:12.1150293Z data.aws_caller_identity.current: Reading...
+2026-10-08T02:13:12.1152817Z data.aws_region.current: Reading...
+2026-10-08T02:13:12.1155031Z data.aws_region.current: Read complete after 0s [id=ap-northeast-1]
+2026-10-08T02:13:12.1201406Z random_id.suffix: Refreshing state... [id=q3Zk9w]
+2026-10-08T02:13:12.1243119Z aws_iam_role.notifier_exec: Refreshing state... [id=notification-notifier-exec]
+2026-10-08T02:13:12.1247720Z aws_cloudwatch_log_group.notifier: Refreshing state... [id=/aws/lambda/notification-notifier]
+2026-10-08T02:13:12.1251096Z aws_sns_topic.alerts: Refreshing state... [id=arn:aws:sns:ap-northeast-1:123456789012:notification-alerts]
+2026-10-08T02:13:12.1254403Z aws_sqs_queue.notification_dlq: Refreshing state... [id=https://sqs.ap-northeast-1.amazonaws.com/123456789012/notification-dlq]
+2026-10-08T02:13:12.4011862Z data.aws_caller_identity.current: Read complete after 0s [id=123456789012]
+2026-10-08T02:13:12.6338417Z aws_sns_topic_subscription.alerts_email: Refreshing state... [id=arn:aws:sns:ap-northeast-1:123456789012:notification-alerts:2b8e5d1c-7f3a-4c0e-9d61-a4b7e0c3f912]
+2026-10-08T02:13:12.7120039Z aws_iam_role_policy_attachment.notifier_basic: Refreshing state... [id=notification-notifier-exec-20250611083012441200000001]
+2026-10-08T02:13:12.7124770Z aws_iam_role_policy.notifier_sqs: Refreshing state... [id=notification-notifier-exec:notifier-sqs]
+2026-10-08T02:13:12.7129913Z aws_iam_role_policy.notifier_ses: Refreshing state... [id=notification-notifier-exec:notifier-ses]
+2026-10-08T02:13:13.0402185Z aws_sqs_queue.notification: Refreshing state... [id=https://sqs.ap-northeast-1.amazonaws.com/123456789012/notification-queue]
+2026-10-08T02:13:13.3218774Z aws_sqs_queue_policy.notification: Refreshing state... [id=https://sqs.ap-northeast-1.amazonaws.com/123456789012/notification-queue]
+2026-10-08T02:13:13.3301452Z aws_lambda_function.notifier: Refreshing state... [id=notification-notifier]
+2026-10-08T02:13:13.8007321Z aws_lambda_event_source_mapping.notifier_sqs: Refreshing state... [id=8f1e2d3c-4b5a-6978-8a9b-0c1d2e3f4a5b]
+2026-10-08T02:13:13.8010224Z aws_cloudwatch_metric_alarm.notifier_errors: Refreshing state... [id=notification-notifier-errors]
+2026-10-08T02:13:13.8013087Z aws_cloudwatch_metric_alarm.queue_age: Refreshing state... [id=notification-queue-oldest-message-age]
+2026-10-08T02:13:14.0127703Z
+2026-10-08T02:13:14.0128459Z Terraform used the selected providers to generate the following execution
+2026-10-08T02:13:14.0129012Z plan. Resource actions are indicated with the following symbols:
+2026-10-08T02:13:14.0129480Z   + create
+2026-10-08T02:13:14.0129836Z   ~ update in-place
+2026-10-08T02:13:14.0130177Z
+2026-10-08T02:13:14.0130542Z Terraform will perform the following actions:
+2026-10-08T02:13:14.0130899Z
+2026-10-08T02:13:14.0131316Z   # aws_cloudwatch_metric_alarm.dlq_depth will be created
+2026-10-08T02:13:14.0131769Z   + resource "aws_cloudwatch_metric_alarm" "dlq_depth" {
+2026-10-08T02:13:14.0132219Z       + actions_enabled                       = true
+2026-10-08T02:13:14.0132700Z       + alarm_actions                         = [
+2026-10-08T02:13:14.0133190Z           + "arn:aws:sns:ap-northeast-1:123456789012:notification-alerts",
+2026-10-08T02:13:14.0133614Z         ]
+2026-10-08T02:13:14.0134002Z       + alarm_name                            = "notification-dlq-depth"
+2026-10-08T02:13:14.0134465Z       + arn                                   = (known after apply)
+2026-10-08T02:13:14.0134931Z       + comparison_operator                   = "GreaterThanThreshold"
+2026-10-08T02:13:14.0135381Z       + dimensions                            = {
+2026-10-08T02:13:14.0135805Z           + "QueueName" = "notification-dlq"
+2026-10-08T02:13:14.0136181Z         }
+2026-10-08T02:13:14.0136560Z       + evaluation_periods                    = 1
+2026-10-08T02:13:14.0136999Z       + id                                    = (known after apply)
+2026-10-08T02:13:14.0137432Z       + metric_name                           = "ApproximateNumberOfMessagesVisible"
+2026-10-08T02:13:14.0137887Z       + namespace                             = "AWS/SQS"
+2026-10-08T02:13:14.0138305Z       + period                                = 300
+2026-10-08T02:13:14.0138734Z       + statistic                             = "Maximum"
+2026-10-08T02:13:14.0139152Z       + tags_all                              = {
+2026-10-08T02:13:14.0139564Z           + "app"     = "notification"
+2026-10-08T02:13:14.0139947Z           + "env"     = "prod"
+2026-10-08T02:13:14.0140308Z         }
+2026-10-08T02:13:14.0140689Z       + threshold                             = 0
+2026-10-08T02:13:14.0141096Z       + treat_missing_data                    = "notBreaching"
+2026-10-08T02:13:14.0141464Z     }
+2026-10-08T02:13:14.0141772Z
+2026-10-08T02:13:14.0142170Z   # aws_lambda_function.notifier will be updated in-place
+2026-10-08T02:13:14.0142618Z   ~ resource "aws_lambda_function" "notifier" {
+2026-10-08T02:13:14.0143036Z         id                             = "notification-notifier"
+2026-10-08T02:13:14.0143494Z       ~ last_modified                  = "2026-09-24T07:41:18.000+0000" -> (known after apply)
+2026-10-08T02:13:14.0143998Z       ~ source_code_hash               = "bXo3c2FtcGxlaGFzaDAxMjM0NTY3ODk=" -> "Zm9vYmFyc2FtcGxlaGFzaDk4NzY1NDM="
+2026-10-08T02:13:14.0144469Z         tags                           = {
+2026-10-08T02:13:14.0144864Z             "app" = "notification"
+2026-10-08T02:13:14.0145235Z             "env" = "prod"
+2026-10-08T02:13:14.0145571Z         }
+2026-10-08T02:13:14.0145935Z       ~ timeout                        = 30 -> 60
+2026-10-08T02:13:14.0146323Z         # (24 unchanged attributes hidden)
+2026-10-08T02:13:14.0146667Z
+2026-10-08T02:13:14.0147011Z         # (4 unchanged blocks hidden)
+2026-10-08T02:13:14.0147343Z     }
+2026-10-08T02:13:14.0147653Z
+2026-10-08T02:13:14.0148040Z   # aws_sqs_queue.notification will be updated in-place
+2026-10-08T02:13:14.0148479Z   ~ resource "aws_sqs_queue" "notification" {
+2026-10-08T02:13:14.0148926Z         id                                = "https://sqs.ap-northeast-1.amazonaws.com/123456789012/notification-queue"
+2026-10-08T02:13:14.0149426Z         name                              = "notification-queue"
+2026-10-08T02:13:14.0149907Z       ~ visibility_timeout_seconds        = 180 -> 360
+2026-10-08T02:13:14.0150323Z         # (17 unchanged attributes hidden)
+2026-10-08T02:13:14.0150659Z     }
+2026-10-08T02:13:14.0150963Z
+2026-10-08T02:13:14.0151342Z   # aws_sqs_queue.notification_dlq will be updated in-place
+2026-10-08T02:13:14.0151790Z   ~ resource "aws_sqs_queue" "notification_dlq" {
+2026-10-08T02:13:14.0152241Z         id                                = "https://sqs.ap-northeast-1.amazonaws.com/123456789012/notification-dlq"
+2026-10-08T02:13:14.0152716Z         name                              = "notification-dlq"
+2026-10-08T02:13:14.0153192Z       ~ message_retention_seconds         = 345600 -> 1209600
+2026-10-08T02:13:14.0153693Z       + redrive_policy                    = jsonencode(
+2026-10-08T02:13:14.0154071Z             {
+2026-10-08T02:13:14.0154495Z               + deadLetterTargetArn = "arn:aws:sqs:ap-northeast-1:123456789012:notification-dlq-archive"
+2026-10-08T02:13:14.0154958Z               + maxReceiveCount     = 10
+2026-10-08T02:13:14.0155307Z             }
+2026-10-08T02:13:14.0155631Z         )
+2026-10-08T02:13:14.0156001Z         # (15 unchanged attributes hidden)
+2026-10-08T02:13:14.0156336Z     }
+2026-10-08T02:13:14.0156639Z
+2026-10-08T02:13:14.0157042Z Plan: 1 to add, 3 to change, 0 to destroy.
+2026-10-08T02:13:14.0157394Z
+2026-10-08T02:13:14.0157776Z ─────────────────────────────────────────────────────────────────────────────
+2026-10-08T02:13:14.0158125Z
+2026-10-08T02:13:14.0158503Z Saved the plan to: tfplan
+2026-10-08T02:13:14.0158840Z
+2026-10-08T02:13:14.0159221Z To perform exactly these actions, run the following command to apply:
+2026-10-08T02:13:14.0159634Z     terraform apply "tfplan"
+2026-10-08T02:13:14.0302710Z
+2026-10-08T02:13:14.0303422Z
+2026-10-08T02:13:14.0303884Z
+2026-10-08T02:13:14.0361542Z ##[group]Run terraform -chdir=infra/notification apply -input=false -no-color -auto-approve tfplan
+2026-10-08T02:13:14.0362301Z [36;1mterraform -chdir=infra/notification apply -input=false -no-color -auto-approve tfplan[0m
+2026-10-08T02:13:14.0375210Z shell: /usr/bin/bash -e {0}
+2026-10-08T02:13:14.0375590Z env:
+2026-10-08T02:13:14.0375918Z   AWS_REGION: ap-northeast-1
+2026-10-08T02:13:14.0376310Z   TF_IN_AUTOMATION: true
+2026-10-08T02:13:14.0376722Z   AWS_DEFAULT_REGION: ap-northeast-1
+2026-10-08T02:13:14.0377143Z   TERRAFORM_CLI_PATH: /home/runner/work/_temp/3f9a1c0d-0b17-4d54-a1d2-61d8e6b4f2a9
+2026-10-08T02:13:14.0377593Z ##[endgroup]
+2026-10-08T02:13:14.0991326Z [command]/home/runner/work/_temp/3f9a1c0d-0b17-4d54-a1d2-61d8e6b4f2a9/terraform-bin -chdir=infra/notification apply -input=false -no-color -auto-approve tfplan
+2026-10-08T02:13:15.2207118Z aws_cloudwatch_metric_alarm.dlq_depth: Creating...
+2026-10-08T02:13:15.2211903Z aws_sqs_queue.notification_dlq: Modifying... [id=https://sqs.ap-northeast-1.amazonaws.com/123456789012/notification-dlq]
+2026-10-08T02:13:15.2215036Z aws_lambda_function.notifier: Modifying... [id=notification-notifier]
+2026-10-08T02:13:15.2218170Z aws_sqs_queue.notification: Modifying... [id=https://sqs.ap-northeast-1.amazonaws.com/123456789012/notification-queue]
+2026-10-08T02:13:15.6043809Z aws_cloudwatch_metric_alarm.dlq_depth: Creation complete after 0s [id=notification-dlq-depth]
+2026-10-08T02:13:16.0112457Z
+2026-10-08T02:13:16.0113218Z Error: setting SQS Queue (https://sqs.ap-northeast-1.amazonaws.com/123456789012/notification-dlq) attribute (RedrivePolicy): operation error SQS: SetQueueAttributes, https response error StatusCode: 403, RequestID: 7c2e9a41-5d3b-5f8e-a0c6-1b4d9e7f2a83, api error AccessDenied: User: arn:aws:sts::123456789012:assumed-role/gha-cd-deploy/GitHubActions is not authorized to perform: sqs:SetQueueAttributes on resource: arn:aws:sqs:ap-northeast-1:123456789012:notification-dlq because no identity-based policy allows the sqs:SetQueueAttributes action
+2026-10-08T02:13:16.0114106Z
+2026-10-08T02:13:16.0114502Z   with aws_sqs_queue.notification_dlq,
+2026-10-08T02:13:16.0114931Z   on sqs.tf line 21, in resource "aws_sqs_queue" "notification_dlq":
+2026-10-08T02:13:16.0115330Z   21: resource "aws_sqs_queue" "notification_dlq" {
+2026-10-08T02:13:16.0115679Z
+2026-10-08T02:13:25.2231560Z aws_lambda_function.notifier: Still modifying... [id=notification-notifier, 10s elapsed]
+2026-10-08T02:13:25.2235702Z aws_sqs_queue.notification: Still modifying... [id=https://sqs.ap-northeast-1.amazonaws.com/123456789012/notification-queue, 10s elapsed]
+2026-10-08T02:13:27.8810416Z aws_lambda_function.notifier: Modifications complete after 13s [id=notification-notifier]
+2026-10-08T02:13:31.4407228Z aws_sqs_queue.notification: Modifications complete after 16s [id=https://sqs.ap-northeast-1.amazonaws.com/123456789012/notification-queue]
+2026-10-08T02:13:31.4562013Z
+2026-10-08T02:13:31.4562794Z Apply complete! Resources: 1 added, 2 changed, 0 destroyed. Failed: 1.
+2026-10-08T02:13:31.4598013Z ##[error]Terraform exited with code 1.
+2026-10-08T02:13:31.4612440Z ##[error]Process completed with exit code 1.
+2026-10-08T02:13:31.4700152Z ##[group]Run terraform -chdir=infra/notification output -json
+2026-10-08T02:13:31.4700913Z Skipping step: previous step failed
+2026-10-08T02:13:31.4701420Z ##[endgroup]
+2026-10-08T02:13:31.4789913Z Post job cleanup.
+2026-10-08T02:13:31.5603288Z Post job cleanup.
+2026-10-08T02:13:31.6251017Z [command]/usr/bin/git version
+2026-10-08T02:13:31.6295840Z git version 2.51.0
+2026-10-08T02:13:31.6337120Z Temporarily overriding HOME='/home/runner/work/_temp/a8d4e2f1-3b6c-4a90-8e7d-5c1f0b9a2d34' before making global git config changes
+2026-10-08T02:13:31.6338406Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-08T02:13:31.6343115Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/platform-deploy/platform-deploy
+2026-10-08T02:13:31.6380621Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-08T02:13:31.6417204Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-08T02:13:31.6644029Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-08T02:13:31.6668312Z http.https://github.com/.extraheader
+2026-10-08T02:13:31.6680110Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-08T02:13:31.6716047Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-08T02:13:31.6990441Z Cleaning up orphan processes

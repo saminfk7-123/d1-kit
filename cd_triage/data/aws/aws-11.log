@@ -1,0 +1,344 @@
+2026-10-08T02:09:41.2214873Z Current runner version: '2.328.0'
+2026-10-08T02:09:41.2240115Z ##[group]Runner Image Provisioner
+2026-10-08T02:09:41.2241002Z Hosted Compute Agent
+2026-10-08T02:09:41.2241588Z Version: 20250912.392
+2026-10-08T02:09:41.2242130Z Commit: 2a7f0c1e9b4d3f8a6c5e1d0b9a8f7e6d5c4b3a21
+2026-10-08T02:09:41.2242791Z Build Date: 2025-09-12T18:03:44Z
+2026-10-08T02:09:41.2243377Z ##[endgroup]
+2026-10-08T02:09:41.2243912Z ##[group]Operating System
+2026-10-08T02:09:41.2244503Z Ubuntu
+2026-10-08T02:09:41.2244987Z 24.04.3
+2026-10-08T02:09:41.2245432Z LTS
+2026-10-08T02:09:41.2245899Z ##[endgroup]
+2026-10-08T02:09:41.2246387Z ##[group]Runner Image
+2026-10-08T02:09:41.2246930Z Image: ubuntu-24.04
+2026-10-08T02:09:41.2247421Z Version: 20250929.1.0
+2026-10-08T02:09:41.2248410Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250929.1/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-08T02:09:41.2249808Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250929.1
+2026-10-08T02:09:41.2250765Z ##[endgroup]
+2026-10-08T02:09:41.2252312Z ##[group]GITHUB_TOKEN Permissions
+2026-10-08T02:09:41.2254301Z Contents: read
+2026-10-08T02:09:41.2254847Z IdToken: write
+2026-10-08T02:09:41.2255355Z Metadata: read
+2026-10-08T02:09:41.2255838Z ##[endgroup]
+2026-10-08T02:09:41.2258441Z Secret source: Actions
+2026-10-08T02:09:41.2259173Z Prepare workflow directory
+2026-10-08T02:09:41.2733019Z Prepare all required actions
+2026-10-08T02:09:41.2771550Z Getting action download info
+2026-10-08T02:09:41.6420117Z Download action repository 'actions/checkout@v4' (SHA:08eba0b27e820071cde6df949e0beb9ba4906955)
+2026-10-08T02:09:41.7803392Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+2026-10-08T02:09:41.8911264Z Download action repository 'aws-actions/configure-aws-credentials@v4' (SHA:a03048d87541d1d9fcf2ecf528a4a65ba9bd7838)
+2026-10-08T02:09:42.1350927Z Complete job name: deploy (order-api)
+2026-10-08T02:09:42.2078813Z ##[group]Run actions/checkout@v4
+2026-10-08T02:09:42.2079530Z with:
+2026-10-08T02:09:42.2079961Z   repository: example-org/platform-apps
+2026-10-08T02:09:42.2080672Z   token: ***
+2026-10-08T02:09:42.2081083Z   ssh-strict: true
+2026-10-08T02:09:42.2081521Z   persist-credentials: true
+2026-10-08T02:09:42.2081999Z   clean: true
+2026-10-08T02:09:42.2082390Z   fetch-depth: 1
+2026-10-08T02:09:42.2082806Z ##[endgroup]
+2026-10-08T02:09:42.3611907Z Syncing repository: example-org/platform-apps
+2026-10-08T02:09:42.3614210Z ##[group]Getting Git version info
+2026-10-08T02:09:42.3615012Z Working directory is '/home/runner/work/platform-apps/platform-apps'
+2026-10-08T02:09:42.3616228Z [command]/usr/bin/git version
+2026-10-08T02:09:42.3712455Z git version 2.51.0
+2026-10-08T02:09:42.3741187Z ##[endgroup]
+2026-10-08T02:09:42.3769920Z Deleting the contents of '/home/runner/work/platform-apps/platform-apps'
+2026-10-08T02:09:42.3773340Z ##[group]Initializing the repository
+2026-10-08T02:09:42.3776011Z [command]/usr/bin/git init /home/runner/work/platform-apps/platform-apps
+2026-10-08T02:09:42.3880422Z Initialized empty Git repository in /home/runner/work/platform-apps/platform-apps/.git/
+2026-10-08T02:09:42.3893318Z [command]/usr/bin/git remote add origin https://github.com/example-org/platform-apps
+2026-10-08T02:09:42.3931164Z ##[endgroup]
+2026-10-08T02:09:42.3933700Z ##[group]Fetching the repository
+2026-10-08T02:09:42.3940211Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +4c81e2fa0d93b7e6a15c2d48f09b3a7e61d5c820:refs/remotes/origin/main
+2026-10-08T02:09:43.1022871Z From https://github.com/example-org/platform-apps
+2026-10-08T02:09:43.1024419Z  * [new ref]         4c81e2fa0d93b7e6a15c2d48f09b3a7e61d5c820 -> origin/main
+2026-10-08T02:09:43.1051183Z ##[endgroup]
+2026-10-08T02:09:43.1052104Z ##[group]Checking out the ref
+2026-10-08T02:09:43.1056409Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-10-08T02:09:43.1388220Z Switched to a new branch 'main'
+2026-10-08T02:09:43.1390561Z branch 'main' set up to track 'origin/main'.
+2026-10-08T02:09:43.1399073Z ##[endgroup]
+2026-10-08T02:09:43.1441870Z [command]/usr/bin/git log -1 --format=%H
+2026-10-08T02:09:43.1475003Z 4c81e2fa0d93b7e6a15c2d48f09b3a7e61d5c820
+2026-10-08T02:09:43.1630114Z ##[group]Run actions/setup-node@v4
+2026-10-08T02:09:43.1630815Z with:
+2026-10-08T02:09:43.1631234Z   node-version: 20
+2026-10-08T02:09:43.1631688Z   cache: npm
+2026-10-08T02:09:43.1632173Z   cache-dependency-path: apps/order-api/package-lock.json
+2026-10-08T02:09:43.1632874Z   always-auth: false
+2026-10-08T02:09:43.1633320Z   check-latest: false
+2026-10-08T02:09:43.1633786Z ##[endgroup]
+2026-10-08T02:09:43.3407712Z Found in cache @ /opt/hostedtoolcache/node/20.19.5/x64
+2026-10-08T02:09:43.3412630Z ##[group]Environment details
+2026-10-08T02:09:43.6935218Z node: v20.19.5
+2026-10-08T02:09:43.6936023Z npm: 10.8.2
+2026-10-08T02:09:43.6936511Z yarn: 1.22.22
+2026-10-08T02:09:43.6937659Z ##[endgroup]
+2026-10-08T02:09:43.7002513Z [command]/opt/hostedtoolcache/node/20.19.5/x64/bin/npm config get cache
+2026-10-08T02:09:43.8350961Z /home/runner/.npm
+2026-10-08T02:09:44.0311742Z Cache hit for: node-cache-Linux-x64-npm-7d1e0b6a93c24f58a1e2d3c4b5a69788f0e1d2c3b4a5968778695a4b3c2d1e0f
+2026-10-08T02:09:45.2186023Z Received 41943040 of 58211633 (72.1%), 39.9 MBs/sec
+2026-10-08T02:09:45.5904417Z Received 58211633 of 58211633 (100.0%), 42.7 MBs/sec
+2026-10-08T02:09:45.5911838Z Cache Size: ~56 MB (58211633 B)
+2026-10-08T02:09:45.5951902Z [command]/usr/bin/tar -xf /home/runner/work/_temp/0b6f3e1a-2c4d-4e8f-9a1b-7c6d5e4f3a2b/cache.tzst -P -C /home/runner/work/platform-apps/platform-apps --use-compress-program unzstd
+2026-10-08T02:09:46.2410935Z Cache restored successfully
+2026-10-08T02:09:46.2498017Z Cache restored from key: node-cache-Linux-x64-npm-7d1e0b6a93c24f58a1e2d3c4b5a69788f0e1d2c3b4a5968778695a4b3c2d1e0f
+2026-10-08T02:09:46.2711804Z ##[group]Run aws-actions/configure-aws-credentials@v4
+2026-10-08T02:09:46.2712566Z with:
+2026-10-08T02:09:46.2713187Z   role-to-assume: arn:aws:iam::123456789012:role/gha-cd-order-api-deploy
+2026-10-08T02:09:46.2713949Z   aws-region: ap-northeast-1
+2026-10-08T02:09:46.2714466Z   role-session-name: gha-cd-order-api-18342977105
+2026-10-08T02:09:46.2715023Z   audience: sts.amazonaws.com
+2026-10-08T02:09:46.2715475Z ##[endgroup]
+2026-10-08T02:09:46.4093372Z Assuming role with OIDC
+2026-10-08T02:09:46.8817120Z Authenticated as assumedRoleId AROAEXAMPLE7QK2M4N5P6:gha-cd-order-api-18342977105
+2026-10-08T02:09:46.8932610Z ##[group]Run npm ci
+2026-10-08T02:09:46.8933168Z [36;1mnpm ci[0m
+2026-10-08T02:09:46.8968807Z shell: /usr/bin/bash -e {0}
+2026-10-08T02:09:46.8969293Z env:
+2026-10-08T02:09:46.8969741Z   AWS_DEFAULT_REGION: ap-northeast-1
+2026-10-08T02:09:46.8970210Z   AWS_REGION: ap-northeast-1
+2026-10-08T02:09:46.8970706Z   AWS_ACCESS_KEY_ID: ***
+2026-10-08T02:09:46.8971171Z   AWS_SECRET_ACCESS_KEY: ***
+2026-10-08T02:09:46.8971639Z   AWS_SESSION_TOKEN: ***
+2026-10-08T02:09:46.8972081Z ##[endgroup]
+2026-10-08T02:09:49.6603741Z npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+2026-10-08T02:09:49.9015542Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2026-10-08T02:09:54.3317705Z
+2026-10-08T02:09:54.3318452Z added 612 packages, and audited 613 packages in 7s
+2026-10-08T02:09:54.3319014Z
+2026-10-08T02:09:54.3319473Z 71 packages are looking for funding
+2026-10-08T02:09:54.3319998Z   run `npm fund` for details
+2026-10-08T02:09:54.3405880Z
+2026-10-08T02:09:54.3406552Z 2 moderate severity vulnerabilities
+2026-10-08T02:09:54.3407010Z
+2026-10-08T02:09:54.3407528Z To address all issues, run:
+2026-10-08T02:09:54.3408024Z   npm audit fix
+2026-10-08T02:09:54.3408404Z
+2026-10-08T02:09:54.3408827Z Run `npm audit` for details.
+2026-10-08T02:09:54.3612210Z ##[group]Run npm run build && npm test -- --ci
+2026-10-08T02:09:54.3612977Z [36;1mnpm run build && npm test -- --ci[0m
+2026-10-08T02:09:54.3640012Z shell: /usr/bin/bash -e {0}
+2026-10-08T02:09:54.3640468Z ##[endgroup]
+2026-10-08T02:09:54.5201881Z
+2026-10-08T02:09:54.5202630Z > order-api@1.14.0 build
+2026-10-08T02:09:54.5203158Z > tsc -p tsconfig.json && node scripts/bundle-lambdas.mjs
+2026-10-08T02:09:54.5203611Z
+2026-10-08T02:09:59.1182240Z [bundle] src/handlers/api.ts -> dist/api/index.js (412.6 kb)
+2026-10-08T02:09:59.2044015Z [bundle] src/handlers/worker.ts -> dist/worker/index.js (388.1 kb)
+2026-10-08T02:09:59.2071935Z [bundle] done in 1.38s
+2026-10-08T02:09:59.4419307Z
+2026-10-08T02:09:59.4420113Z > order-api@1.14.0 test
+2026-10-08T02:09:59.4420599Z > jest --ci
+2026-10-08T02:09:59.4421012Z
+2026-10-08T02:10:04.0517726Z PASS test/handlers/api.test.ts
+2026-10-08T02:10:04.4826361Z PASS test/handlers/worker.test.ts
+2026-10-08T02:10:05.9031542Z PASS test/infra/network-stack.test.ts
+2026-10-08T02:10:06.7720183Z PASS test/infra/prod-stack.test.ts
+2026-10-08T02:10:06.7811084Z
+2026-10-08T02:10:06.7812042Z Test Suites: 4 passed, 4 total
+2026-10-08T02:10:06.7812629Z Tests:       31 passed, 31 total
+2026-10-08T02:10:06.7813117Z Snapshots:   2 passed, 2 total
+2026-10-08T02:10:06.7813571Z Time:        6.214 s
+2026-10-08T02:10:06.7814025Z Ran all test suites.
+2026-10-08T02:10:06.8205118Z ##[group]Run npx cdk synth --quiet
+2026-10-08T02:10:06.8205882Z [36;1mnpx cdk synth --quiet[0m
+2026-10-08T02:10:06.8233301Z shell: /usr/bin/bash -e {0}
+2026-10-08T02:10:06.8233770Z env:
+2026-10-08T02:10:06.8234219Z   CDK_DEFAULT_ACCOUNT: 123456789012
+2026-10-08T02:10:06.8234721Z   CDK_DEFAULT_REGION: ap-northeast-1
+2026-10-08T02:10:06.8235201Z ##[endgroup]
+2026-10-08T02:10:14.0021478Z [Warning at /OrderApi-Prod/ApiFn] [ack: @aws-cdk/aws-lambda:runtimeDeprecation] nodejs18.x is approaching end of support; consider upgrading to nodejs20.x or later
+2026-10-08T02:10:14.9318820Z Successfully synthesized to /home/runner/work/platform-apps/platform-apps/apps/order-api/cdk.out
+2026-10-08T02:10:14.9320031Z Supply a stack id (OrderApi-Network, OrderApi-Prod) to display its template.
+2026-10-08T02:10:14.9601447Z ##[group]Run npx cdk deploy --all --require-approval never --progress events
+2026-10-08T02:10:14.9602219Z [36;1mnpx cdk deploy --all --require-approval never --progress events[0m
+2026-10-08T02:10:14.9628940Z shell: /usr/bin/bash -e {0}
+2026-10-08T02:10:14.9629404Z env:
+2026-10-08T02:10:14.9629839Z   CDK_DEFAULT_ACCOUNT: 123456789012
+2026-10-08T02:10:14.9630296Z   CDK_DEFAULT_REGION: ap-northeast-1
+2026-10-08T02:10:14.9630756Z ##[endgroup]
+2026-10-08T02:10:23.1186712Z
+2026-10-08T02:10:23.1187490Z ✨  Synthesis time: 7.84s
+2026-10-08T02:10:23.1188012Z
+2026-10-08T02:10:23.1205526Z OrderApi-Network: start: Building OrderApi-Network Template
+2026-10-08T02:10:23.1209014Z OrderApi-Network: success: Built OrderApi-Network Template
+2026-10-08T02:10:23.1340218Z OrderApi-Network: start: Publishing OrderApi-Network Template (123456789012-ap-northeast-1-c41a8b2e)
+2026-10-08T02:10:23.7715031Z OrderApi-Network: success: Published OrderApi-Network Template (123456789012-ap-northeast-1-c41a8b2e)
+2026-10-08T02:10:23.7801152Z OrderApi-Network
+2026-10-08T02:10:23.7803447Z OrderApi-Network: deploying... [1/2]
+2026-10-08T02:10:24.4011287Z OrderApi-Network: creating CloudFormation changeset...
+2026-10-08T02:10:30.0513312Z OrderApi-Network | 0/6 | 2:10:29 AM | UPDATE_IN_PROGRESS   | AWS::CloudFormation::Stack | OrderApi-Network User Initiated
+2026-10-08T02:10:33.0921404Z OrderApi-Network | 0/6 | 2:10:32 AM | UPDATE_IN_PROGRESS   | AWS::EC2::SecurityGroup | WorkerSg (WorkerSg3A9B1C2D)
+2026-10-08T02:10:36.1180035Z OrderApi-Network | 1/6 | 2:10:35 AM | UPDATE_COMPLETE      | AWS::EC2::SecurityGroup | WorkerSg (WorkerSg3A9B1C2D)
+2026-10-08T02:10:36.1182213Z OrderApi-Network | 1/6 | 2:10:35 AM | UPDATE_IN_PROGRESS   | AWS::EC2::VPCEndpoint | Vpc/SqsEndpoint (VpcSqsEndpoint5F1E2A7B)
+2026-10-08T02:10:39.2014433Z OrderApi-Network | 2/6 | 2:10:38 AM | UPDATE_COMPLETE      | AWS::EC2::VPCEndpoint | Vpc/SqsEndpoint (VpcSqsEndpoint5F1E2A7B)
+2026-10-08T02:10:41.0017725Z OrderApi-Network | 2/6 | 2:10:40 AM | UPDATE_COMPLETE_CLEANUP_IN_PROGRESS | AWS::CloudFormation::Stack | OrderApi-Network
+2026-10-08T02:10:42.4440190Z OrderApi-Network | 3/6 | 2:10:41 AM | UPDATE_COMPLETE      | AWS::CloudFormation::Stack | OrderApi-Network
+2026-10-08T02:10:42.4501773Z
+2026-10-08T02:10:42.4502611Z  ✅  OrderApi-Network
+2026-10-08T02:10:42.4503144Z
+2026-10-08T02:10:42.4503729Z ✨  Deployment time: 18.67s
+2026-10-08T02:10:42.4504221Z
+2026-10-08T02:10:42.4504812Z Outputs:
+2026-10-08T02:10:42.4505611Z OrderApi-Network.ExportsOutputRefVpc8378EB38272D6E3A = vpc-0a1b2c3d4e5f60718
+2026-10-08T02:10:42.4506520Z OrderApi-Network.ExportsOutputRefWorkerSg3A9B1C2DGroupId6F7E8D9C = sg-0f1e2d3c4b5a69788
+2026-10-08T02:10:42.4507227Z Stack ARN:
+2026-10-08T02:10:42.4508011Z arn:aws:cloudformation:ap-northeast-1:123456789012:stack/OrderApi-Network/1e2d3c4b-5a69-11ef-8f7e-0a1b2c3d4e5f
+2026-10-08T02:10:42.4508645Z
+2026-10-08T02:10:42.4509132Z ✨  Total time: 26.51s
+2026-10-08T02:10:42.4509591Z
+2026-10-08T02:10:42.4612980Z OrderApi-Prod: start: Building OrderApi-Prod Template
+2026-10-08T02:10:42.4615511Z OrderApi-Prod: success: Built OrderApi-Prod Template
+2026-10-08T02:10:42.4618342Z OrderApi-Prod: start: Building ApiFn/Code
+2026-10-08T02:10:42.4619910Z OrderApi-Prod: success: Built ApiFn/Code
+2026-10-08T02:10:42.4621442Z OrderApi-Prod: start: Building WorkerFn/Code
+2026-10-08T02:10:42.4622930Z OrderApi-Prod: success: Built WorkerFn/Code
+2026-10-08T02:10:42.4711290Z OrderApi-Prod: start: Publishing ApiFn/Code (123456789012-ap-northeast-1-9b7e1f04)
+2026-10-08T02:10:42.4713517Z OrderApi-Prod: start: Publishing WorkerFn/Code (123456789012-ap-northeast-1-5d2c8a61)
+2026-10-08T02:10:42.4715410Z OrderApi-Prod: start: Publishing OrderApi-Prod Template (123456789012-ap-northeast-1-e03f7b19)
+2026-10-08T02:10:43.6620041Z OrderApi-Prod: success: Published ApiFn/Code (123456789012-ap-northeast-1-9b7e1f04)
+2026-10-08T02:10:43.7104408Z OrderApi-Prod: success: Published WorkerFn/Code (123456789012-ap-northeast-1-5d2c8a61)
+2026-10-08T02:10:43.9038110Z OrderApi-Prod: success: Published OrderApi-Prod Template (123456789012-ap-northeast-1-e03f7b19)
+2026-10-08T02:10:43.9102279Z OrderApi-Prod
+2026-10-08T02:10:43.9104305Z OrderApi-Prod: deploying... [2/2]
+2026-10-08T02:10:44.6612770Z OrderApi-Prod: creating CloudFormation changeset...
+2026-10-08T02:10:52.3307114Z OrderApi-Prod |  0/27 | 2:10:51 AM | UPDATE_IN_PROGRESS   | AWS::CloudFormation::Stack | OrderApi-Prod User Initiated
+2026-10-08T02:10:55.0128803Z OrderApi-Prod |  0/27 | 2:10:54 AM | CREATE_IN_PROGRESS   | AWS::SQS::Queue | OrderDlq (OrderDlq8C2E4F1A)
+2026-10-08T02:10:55.0131042Z OrderApi-Prod |  0/27 | 2:10:54 AM | CREATE_IN_PROGRESS   | AWS::IAM::Role | WorkerRole (WorkerRole7E1C3B5D)
+2026-10-08T02:10:55.0133150Z OrderApi-Prod |  0/27 | 2:10:54 AM | UPDATE_IN_PROGRESS   | AWS::IAM::Role | ApiFn/ServiceRole (ApiFnServiceRole0D4A7E21)
+2026-10-08T02:10:55.4417716Z OrderApi-Prod |  0/27 | 2:10:54 AM | CREATE_IN_PROGRESS   | AWS::SQS::Queue | OrderDlq (OrderDlq8C2E4F1A) Resource creation Initiated
+2026-10-08T02:10:55.6802291Z OrderApi-Prod |  0/27 | 2:10:55 AM | CREATE_IN_PROGRESS   | AWS::IAM::Role | WorkerRole (WorkerRole7E1C3B5D) Resource creation Initiated
+2026-10-08T02:10:56.2290315Z OrderApi-Prod |  1/27 | 2:10:55 AM | CREATE_COMPLETE      | AWS::SQS::Queue | OrderDlq (OrderDlq8C2E4F1A)
+2026-10-08T02:10:57.1014620Z OrderApi-Prod |  1/27 | 2:10:56 AM | CREATE_IN_PROGRESS   | AWS::SQS::Queue | OrderQueue (OrderQueue4B9D0F3E)
+2026-10-08T02:10:57.5522408Z OrderApi-Prod |  1/27 | 2:10:57 AM | CREATE_IN_PROGRESS   | AWS::SQS::Queue | OrderQueue (OrderQueue4B9D0F3E) Resource creation Initiated
+2026-10-08T02:10:58.3381973Z OrderApi-Prod |  2/27 | 2:10:57 AM | CREATE_COMPLETE      | AWS::SQS::Queue | OrderQueue (OrderQueue4B9D0F3E)
+2026-10-08T02:11:10.8217364Z OrderApi-Prod |  3/27 | 2:11:10 AM | UPDATE_COMPLETE      | AWS::IAM::Role | ApiFn/ServiceRole (ApiFnServiceRole0D4A7E21)
+2026-10-08T02:11:12.4110298Z OrderApi-Prod |  4/27 | 2:11:11 AM | CREATE_COMPLETE      | AWS::IAM::Role | WorkerRole (WorkerRole7E1C3B5D)
+2026-10-08T02:11:13.0024765Z OrderApi-Prod |  4/27 | 2:11:12 AM | CREATE_IN_PROGRESS   | AWS::IAM::Policy | WorkerRole/DefaultPolicy (WorkerRoleDefaultPolicy2A6F8C10)
+2026-10-08T02:11:13.0027113Z OrderApi-Prod |  4/27 | 2:11:12 AM | UPDATE_IN_PROGRESS   | AWS::IAM::Policy | ApiFn/ServiceRole/DefaultPolicy (ApiFnServiceRoleDefaultPolicy5C3E9A72)
+2026-10-08T02:11:13.6650922Z OrderApi-Prod |  4/27 | 2:11:13 AM | CREATE_IN_PROGRESS   | AWS::IAM::Policy | WorkerRole/DefaultPolicy (WorkerRoleDefaultPolicy2A6F8C10) Resource creation Initiated
+2026-10-08T02:11:29.1189137Z OrderApi-Prod |  5/27 | 2:11:28 AM | UPDATE_COMPLETE      | AWS::IAM::Policy | ApiFn/ServiceRole/DefaultPolicy (ApiFnServiceRoleDefaultPolicy5C3E9A72)
+2026-10-08T02:11:29.7720461Z OrderApi-Prod |  6/27 | 2:11:29 AM | CREATE_COMPLETE      | AWS::IAM::Policy | WorkerRole/DefaultPolicy (WorkerRoleDefaultPolicy2A6F8C10)
+2026-10-08T02:11:30.4013586Z OrderApi-Prod |  6/27 | 2:11:30 AM | UPDATE_IN_PROGRESS   | AWS::Lambda::Function | ApiFn (ApiFn8A1D2C4F)
+2026-10-08T02:11:30.4016221Z OrderApi-Prod |  6/27 | 2:11:30 AM | CREATE_IN_PROGRESS   | AWS::Lambda::Function | WorkerFn (WorkerFn6E3B7D90)
+2026-10-08T02:11:31.0822914Z OrderApi-Prod |  6/27 | 2:11:30 AM | CREATE_IN_PROGRESS   | AWS::Lambda::Function | WorkerFn (WorkerFn6E3B7D90) Resource creation Initiated
+2026-10-08T02:11:33.5501877Z OrderApi-Prod |  7/27 | 2:11:33 AM | UPDATE_COMPLETE      | AWS::Lambda::Function | ApiFn (ApiFn8A1D2C4F)
+2026-10-08T02:11:34.0117302Z OrderApi-Prod |  7/27 | 2:11:33 AM | CREATE_IN_PROGRESS   | AWS::Lambda::Version | ApiFn/CurrentVersion (ApiFnCurrentVersion3F0A8b1c4e2d7a9f6b5c3e1d0a8f7b6c)
+2026-10-08T02:11:34.0119917Z OrderApi-Prod |  7/27 | 2:11:33 AM | CREATE_IN_PROGRESS   | AWS::Logs::LogGroup | WorkerFn/LogGroup (WorkerFnLogGroup1D7C9E2B)
+2026-10-08T02:11:34.6603319Z OrderApi-Prod |  7/27 | 2:11:34 AM | CREATE_IN_PROGRESS   | AWS::Logs::LogGroup | WorkerFn/LogGroup (WorkerFnLogGroup1D7C9E2B) Resource creation Initiated
+2026-10-08T02:11:35.2047713Z OrderApi-Prod |  8/27 | 2:11:34 AM | CREATE_COMPLETE      | AWS::Logs::LogGroup | WorkerFn/LogGroup (WorkerFnLogGroup1D7C9E2B)
+2026-10-08T02:11:37.8810512Z OrderApi-Prod |  9/27 | 2:11:37 AM | CREATE_COMPLETE      | AWS::Lambda::Version | ApiFn/CurrentVersion (ApiFnCurrentVersion3F0A8b1c4e2d7a9f6b5c3e1d0a8f7b6c)
+2026-10-08T02:11:38.4426150Z OrderApi-Prod |  9/27 | 2:11:38 AM | UPDATE_IN_PROGRESS   | AWS::Lambda::Alias | ApiFn/LiveAlias (ApiFnLiveAlias9B2E4D61)
+2026-10-08T02:11:39.9012287Z OrderApi-Prod | 10/27 | 2:11:39 AM | UPDATE_COMPLETE      | AWS::Lambda::Alias | ApiFn/LiveAlias (ApiFnLiveAlias9B2E4D61)
+2026-10-08T02:11:40.5518841Z OrderApi-Prod | 10/27 | 2:11:40 AM | UPDATE_IN_PROGRESS   | AWS::ApiGateway::Method | OrderRestApi/Default/orders/POST (OrderRestApiordersPOST7C1E5A3D)
+2026-10-08T02:11:41.6402213Z OrderApi-Prod | 11/27 | 2:11:41 AM | UPDATE_COMPLETE      | AWS::ApiGateway::Method | OrderRestApi/Default/orders/POST (OrderRestApiordersPOST7C1E5A3D)
+2026-10-08T02:11:42.1170994Z OrderApi-Prod | 11/27 | 2:11:41 AM | CREATE_IN_PROGRESS   | AWS::ApiGateway::Deployment | OrderRestApi/Deployment (OrderRestApiDeployment5A8F3C2E1b7d4e9a0c6f2b8d5e3a1c7f)
+2026-10-08T02:11:42.6619830Z OrderApi-Prod | 11/27 | 2:11:42 AM | CREATE_IN_PROGRESS   | AWS::ApiGateway::Deployment | OrderRestApi/Deployment (OrderRestApiDeployment5A8F3C2E1b7d4e9a0c6f2b8d5e3a1c7f) Resource creation Initiated
+2026-10-08T02:11:43.2297418Z OrderApi-Prod | 12/27 | 2:11:42 AM | CREATE_COMPLETE      | AWS::ApiGateway::Deployment | OrderRestApi/Deployment (OrderRestApiDeployment5A8F3C2E1b7d4e9a0c6f2b8d5e3a1c7f)
+2026-10-08T02:11:43.7714508Z OrderApi-Prod | 12/27 | 2:11:43 AM | UPDATE_IN_PROGRESS   | AWS::ApiGateway::Stage | OrderRestApi/DeploymentStage.prod (OrderRestApiDeploymentStageprod2D9B6E40)
+2026-10-08T02:11:45.0013376Z OrderApi-Prod | 13/27 | 2:11:44 AM | UPDATE_COMPLETE      | AWS::ApiGateway::Stage | OrderRestApi/DeploymentStage.prod (OrderRestApiDeploymentStageprod2D9B6E40)
+2026-10-08T02:11:47.3389012Z OrderApi-Prod | 14/27 | 2:11:47 AM | CREATE_COMPLETE      | AWS::Lambda::Function | WorkerFn (WorkerFn6E3B7D90)
+2026-10-08T02:11:47.9901457Z OrderApi-Prod | 14/27 | 2:11:47 AM | CREATE_IN_PROGRESS   | AWS::Lambda::EventSourceMapping | WorkerFnSqsEventSource (WorkerFnSqsEventSourceOrderApiProdOrderQueue4B9D0F3E81A2C6D7)
+2026-10-08T02:11:47.9904120Z OrderApi-Prod | 14/27 | 2:11:47 AM | CREATE_IN_PROGRESS   | AWS::CloudWatch::Alarm | WorkerFn/ErrorsAlarm (WorkerFnErrorsAlarm4C8A1F2E)
+2026-10-08T02:11:47.9906338Z OrderApi-Prod | 14/27 | 2:11:47 AM | CREATE_IN_PROGRESS   | AWS::CloudWatch::Alarm | OrderDlq/DepthAlarm (OrderDlqDepthAlarm6B0D3E7F)
+2026-10-08T02:11:48.5517392Z OrderApi-Prod | 14/27 | 2:11:48 AM | CREATE_IN_PROGRESS   | AWS::CloudWatch::Alarm | WorkerFn/ErrorsAlarm (WorkerFnErrorsAlarm4C8A1F2E) Resource creation Initiated
+2026-10-08T02:11:48.5519950Z OrderApi-Prod | 14/27 | 2:11:48 AM | CREATE_IN_PROGRESS   | AWS::CloudWatch::Alarm | OrderDlq/DepthAlarm (OrderDlqDepthAlarm6B0D3E7F) Resource creation Initiated
+2026-10-08T02:11:49.1102284Z OrderApi-Prod | 15/27 | 2:11:48 AM | CREATE_COMPLETE      | AWS::CloudWatch::Alarm | WorkerFn/ErrorsAlarm (WorkerFnErrorsAlarm4C8A1F2E)
+2026-10-08T02:11:49.1104713Z OrderApi-Prod | 16/27 | 2:11:48 AM | CREATE_COMPLETE      | AWS::CloudWatch::Alarm | OrderDlq/DepthAlarm (OrderDlqDepthAlarm6B0D3E7F)
+2026-10-08T02:11:50.6640339Z OrderApi-Prod | 16/27 | 2:11:50 AM | CREATE_FAILED        | AWS::Lambda::EventSourceMapping | WorkerFnSqsEventSource (WorkerFnSqsEventSourceOrderApiProdOrderQueue4B9D0F3E81A2C6D7) Resource handler returned message: "Invalid request provided: The provided execution role does not have permissions to call ReceiveMessage on SQS (Service: Lambda, Status Code: 400, Request ID: 7f3e9c21-4b8a-4d6e-a1f0-2c5d8e9b3a74)" (RequestToken: 0d8e4a1b-6c2f-9e37-5b1d-a4c7e2f08b39, HandlerErrorCode: InvalidRequest)
+2026-10-08T02:11:50.9017281Z OrderApi-Prod | 16/27 | 2:11:50 AM | CREATE_IN_PROGRESS   | AWS::Logs::SubscriptionFilter | WorkerFn/LogShipping (WorkerFnLogShipping8E2A4C6B) Resource creation cancelled
+2026-10-08T02:11:50.9019775Z OrderApi-Prod | 16/27 | 2:11:50 AM | CREATE_IN_PROGRESS   | AWS::Lambda::Permission | ApiFn/ApiInvokePermission (ApiFnApiInvokePermission1F3B5D7A) Resource creation cancelled
+2026-10-08T02:11:51.4402173Z OrderApi-Prod | 16/27 | 2:11:51 AM | CREATE_FAILED        | AWS::Logs::SubscriptionFilter | WorkerFn/LogShipping (WorkerFnLogShipping8E2A4C6B) Resource creation cancelled
+2026-10-08T02:11:51.4404809Z OrderApi-Prod | 16/27 | 2:11:51 AM | CREATE_FAILED        | AWS::Lambda::Permission | ApiFn/ApiInvokePermission (ApiFnApiInvokePermission1F3B5D7A) Resource creation cancelled
+2026-10-08T02:11:52.0218734Z OrderApi-Prod | 16/27 | 2:11:51 AM | UPDATE_ROLLBACK_IN_PROGRESS | AWS::CloudFormation::Stack | OrderApi-Prod The following resource(s) failed to create: [WorkerFnSqsEventSourceOrderApiProdOrderQueue4B9D0F3E81A2C6D7, WorkerFnLogShipping8E2A4C6B, ApiFnApiInvokePermission1F3B5D7A].
+2026-10-08T02:11:56.3301148Z OrderApi-Prod | 15/27 | 2:11:55 AM | UPDATE_IN_PROGRESS   | AWS::IAM::Role | ApiFn/ServiceRole (ApiFnServiceRole0D4A7E21)
+2026-10-08T02:11:56.3303617Z OrderApi-Prod | 15/27 | 2:11:55 AM | UPDATE_IN_PROGRESS   | AWS::Lambda::Function | ApiFn (ApiFn8A1D2C4F)
+2026-10-08T02:11:59.8817205Z OrderApi-Prod | 14/27 | 2:11:59 AM | UPDATE_COMPLETE      | AWS::Lambda::Function | ApiFn (ApiFn8A1D2C4F)
+2026-10-08T02:12:00.4416682Z OrderApi-Prod | 14/27 | 2:12:00 AM | UPDATE_IN_PROGRESS   | AWS::Lambda::Alias | ApiFn/LiveAlias (ApiFnLiveAlias9B2E4D61)
+2026-10-08T02:12:01.9920153Z OrderApi-Prod | 13/27 | 2:12:01 AM | UPDATE_COMPLETE      | AWS::Lambda::Alias | ApiFn/LiveAlias (ApiFnLiveAlias9B2E4D61)
+2026-10-08T02:12:02.5512830Z OrderApi-Prod | 13/27 | 2:12:02 AM | UPDATE_IN_PROGRESS   | AWS::ApiGateway::Stage | OrderRestApi/DeploymentStage.prod (OrderRestApiDeploymentStageprod2D9B6E40)
+2026-10-08T02:12:03.8807441Z OrderApi-Prod | 12/27 | 2:12:03 AM | UPDATE_COMPLETE      | AWS::ApiGateway::Stage | OrderRestApi/DeploymentStage.prod (OrderRestApiDeploymentStageprod2D9B6E40)
+2026-10-08T02:12:12.0031904Z OrderApi-Prod | 11/27 | 2:12:11 AM | UPDATE_COMPLETE      | AWS::IAM::Role | ApiFn/ServiceRole (ApiFnServiceRole0D4A7E21)
+2026-10-08T02:12:13.1146690Z OrderApi-Prod | 11/27 | 2:12:12 AM | UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS | AWS::CloudFormation::Stack | OrderApi-Prod
+2026-10-08T02:12:14.2201775Z OrderApi-Prod | 10/27 | 2:12:13 AM | DELETE_IN_PROGRESS   | AWS::CloudWatch::Alarm | WorkerFn/ErrorsAlarm (WorkerFnErrorsAlarm4C8A1F2E)
+2026-10-08T02:12:14.2204210Z OrderApi-Prod | 10/27 | 2:12:13 AM | DELETE_IN_PROGRESS   | AWS::CloudWatch::Alarm | OrderDlq/DepthAlarm (OrderDlqDepthAlarm6B0D3E7F)
+2026-10-08T02:12:14.2206518Z OrderApi-Prod | 10/27 | 2:12:13 AM | DELETE_IN_PROGRESS   | AWS::ApiGateway::Deployment | OrderRestApi/Deployment (OrderRestApiDeployment5A8F3C2E1b7d4e9a0c6f2b8d5e3a1c7f)
+2026-10-08T02:12:14.2208812Z OrderApi-Prod | 10/27 | 2:12:13 AM | DELETE_IN_PROGRESS   | AWS::Lambda::Version | ApiFn/CurrentVersion (ApiFnCurrentVersion3F0A8b1c4e2d7a9f6b5c3e1d0a8f7b6c)
+2026-10-08T02:12:14.8810227Z OrderApi-Prod |  9/27 | 2:12:14 AM | DELETE_COMPLETE      | AWS::CloudWatch::Alarm | WorkerFn/ErrorsAlarm (WorkerFnErrorsAlarm4C8A1F2E)
+2026-10-08T02:12:14.8812844Z OrderApi-Prod |  8/27 | 2:12:14 AM | DELETE_COMPLETE      | AWS::CloudWatch::Alarm | OrderDlq/DepthAlarm (OrderDlqDepthAlarm6B0D3E7F)
+2026-10-08T02:12:15.3307719Z OrderApi-Prod |  7/27 | 2:12:15 AM | DELETE_COMPLETE      | AWS::ApiGateway::Deployment | OrderRestApi/Deployment (OrderRestApiDeployment5A8F3C2E1b7d4e9a0c6f2b8d5e3a1c7f)
+2026-10-08T02:12:15.6619035Z OrderApi-Prod |  6/27 | 2:12:15 AM | DELETE_SKIPPED       | AWS::Lambda::Version | ApiFn/CurrentVersion (ApiFnCurrentVersion3F0A8b1c4e2d7a9f6b5c3e1d0a8f7b6c)
+2026-10-08T02:12:16.0021370Z OrderApi-Prod |  6/27 | 2:12:15 AM | DELETE_IN_PROGRESS   | AWS::Lambda::EventSourceMapping | WorkerFnSqsEventSource (WorkerFnSqsEventSourceOrderApiProdOrderQueue4B9D0F3E81A2C6D7)
+2026-10-08T02:12:16.0023881Z OrderApi-Prod |  6/27 | 2:12:15 AM | DELETE_IN_PROGRESS   | AWS::Logs::SubscriptionFilter | WorkerFn/LogShipping (WorkerFnLogShipping8E2A4C6B)
+2026-10-08T02:12:16.0026103Z OrderApi-Prod |  6/27 | 2:12:15 AM | DELETE_IN_PROGRESS   | AWS::Lambda::Permission | ApiFn/ApiInvokePermission (ApiFnApiInvokePermission1F3B5D7A)
+2026-10-08T02:12:16.5514458Z OrderApi-Prod |  5/27 | 2:12:16 AM | DELETE_COMPLETE      | AWS::Lambda::EventSourceMapping | WorkerFnSqsEventSource (WorkerFnSqsEventSourceOrderApiProdOrderQueue4B9D0F3E81A2C6D7)
+2026-10-08T02:12:16.5517002Z OrderApi-Prod |  4/27 | 2:12:16 AM | DELETE_COMPLETE      | AWS::Logs::SubscriptionFilter | WorkerFn/LogShipping (WorkerFnLogShipping8E2A4C6B)
+2026-10-08T02:12:16.5519284Z OrderApi-Prod |  3/27 | 2:12:16 AM | DELETE_COMPLETE      | AWS::Lambda::Permission | ApiFn/ApiInvokePermission (ApiFnApiInvokePermission1F3B5D7A)
+2026-10-08T02:12:17.1105530Z OrderApi-Prod |  3/27 | 2:12:16 AM | DELETE_IN_PROGRESS   | AWS::Lambda::Function | WorkerFn (WorkerFn6E3B7D90)
+2026-10-08T02:12:17.1108012Z OrderApi-Prod |  3/27 | 2:12:16 AM | DELETE_IN_PROGRESS   | AWS::Logs::LogGroup | WorkerFn/LogGroup (WorkerFnLogGroup1D7C9E2B)
+2026-10-08T02:12:17.7712861Z OrderApi-Prod |  2/27 | 2:12:17 AM | DELETE_COMPLETE      | AWS::Logs::LogGroup | WorkerFn/LogGroup (WorkerFnLogGroup1D7C9E2B)
+2026-10-08T02:12:20.4419927Z OrderApi-Prod |  1/27 | 2:12:20 AM | DELETE_COMPLETE      | AWS::Lambda::Function | WorkerFn (WorkerFn6E3B7D90)
+2026-10-08T02:12:21.0016148Z OrderApi-Prod |  1/27 | 2:12:20 AM | DELETE_IN_PROGRESS   | AWS::IAM::Policy | WorkerRole/DefaultPolicy (WorkerRoleDefaultPolicy2A6F8C10)
+2026-10-08T02:12:21.0018530Z OrderApi-Prod |  1/27 | 2:12:20 AM | DELETE_IN_PROGRESS   | AWS::SQS::Queue | OrderQueue (OrderQueue4B9D0F3E)
+2026-10-08T02:12:22.3307781Z OrderApi-Prod |  0/27 | 2:12:21 AM | DELETE_COMPLETE      | AWS::IAM::Policy | WorkerRole/DefaultPolicy (WorkerRoleDefaultPolicy2A6F8C10)
+2026-10-08T02:12:22.9012645Z OrderApi-Prod |  0/27 | 2:12:22 AM | DELETE_IN_PROGRESS   | AWS::IAM::Role | WorkerRole (WorkerRole7E1C3B5D)
+2026-10-08T02:12:24.5518306Z OrderApi-Prod |  0/27 | 2:12:24 AM | DELETE_COMPLETE      | AWS::IAM::Role | WorkerRole (WorkerRole7E1C3B5D)
+2026-10-08T02:13:01.7713094Z OrderApi-Prod |  0/27 | 2:13:01 AM | DELETE_COMPLETE      | AWS::SQS::Queue | OrderQueue (OrderQueue4B9D0F3E)
+2026-10-08T02:13:02.1146205Z OrderApi-Prod |  0/27 | 2:13:01 AM | DELETE_IN_PROGRESS   | AWS::SQS::Queue | OrderDlq (OrderDlq8C2E4F1A)
+2026-10-08T02:13:42.8809316Z OrderApi-Prod |  0/27 | 2:13:42 AM | DELETE_COMPLETE      | AWS::SQS::Queue | OrderDlq (OrderDlq8C2E4F1A)
+2026-10-08T02:13:43.4402911Z OrderApi-Prod |  1/27 | 2:13:43 AM | UPDATE_ROLLBACK_COMPLETE | AWS::CloudFormation::Stack | OrderApi-Prod
+2026-10-08T02:13:43.4511174Z
+2026-10-08T02:13:43.4512068Z Failed resources:
+2026-10-08T02:13:43.4513492Z OrderApi-Prod | 2:11:50 AM | CREATE_FAILED        | AWS::Lambda::EventSourceMapping | WorkerFnSqsEventSource (WorkerFnSqsEventSourceOrderApiProdOrderQueue4B9D0F3E81A2C6D7) Resource handler returned message: "Invalid request provided: The provided execution role does not have permissions to call ReceiveMessage on SQS (Service: Lambda, Status Code: 400, Request ID: 7f3e9c21-4b8a-4d6e-a1f0-2c5d8e9b3a74)" (RequestToken: 0d8e4a1b-6c2f-9e37-5b1d-a4c7e2f08b39, HandlerErrorCode: InvalidRequest)
+2026-10-08T02:13:43.4602733Z
+2026-10-08T02:13:43.4603491Z  ❌  OrderApi-Prod failed: _ToolkitError: The stack named OrderApi-Prod failed to deploy: UPDATE_ROLLBACK_COMPLETE: Resource handler returned message: "Invalid request provided: The provided execution role does not have permissions to call ReceiveMessage on SQS (Service: Lambda, Status Code: 400, Request ID: 7f3e9c21-4b8a-4d6e-a1f0-2c5d8e9b3a74)" (RequestToken: 0d8e4a1b-6c2f-9e37-5b1d-a4c7e2f08b39, HandlerErrorCode: InvalidRequest)
+2026-10-08T02:13:43.4614006Z     at FullCloudFormationDeployment.monitorDeployment (/home/runner/work/platform-apps/platform-apps/apps/order-api/node_modules/aws-cdk/lib/index.js:532:10568)
+2026-10-08T02:13:43.4615218Z     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-10-08T02:13:43.4616104Z     at async Object.deployStack2 [as deployStack] (/home/runner/work/platform-apps/platform-apps/apps/order-api/node_modules/aws-cdk/lib/index.js:535:200310)
+2026-10-08T02:13:43.4617042Z     at async /home/runner/work/platform-apps/platform-apps/apps/order-api/node_modules/aws-cdk/lib/index.js:535:181715
+2026-10-08T02:13:43.4618022Z
+2026-10-08T02:13:43.4618933Z  ❌ Deployment failed: _ToolkitError: The stack named OrderApi-Prod failed to deploy: UPDATE_ROLLBACK_COMPLETE
+2026-10-08T02:13:43.4619622Z
+2026-10-08T02:13:43.5106237Z ##[error]Process completed with exit code 1.
+2026-10-08T02:13:43.5201183Z ##[group]Run echo "::notice::order-api deploy result: failure"
+2026-10-08T02:13:43.5201950Z [36;1mecho "::notice::order-api deploy result: failure"[0m
+2026-10-08T02:13:43.5229112Z shell: /usr/bin/bash -e {0}
+2026-10-08T02:13:43.5229587Z ##[endgroup]
+2026-10-08T02:13:43.5301736Z ##[notice]order-api deploy result: failure
+2026-10-08T02:13:43.5382915Z ##[group]Run actions/upload-artifact@v4
+2026-10-08T02:13:43.5383624Z with:
+2026-10-08T02:13:43.5384071Z   name: order-api-cdk-out
+2026-10-08T02:13:43.5384579Z   path: apps/order-api/cdk.out/*.template.json
+2026-10-08T02:13:43.5385089Z   if-no-files-found: warn
+2026-10-08T02:13:43.5385538Z   retention-days: 7
+2026-10-08T02:13:43.5385977Z ##[endgroup]
+2026-10-08T02:13:43.8017722Z With the provided path, there will be 2 files uploaded
+2026-10-08T02:13:43.8023119Z Artifact name is valid!
+2026-10-08T02:13:43.8023864Z Root directory input is valid!
+2026-10-08T02:13:44.1105817Z Beginning upload of artifact content to blob storage
+2026-10-08T02:13:44.4421903Z Uploaded bytes 38412
+2026-10-08T02:13:44.5310268Z Finished uploading artifact content to blob storage!
+2026-10-08T02:13:44.5313055Z SHA256 digest of uploaded artifact zip is 9e1d4c7a2b8f3e6d0a5c1b9f7e4d2a8c6b3f0e1d9a7c5b2e8f4a6d1c3b0e9f7a
+2026-10-08T02:13:44.5314416Z Finalizing artifact upload
+2026-10-08T02:13:44.6712507Z Artifact order-api-cdk-out.zip successfully finalized. Artifact ID 4128830917
+2026-10-08T02:13:44.6713850Z Artifact order-api-cdk-out has been successfully uploaded! Final size is 38412 bytes. Artifact ID is 4128830917
+2026-10-08T02:13:44.6801032Z Skipping step 'Smoke test POST /orders' due to condition: success()
+2026-10-08T02:13:44.6802118Z Skipping step 'Tag release' due to condition: success()
+2026-10-08T02:13:44.6880221Z Post job cleanup.
+2026-10-08T02:13:44.8813340Z Post job cleanup.
+2026-10-08T02:13:44.9902114Z Cache hit occurred on the primary key node-cache-Linux-x64-npm-7d1e0b6a93c24f58a1e2d3c4b5a69788f0e1d2c3b4a5968778695a4b3c2d1e0f, not saving cache.
+2026-10-08T02:13:45.0021118Z Post job cleanup.
+2026-10-08T02:13:45.1310437Z [command]/usr/bin/git version
+2026-10-08T02:13:45.1355022Z git version 2.51.0
+2026-10-08T02:13:45.1412883Z Temporarily overriding HOME='/home/runner/work/_temp/a3c1e7d9-5b2f-4e8a-9c0d-1f6b2e4a8d7c' before making global git config changes
+2026-10-08T02:13:45.1414501Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-08T02:13:45.1420337Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/platform-apps/platform-apps
+2026-10-08T02:13:45.1477128Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-08T02:13:45.1519006Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-08T02:13:45.1803327Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-08T02:13:45.1838110Z http.https://github.com/.extraheader
+2026-10-08T02:13:45.1851402Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-08T02:13:45.2007219Z Cleaning up orphan processes

@@ -1,0 +1,21 @@
+PR: docs: fix pass-through typos
+
+diff --git a/lib/response.js b/lib/response.js
+--- a/lib/response.js
++++ b/lib/response.js
+@@ -488,7 +488,7 @@ res.download = function download (path, filename, options, callback) {
+ /**
+  * Set _Content-Type_ response header with `type` through `mime.contentType()`
+  * when it does not contain "/", or set the Content-Type to `type` otherwise.
+- * When no mapping is found though `mime.contentType()`, the type is set to
++ * When no mapping is found through `mime.contentType()`, the type is set to
+  * "application/octet-stream".
+diff --git a/test/app.router.js b/test/app.router.js
+--- a/test/app.router.js
++++ b/test/app.router.js
+@@ -448,7 +448,7 @@ describe('app.router', function () {
+-      it('should pass-though middleware', function (done) {
++      it('should pass-through middleware', function (done) {
+@@ -468,7 +468,7 @@ describe('app.router', function () {
+-      it('should pass-though mounted middleware', function (done) {
++      it('should pass-through mounted middleware', function (done) {

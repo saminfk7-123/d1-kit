@@ -1,0 +1,5 @@
+STEP: Deploy schema changes (schemachange)
+2026-10-11T04:05:09Z Applying change script V1.44__backfill_customers.sql
+2026-10-11T04:10:09Z snowflake.connector.vendored.urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='acme-xy12345.snowflakecomputing.com', port=443): Read timed out. (read timeout=300)
+2026-10-11T04:10:09Z snowflake.connector.errors.OperationalError: 251006: Retry request timed out
+2026-10-11T04:10:09Z ##[error]Process completed with exit code 1.

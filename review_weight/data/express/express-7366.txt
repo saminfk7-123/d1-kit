@@ -1,0 +1,24 @@
+PR: feat: allow conditional revalidation for QUERY requests
+
+diff --git a/History.md b/History.md
++* Allow conditional revalidation for QUERY requests. `req.fresh` previously only validated freshness for GET and HEAD requests, so QUERY responses never returned 304 despite a matching validator. Since QUERY is a safe, idempotent, and cacheable method that supports conditional requests, it is now included in the freshness check
+diff --git a/lib/request.js b/lib/request.js
+--- a/lib/request.js
++++ b/lib/request.js
+@@ -471,8 +471,8 @@ defineGetter(req, 'fresh', function(){
+   var res = this.res
+   var status = res.statusCode
+ 
+-  // GET or HEAD for weak freshness validation only
+-  if ('GET' !== method && 'HEAD' !== method) return false;
++  // GET, HEAD, or QUERY for weak freshness validation only
++  if ('GET' !== method && 'HEAD' !== method && 'QUERY' !== method) return false;
+diff --git a/test/req.fresh.js b/test/req.fresh.js
++    it('should return true for a QUERY request with a body when the resource is not modified', function(done){
++      ...
++      .expect(304, done);
++    })
++    it('should return false for a QUERY request with a body when the resource is modified', function(done){
++      ...
++      .expect(200, 'false', done);
++    })

@@ -1,0 +1,11 @@
+STEP: Terraform apply
+2026-10-05T11:12:03Z snowflake_table.orders: Modifying... [id="ANALYTICS"|"SALES"|"ORDERS"]
+2026-10-05T11:12:05Z ╷
+2026-10-05T11:12:05Z │ Error: error updating table ORDERS
+2026-10-05T11:12:05Z │
+2026-10-05T11:12:05Z │ 003001 (42501): SQL access control error:
+2026-10-05T11:12:05Z │ Insufficient privileges to operate on table 'ORDERS'. Only the owner role (SYSADMIN) can alter this object.
+2026-10-05T11:12:05Z │
+2026-10-05T11:12:05Z │   with snowflake_table.orders,
+2026-10-05T11:12:05Z ╵
+2026-10-05T11:12:05Z ##[error]Process completed with exit code 1.

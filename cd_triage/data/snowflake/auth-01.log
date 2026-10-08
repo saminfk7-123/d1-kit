@@ -1,0 +1,8 @@
+STEP: Deploy schema changes (schemachange)
+2026-10-01T02:13:04Z schemachange version: 4.0.1
+2026-10-01T02:13:04Z Using Snowflake account acme-xy12345
+2026-10-01T02:13:04Z Using default role DEPLOY_ROLE
+2026-10-01T02:13:05Z Traceback (most recent call last):
+2026-10-01T02:13:05Z   File "/opt/hostedtoolcache/Python/3.12/lib/python3.12/site-packages/snowflake/connector/connection.py", line 1145, in __open_connection
+2026-10-01T02:13:05Z snowflake.connector.errors.DatabaseError: 250001 (08001): Failed to connect to DB: acme-xy12345.snowflakecomputing.com:443. Incorrect username or password was specified.
+2026-10-01T02:13:05Z ##[error]Process completed with exit code 1.

@@ -1,0 +1,14 @@
+PR: Improve error logging by logging full error object
+
+diff --git a/History.md b/History.md
++* The default error handler now logs the full error object instead of only its stack trace, so nested details such as `Error.cause` and library-specific properties (e.g. Sequelize's `parent`/`original`) are no longer swallowed
+diff --git a/lib/application.js b/lib/application.js
+--- a/lib/application.js
++++ b/lib/application.js
+@@ -614,7 +614,7 @@ app.listen = function listen() {
+ 
+ function logerror(err) {
+   /* istanbul ignore next */
+-  if (this.get('env') !== 'test') console.error(err.stack || err.toString());
++  if (this.get('env') !== 'test') console.error(err);
+ }

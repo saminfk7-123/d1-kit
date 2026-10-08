@@ -1,0 +1,16 @@
+{
+  "auth-01": ["auth"],
+  "auth-02": ["auth"],
+  "auth-03": ["auth"],
+  "authz-01": ["authorization"],
+  "authz-02": ["authorization"],
+  "authz-03": ["authorization"],
+  "config-01": ["config"],
+  "config-02": ["config"],
+  "build-01": ["build"],
+  "build-02": ["build"],
+  "transient-01": ["transient"],
+  "transient-02": ["transient"],
+  "ambiguous-01": ["authorization", "config"],
+  "ambiguous-02": ["authorization", "config"]
+}

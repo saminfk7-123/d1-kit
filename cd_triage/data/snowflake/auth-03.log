@@ -1,0 +1,8 @@
+STEP: Deploy native app (snow app deploy)
+2026-10-03T05:02:10Z + snow app deploy --connection ci
+2026-10-03T05:02:11Z Checking if stage exists, or creating a new one if none exists.
+2026-10-03T05:02:12Z ╭─ Error ──────────────────────────────────────────────────────╮
+2026-10-03T05:02:12Z │ 390318 (08001): Failed to connect to DB. The OAuth access     │
+2026-10-03T05:02:12Z │ token has expired. Please re-authenticate.                    │
+2026-10-03T05:02:12Z ╰──────────────────────────────────────────────────────────────╯
+2026-10-03T05:02:12Z ##[error]Process completed with exit code 1.

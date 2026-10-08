@@ -1,0 +1,71 @@
+{
+  "kind": "review",
+  "id": "express-7465",
+  "expected": 3,
+  "evaluation": {
+    "category": {
+      "type": "choice",
+      "choice": "build_infra",
+      "probabilities": {
+        "typo_comment": 0.000005088252455079574,
+        "dev_docs": 0.0006260529294655464,
+        "reference_docs": 0.000013831304187254929,
+        "tests_only": 0.000021422342994845585,
+        "ui_style": 0.0000018718634697138929,
+        "feature_add": 0.0002451657328720419,
+        "logic_change": 0.00010220028256100108,
+        "shared_code": 0.000010119198312110835,
+        "refactor": 0.000007880839569526757,
+        "logging_monitoring": 0.000006137604028007551,
+        "build_infra": 0.9989249101775209,
+        "critical": 0.000035319472563835806
+      },
+      "confidence": 0.9988271747391138
+    },
+    "behavior": {
+      "type": "noul",
+      "noul": 0.0008559007514322099
+    },
+    "used_by_everyone": {
+      "type": "noul",
+      "noul": 0.012431648017567791
+    },
+    "conditional": {
+      "type": "noul",
+      "noul": 0.0474258704848281
+    },
+    "security": {
+      "type": "noul",
+      "noul": 0.2689414565269499
+    },
+    "hard_to_undo": {
+      "type": "noul",
+      "noul": 0.14804719051380197
+    }
+  },
+  "decision": {
+    "type": "score",
+    "score": 1.8255832900152378,
+    "legend": {
+      "0": "No one is affected.",
+      "1": "Affects only maintainers, or the behavior users see does not change.",
+      "2": "Changes behavior only in a part that some users run, such as one optional feature or module.",
+      "3": "Changes behavior in a part that every user runs, even if the change only happens under a specific condition; or relates to security; or a mistake would be hard to undo."
+    },
+    "probabilities": {
+      "0": 0.058453749409031336,
+      "1": 0.48942719325422757,
+      "2": 0.02020107524921302,
+      "3": 0.4319179820875281
+    },
+    "confidence": 0.3192362576723034
+  },
+  "d1Level": 2,
+  "floor": 3,
+  "level": 3,
+  "needsHuman": false,
+  "correct": true,
+  "tokens": 6211,
+  "seconds": 0.8135438329999888,
+  "ranAt": "2026-10-08T11:36:27.135Z"
+}

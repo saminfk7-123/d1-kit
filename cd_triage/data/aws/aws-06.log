@@ -1,0 +1,366 @@
+2026-10-08T02:13:05.1234567Z Current runner version: '2.328.0'
+2026-10-08T02:13:05.1267431Z ##[group]Runner Image Provisioner
+2026-10-08T02:13:05.1268102Z Hosted Compute Agent
+2026-10-08T02:13:05.1268544Z Version: 20250912.392
+2026-10-08T02:13:05.1268990Z Commit: 4f1c2a7e9b3d5c8a1e6f0b2d4c7a9e1f3b5d7c9a
+2026-10-08T02:13:05.1269451Z Build Date: 2025-09-12T18:22:41Z
+2026-10-08T02:13:05.1269870Z ##[endgroup]
+2026-10-08T02:13:05.1270312Z ##[group]Operating System
+2026-10-08T02:13:05.1270733Z Ubuntu
+2026-10-08T02:13:05.1271101Z 24.04.3
+2026-10-08T02:13:05.1271478Z LTS
+2026-10-08T02:13:05.1271855Z ##[endgroup]
+2026-10-08T02:13:05.1272240Z ##[group]Runner Image
+2026-10-08T02:13:05.1272655Z Image: ubuntu-24.04
+2026-10-08T02:13:05.1273041Z Version: 20250929.1.0
+2026-10-08T02:13:05.1273902Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250929.1/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-08T02:13:05.1275017Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250929.1
+2026-10-08T02:13:05.1275589Z ##[endgroup]
+2026-10-08T02:13:05.1277342Z ##[group]GITHUB_TOKEN Permissions
+2026-10-08T02:13:05.1278701Z Contents: read
+2026-10-08T02:13:05.1279102Z IdToken: write
+2026-10-08T02:13:05.1279498Z Metadata: read
+2026-10-08T02:13:05.1279881Z ##[endgroup]
+2026-10-08T02:13:05.1282744Z Secret source: Actions
+2026-10-08T02:13:05.1283491Z Prepare workflow directory
+2026-10-08T02:13:05.1801236Z Prepare all required actions
+2026-10-08T02:13:05.1843917Z Getting action download info
+2026-10-08T02:13:05.5127730Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2026-10-08T02:13:05.6403318Z Download action repository 'aws-actions/configure-aws-credentials@v4' (SHA:e3dd6a429d7300a6a4c196c26e071d42e0343502)
+2026-10-08T02:13:05.7712044Z Download action repository 'aws-actions/amazon-ecr-login@v2' (SHA:062b18b96a7aff071d4dc91bc00c4c1a7945b076)
+2026-10-08T02:13:05.8820935Z Download action repository 'docker/setup-buildx-action@v3' (SHA:e468171a9de216ec08956ac3ada2f0791b6bd435)
+2026-10-08T02:13:05.9934127Z Download action repository 'docker/build-push-action@v6' (SHA:263435318d21b8e681c14492fe198d362a7d2c83)
+2026-10-08T02:13:06.1045816Z Download action repository 'aws-actions/amazon-ecs-render-task-definition@v1' (SHA:acd72bc11233ac43bac45ddb7b8e54ada737e6cd)
+2026-10-08T02:13:06.2159442Z Download action repository 'aws-actions/amazon-ecs-deploy-task-definition@v2' (SHA:f7b2b96b7fe1b20b452641919c0559bcc19ab8f9)
+2026-10-08T02:13:06.4821390Z Complete job name: deploy-web-backend
+2026-10-08T02:13:06.5520187Z ##[group]Run actions/checkout@v4
+2026-10-08T02:13:06.5520814Z with:
+2026-10-08T02:13:06.5521193Z   repository: example-org/shop-platform
+2026-10-08T02:13:06.5521844Z   token: ***
+2026-10-08T02:13:06.5522203Z   ssh-strict: true
+2026-10-08T02:13:06.5522577Z   ssh-user: git
+2026-10-08T02:13:06.5522941Z   persist-credentials: true
+2026-10-08T02:13:06.5523345Z   clean: true
+2026-10-08T02:13:06.5523716Z   sparse-checkout-cone-mode: true
+2026-10-08T02:13:06.5524133Z   fetch-depth: 1
+2026-10-08T02:13:06.5524498Z   fetch-tags: false
+2026-10-08T02:13:06.5524866Z   show-progress: true
+2026-10-08T02:13:06.5525239Z   lfs: false
+2026-10-08T02:13:06.5525588Z   submodules: false
+2026-10-08T02:13:06.5525962Z   set-safe-directory: true
+2026-10-08T02:13:06.5526401Z env:
+2026-10-08T02:13:06.5526744Z   AWS_REGION: ap-northeast-1
+2026-10-08T02:13:06.5527139Z   ECR_REPOSITORY: web-backend
+2026-10-08T02:13:06.5527531Z   ECS_CLUSTER: web-prod
+2026-10-08T02:13:06.5527913Z   ECS_SERVICE: web-backend
+2026-10-08T02:13:06.5528302Z ##[endgroup]
+2026-10-08T02:13:06.6703128Z Syncing repository: example-org/shop-platform
+2026-10-08T02:13:06.6705237Z ##[group]Getting Git version info
+2026-10-08T02:13:06.6705989Z Working directory is '/home/runner/work/shop-platform/shop-platform'
+2026-10-08T02:13:06.6707013Z [command]/usr/bin/git version
+2026-10-08T02:13:06.6765302Z git version 2.51.0
+2026-10-08T02:13:06.6791447Z ##[endgroup]
+2026-10-08T02:13:06.6806132Z Temporarily overriding HOME='/home/runner/work/_temp/5c2e1b7a-0d4f-4b6e-9a31-7f8d2c6e4a10' before making global git config changes
+2026-10-08T02:13:06.6807349Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-08T02:13:06.6812420Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/shop-platform/shop-platform
+2026-10-08T02:13:06.6853087Z Deleting the contents of '/home/runner/work/shop-platform/shop-platform'
+2026-10-08T02:13:06.6857219Z ##[group]Initializing the repository
+2026-10-08T02:13:06.6861304Z [command]/usr/bin/git init /home/runner/work/shop-platform/shop-platform
+2026-10-08T02:13:06.6933610Z Initialized empty Git repository in /home/runner/work/shop-platform/shop-platform/.git/
+2026-10-08T02:13:06.6945128Z [command]/usr/bin/git remote add origin https://github.com/example-org/shop-platform
+2026-10-08T02:13:06.6987742Z ##[endgroup]
+2026-10-08T02:13:06.6988430Z ##[group]Disabling automatic garbage collection
+2026-10-08T02:13:06.6992171Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-08T02:13:06.7028815Z ##[endgroup]
+2026-10-08T02:13:06.7029501Z ##[group]Setting up auth
+2026-10-08T02:13:06.7036022Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-08T02:13:06.7224918Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-08T02:13:06.7261035Z ##[endgroup]
+2026-10-08T02:13:06.7261720Z ##[group]Fetching the repository
+2026-10-08T02:13:06.7270548Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +9e4b2c71d0a8f35e6c1b7d92a4f0e83c5d6b1a27:refs/remotes/origin/main
+2026-10-08T02:13:07.4418302Z From https://github.com/example-org/shop-platform
+2026-10-08T02:13:07.4419411Z  * [new ref]         9e4b2c71d0a8f35e6c1b7d92a4f0e83c5d6b1a27 -> origin/main
+2026-10-08T02:13:07.4452087Z ##[endgroup]
+2026-10-08T02:13:07.4452801Z ##[group]Determining the checkout info
+2026-10-08T02:13:07.4455120Z ##[endgroup]
+2026-10-08T02:13:07.4461375Z [command]/usr/bin/git sparse-checkout disable
+2026-10-08T02:13:07.4507220Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-08T02:13:07.4539004Z ##[group]Checking out the ref
+2026-10-08T02:13:07.4543811Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-10-08T02:13:07.5812736Z Switched to a new branch 'main'
+2026-10-08T02:13:07.5814109Z branch 'main' set up to track 'origin/main'.
+2026-10-08T02:13:07.5833295Z ##[endgroup]
+2026-10-08T02:13:07.5872118Z [command]/usr/bin/git log -1 --format=%H
+2026-10-08T02:13:07.5903540Z 9e4b2c71d0a8f35e6c1b7d92a4f0e83c5d6b1a27
+2026-10-08T02:13:07.6120419Z ##[group]Run aws-actions/configure-aws-credentials@v4
+2026-10-08T02:13:07.6121138Z with:
+2026-10-08T02:13:07.6121703Z   role-to-assume: arn:aws:iam::123456789012:role/github-actions-cd-web-backend
+2026-10-08T02:13:07.6122318Z   role-session-name: gha-cd-web-backend
+2026-10-08T02:13:07.6122744Z   aws-region: ap-northeast-1
+2026-10-08T02:13:07.6123140Z   audience: sts.amazonaws.com
+2026-10-08T02:13:07.6123526Z env:
+2026-10-08T02:13:07.6123863Z   AWS_REGION: ap-northeast-1
+2026-10-08T02:13:07.6124247Z   ECR_REPOSITORY: web-backend
+2026-10-08T02:13:07.6124633Z   ECS_CLUSTER: web-prod
+2026-10-08T02:13:07.6125010Z   ECS_SERVICE: web-backend
+2026-10-08T02:13:07.6125391Z ##[endgroup]
+2026-10-08T02:13:07.7930472Z Assuming role with OIDC
+2026-10-08T02:13:08.2108356Z Authenticated as assumedRoleId AROAEXAMPLEID7Q3XK2LM:gha-cd-web-backend
+2026-10-08T02:13:08.2280731Z ##[group]Run aws-actions/amazon-ecr-login@v2
+2026-10-08T02:13:08.2281420Z with:
+2026-10-08T02:13:08.2281798Z   mask-password: true
+2026-10-08T02:13:08.2282172Z   registry-type: private
+2026-10-08T02:13:08.2282553Z   skip-logout: false
+2026-10-08T02:13:08.2282906Z env:
+2026-10-08T02:13:08.2283239Z   AWS_REGION: ap-northeast-1
+2026-10-08T02:13:08.2283627Z   AWS_DEFAULT_REGION: ap-northeast-1
+2026-10-08T02:13:08.2284049Z   AWS_ACCESS_KEY_ID: ***
+2026-10-08T02:13:08.2284441Z   AWS_SECRET_ACCESS_KEY: ***
+2026-10-08T02:13:08.2284837Z   AWS_SESSION_TOKEN: ***
+2026-10-08T02:13:08.2285207Z ##[endgroup]
+2026-10-08T02:13:08.4391022Z Retrieving registries: 123456789012
+2026-10-08T02:13:08.6611478Z [command]/usr/bin/docker login -u AWS --password-stdin 123456789012.dkr.ecr.ap-northeast-1.amazonaws.com
+2026-10-08T02:13:09.0127764Z Login Succeeded!
+2026-10-08T02:13:09.0198312Z ##[group]Run docker/setup-buildx-action@v3
+2026-10-08T02:13:09.0198997Z with:
+2026-10-08T02:13:09.0199358Z   driver: docker-container
+2026-10-08T02:13:09.0199749Z   install: false
+2026-10-08T02:13:09.0200103Z   use: true
+2026-10-08T02:13:09.0200445Z   keep-state: false
+2026-10-08T02:13:09.0200802Z   cache-binary: true
+2026-10-08T02:13:09.0201162Z   cleanup: true
+2026-10-08T02:13:09.0201505Z ##[endgroup]
+2026-10-08T02:13:09.3317109Z ##[group]Docker info
+2026-10-08T02:13:09.3339520Z [command]/usr/bin/docker version
+2026-10-08T02:13:09.3602815Z Client: Docker Engine - Community
+2026-10-08T02:13:09.3603498Z  Version:           28.0.4
+2026-10-08T02:13:09.3604012Z  API version:       1.48
+2026-10-08T02:13:09.3604508Z  Go version:        go1.23.7
+2026-10-08T02:13:09.3605019Z  OS/Arch:           linux/amd64
+2026-10-08T02:13:09.3708251Z Server: Docker Engine - Community
+2026-10-08T02:13:09.3708893Z  Engine:
+2026-10-08T02:13:09.3709375Z   Version:          28.0.4
+2026-10-08T02:13:09.3709880Z   Storage Driver:   overlay2
+2026-10-08T02:13:09.3712004Z ##[endgroup]
+2026-10-08T02:13:09.3715432Z ##[group]Buildx version
+2026-10-08T02:13:09.3728710Z [command]/usr/bin/docker buildx version
+2026-10-08T02:13:09.4120338Z github.com/docker/buildx v0.28.0 b1281b81bc6e3d1e3a0f2a8c4d5e6f7a8b9c0d1e
+2026-10-08T02:13:09.4148261Z ##[endgroup]
+2026-10-08T02:13:09.4161403Z ##[group]Creating a new builder instance
+2026-10-08T02:13:09.4189112Z [command]/usr/bin/docker buildx create --name builder-3f8a2c1e-6b7d-4e90-a5c2-1d9e8f7b6a43 --driver docker-container --buildkitd-flags --allow-insecure-entitlement security.insecure --allow-insecure-entitlement network.host --use
+2026-10-08T02:13:09.4603927Z builder-3f8a2c1e-6b7d-4e90-a5c2-1d9e8f7b6a43
+2026-10-08T02:13:09.4626118Z ##[endgroup]
+2026-10-08T02:13:09.4627004Z ##[group]Booting builder
+2026-10-08T02:13:09.4651730Z [command]/usr/bin/docker buildx inspect --bootstrap --builder builder-3f8a2c1e-6b7d-4e90-a5c2-1d9e8f7b6a43
+2026-10-08T02:13:09.5120015Z #1 [internal] booting buildkit
+2026-10-08T02:13:09.6634870Z #1 pulling image moby/buildkit:buildx-stable-1
+2026-10-08T02:13:11.2018826Z #1 pulling image moby/buildkit:buildx-stable-1 1.5s done
+2026-10-08T02:13:11.2020114Z #1 creating container buildx_buildkit_builder-3f8a2c1e-6b7d-4e90-a5c2-1d9e8f7b6a430
+2026-10-08T02:13:11.9810337Z #1 creating container buildx_buildkit_builder-3f8a2c1e-6b7d-4e90-a5c2-1d9e8f7b6a430 0.8s done
+2026-10-08T02:13:11.9811842Z #1 DONE 2.5s
+2026-10-08T02:13:12.0216604Z Name:          builder-3f8a2c1e-6b7d-4e90-a5c2-1d9e8f7b6a43
+2026-10-08T02:13:12.0217355Z Driver:        docker-container
+2026-10-08T02:13:12.0217880Z Last Activity: 2026-10-08 02:13:09 +0000 UTC
+2026-10-08T02:13:12.0219053Z Nodes:
+2026-10-08T02:13:12.0219512Z Name:      builder-3f8a2c1e-6b7d-4e90-a5c2-1d9e8f7b6a430
+2026-10-08T02:13:12.0220042Z Endpoint:  unix:///var/run/docker.sock
+2026-10-08T02:13:12.0220518Z Status:    running
+2026-10-08T02:13:12.0220967Z BuildKit:  v0.24.0
+2026-10-08T02:13:12.0221435Z Platforms: linux/amd64, linux/amd64/v2, linux/amd64/v3, linux/386
+2026-10-08T02:13:12.0238116Z ##[endgroup]
+2026-10-08T02:13:12.0911345Z ##[group]Run docker/build-push-action@v6
+2026-10-08T02:13:12.0912042Z with:
+2026-10-08T02:13:12.0912405Z   context: ./apps/web-backend
+2026-10-08T02:13:12.0912802Z   file: ./apps/web-backend/Dockerfile
+2026-10-08T02:13:12.0913225Z   platforms: linux/amd64
+2026-10-08T02:13:12.0913602Z   push: true
+2026-10-08T02:13:12.0914153Z   tags: 123456789012.dkr.ecr.ap-northeast-1.amazonaws.com/web-backend:9e4b2c71d0a8f35e6c1b7d92a4f0e83c5d6b1a27
+2026-10-08T02:13:12.0914801Z   cache-from: type=gha,scope=web-backend
+2026-10-08T02:13:12.0915228Z   cache-to: type=gha,mode=max,scope=web-backend
+2026-10-08T02:13:12.0915640Z   load: false
+2026-10-08T02:13:12.0915987Z   no-cache: false
+2026-10-08T02:13:12.0916344Z   pull: false
+2026-10-08T02:13:12.0916719Z   github-token: ***
+2026-10-08T02:13:12.0917071Z env:
+2026-10-08T02:13:12.0917404Z   AWS_REGION: ap-northeast-1
+2026-10-08T02:13:12.0917794Z   ECR_REPOSITORY: web-backend
+2026-10-08T02:13:12.0918182Z   ECS_CLUSTER: web-prod
+2026-10-08T02:13:12.0918559Z   ECS_SERVICE: web-backend
+2026-10-08T02:13:12.0918934Z ##[endgroup]
+2026-10-08T02:13:12.3204478Z ##[group]GitHub Actions runtime token ACs
+2026-10-08T02:13:12.3215316Z refs/heads/main: read/write
+2026-10-08T02:13:12.3216002Z ##[endgroup]
+2026-10-08T02:13:12.3216783Z ##[group]Docker info
+2026-10-08T02:13:12.3245541Z [command]/usr/bin/docker version
+2026-10-08T02:13:12.3480662Z  Version:           28.0.4
+2026-10-08T02:13:12.3511298Z ##[endgroup]
+2026-10-08T02:13:12.3512107Z ##[group]Proxy configuration
+2026-10-08T02:13:12.3513940Z No proxy configuration found
+2026-10-08T02:13:12.3514640Z ##[endgroup]
+2026-10-08T02:13:12.3515482Z ##[group]Buildx version
+2026-10-08T02:13:12.3530179Z [command]/usr/bin/docker buildx version
+2026-10-08T02:13:12.3901526Z github.com/docker/buildx v0.28.0 b1281b81bc6e3d1e3a0f2a8c4d5e6f7a8b9c0d1e
+2026-10-08T02:13:12.3922210Z ##[endgroup]
+2026-10-08T02:13:12.3998412Z [command]/usr/bin/docker buildx build --cache-from type=gha,scope=web-backend --cache-to type=gha,mode=max,scope=web-backend --file ./apps/web-backend/Dockerfile --iidfile /home/runner/work/_temp/docker-actions-toolkit-a71Kq2/build-iidfile-4c9e1b2f07.txt --platform linux/amd64 --attest type=provenance,mode=max,builder-id=https://github.com/example-org/shop-platform/actions/runs/18311204587/attempts/1 --tag 123456789012.dkr.ecr.ap-northeast-1.amazonaws.com/web-backend:9e4b2c71d0a8f35e6c1b7d92a4f0e83c5d6b1a27 --metadata-file /home/runner/work/_temp/docker-actions-toolkit-a71Kq2/build-metadata-8d2f3a6c11.json --push ./apps/web-backend
+2026-10-08T02:13:12.6115302Z #0 building with "builder-3f8a2c1e-6b7d-4e90-a5c2-1d9e8f7b6a43" instance using docker-container driver
+2026-10-08T02:13:12.6116311Z
+2026-10-08T02:13:12.6117004Z #1 [internal] load build definition from Dockerfile
+2026-10-08T02:13:12.6117742Z #1 transferring dockerfile: 1.02kB done
+2026-10-08T02:13:12.6118319Z #1 DONE 0.0s
+2026-10-08T02:13:12.6118790Z
+2026-10-08T02:13:12.7302114Z #2 [auth] library/node:pull token for registry-1.docker.io
+2026-10-08T02:13:12.7303018Z #2 DONE 0.0s
+2026-10-08T02:13:12.7303552Z
+2026-10-08T02:13:12.7304093Z #3 [internal] load metadata for docker.io/library/node:22-slim
+2026-10-08T02:13:13.4410287Z #3 DONE 0.8s
+2026-10-08T02:13:13.4411035Z
+2026-10-08T02:13:13.4411722Z #4 [internal] load .dockerignore
+2026-10-08T02:13:13.4412419Z #4 transferring context: 214B done
+2026-10-08T02:13:13.4412989Z #4 DONE 0.0s
+2026-10-08T02:13:13.4413471Z
+2026-10-08T02:13:13.4521093Z #5 [builder 1/6] FROM docker.io/library/node:22-slim@sha256:7c1e5a3b9f2d4e6a8c0b1d3f5e7a9c2b4d6f8e0a1c3e5b7d9f1a2c4e6b8d0f2a4
+2026-10-08T02:13:13.4522106Z #5 resolve docker.io/library/node:22-slim@sha256:7c1e5a3b9f2d4e6a8c0b1d3f5e7a9c2b4d6f8e0a1c3e5b7d9f1a2c4e6b8d0f2a4 0.0s done
+2026-10-08T02:13:13.4522918Z #5 DONE 0.0s
+2026-10-08T02:13:13.4523411Z
+2026-10-08T02:13:13.4524022Z #6 importing cache manifest from gha:11942708530372946125
+2026-10-08T02:13:13.9817309Z #6 DONE 0.5s
+2026-10-08T02:13:13.9818011Z
+2026-10-08T02:13:13.9818680Z #7 [internal] load build context
+2026-10-08T02:13:13.9819391Z #7 transferring context: 412.36kB 0.1s done
+2026-10-08T02:13:13.9820004Z #7 DONE 0.1s
+2026-10-08T02:13:13.9820487Z
+2026-10-08T02:13:13.9821201Z #8 [runtime 2/5] WORKDIR /app
+2026-10-08T02:13:13.9821853Z #8 CACHED
+2026-10-08T02:13:13.9822327Z
+2026-10-08T02:13:13.9822971Z #9 [builder 2/6] WORKDIR /build
+2026-10-08T02:13:13.9823602Z #9 CACHED
+2026-10-08T02:13:13.9824081Z
+2026-10-08T02:13:13.9824745Z #10 [builder 3/6] COPY package.json package-lock.json ./
+2026-10-08T02:13:13.9825431Z #10 CACHED
+2026-10-08T02:13:13.9825911Z
+2026-10-08T02:13:13.9826582Z #11 [runtime 3/5] RUN groupadd -r app && useradd -r -g app app
+2026-10-08T02:13:13.9827264Z #11 CACHED
+2026-10-08T02:13:13.9827748Z
+2026-10-08T02:13:13.9828413Z #12 [builder 4/6] RUN npm ci --no-audit --no-fund
+2026-10-08T02:13:14.3109842Z #12 sha256:2b8f1c4d6e9a0b3c5d7e9f1a3b5c7d9e1f3a5b7c9d1e3f5a7b9c1d3e5f7a9b1c 0B / 29.15MB 0.2s
+2026-10-08T02:13:15.0114437Z #12 sha256:2b8f1c4d6e9a0b3c5d7e9f1a3b5c7d9e1f3a5b7c9d1e3f5a7b9c1d3e5f7a9b1c 29.15MB / 29.15MB 0.9s done
+2026-10-08T02:13:15.0116081Z #12 extracting sha256:2b8f1c4d6e9a0b3c5d7e9f1a3b5c7d9e1f3a5b7c9d1e3f5a7b9c1d3e5f7a9b1c
+2026-10-08T02:13:15.8823750Z #12 extracting sha256:2b8f1c4d6e9a0b3c5d7e9f1a3b5c7d9e1f3a5b7c9d1e3f5a7b9c1d3e5f7a9b1c 0.9s done
+2026-10-08T02:13:17.2041163Z #12 1.893 npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+2026-10-08T02:13:17.3315027Z #12 2.021 npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2026-10-08T02:13:17.4120593Z #12 2.104 npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+2026-10-08T02:13:17.6602871Z #12 2.352 npm warn deprecated @humanwhocodes/object-schema@2.0.3: Use @eslint/object-schema instead
+2026-10-08T02:13:17.7014420Z #12 2.390 npm warn deprecated @humanwhocodes/config-array@0.13.0: Use @eslint/config-array instead
+2026-10-08T02:13:18.0129318Z #12 2.705 npm warn deprecated eslint@8.57.1: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+2026-10-08T02:13:18.2240185Z #12 2.913 npm warn EBADENGINE Unsupported engine {
+2026-10-08T02:13:18.2241046Z #12 2.913 npm warn EBADENGINE   package: 'pino-pretty@10.3.1',
+2026-10-08T02:13:18.2241702Z #12 2.913 npm warn EBADENGINE   required: { node: '>=14 <21' },
+2026-10-08T02:13:18.2242352Z #12 2.913 npm warn EBADENGINE   current: { node: 'v22.20.0', npm: '10.9.3' }
+2026-10-08T02:13:18.2242971Z #12 2.913 npm warn EBADENGINE }
+2026-10-08T02:13:24.8817402Z #12 9.574
+2026-10-08T02:13:24.8818311Z #12 9.574 added 612 packages in 9s
+2026-10-08T02:13:24.9902113Z #12 DONE 11.0s
+2026-10-08T02:13:24.9902864Z
+2026-10-08T02:13:24.9903590Z #13 [builder 5/6] COPY tsconfig.json tsconfig.build.json ./
+2026-10-08T02:13:24.9904275Z #13 DONE 0.0s
+2026-10-08T02:13:24.9904760Z
+2026-10-08T02:13:24.9905423Z #14 [builder 5/6] COPY src ./src
+2026-10-08T02:13:25.0318806Z #14 DONE 0.0s
+2026-10-08T02:13:25.0319509Z
+2026-10-08T02:13:25.0320196Z #15 [builder 6/6] RUN npm run build
+2026-10-08T02:13:25.4217430Z #15 0.388
+2026-10-08T02:13:25.4218212Z #15 0.388 > web-backend@3.14.0 build
+2026-10-08T02:13:25.4218911Z #15 0.388 > tsc -p tsconfig.build.json
+2026-10-08T02:13:25.4219502Z #15 0.388
+2026-10-08T02:13:31.6025814Z #15 6.571 src/routes/orders.ts(42,17): error TS2339: Property 'customerId' does not exist on type 'OrderDto'.
+2026-10-08T02:13:31.6026790Z #15 6.571 src/routes/orders.ts(87,29): error TS2339: Property 'customerId' does not exist on type 'OrderDto'.
+2026-10-08T02:13:31.6027688Z #15 6.572 src/services/orderSummary.ts(19,34): error TS2551: Property 'customerId' does not exist on type 'OrderDto'. Did you mean 'customerRef'?
+2026-10-08T02:13:31.6028514Z #15 6.572 src/services/orderSummary.ts(55,9): error TS2353: Object literal may only specify known properties, and 'customerId' does not exist in type 'OrderDto'.
+2026-10-08T02:13:31.6029274Z #15 6.598
+2026-10-08T02:13:31.6029812Z #15 6.598 Found 4 errors in 2 files.
+2026-10-08T02:13:31.6030352Z #15 6.598
+2026-10-08T02:13:31.6030904Z #15 6.598 Errors  Files
+2026-10-08T02:13:31.6031451Z #15 6.598      2  src/routes/orders.ts:42
+2026-10-08T02:13:31.6032002Z #15 6.598      2  src/services/orderSummary.ts:19
+2026-10-08T02:13:31.6812295Z #15 6.649 npm notice
+2026-10-08T02:13:31.6813122Z #15 6.649 npm notice New minor version of npm available! 10.9.3 -> 11.6.1
+2026-10-08T02:13:31.6813921Z #15 6.649 npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.6.1
+2026-10-08T02:13:31.6814663Z #15 6.649 npm notice To update run: npm install -g npm@11.6.1
+2026-10-08T02:13:31.6815283Z #15 6.649 npm notice
+2026-10-08T02:13:31.7020448Z #15 ERROR: process "/bin/sh -c npm run build" did not complete successfully: exit code: 2
+2026-10-08T02:13:31.7021336Z
+2026-10-08T02:13:31.7022001Z #16 exporting to GitHub Actions Cache
+2026-10-08T02:13:31.7022628Z #16 preparing build cache for export
+2026-10-08T02:13:32.4416183Z #16 writing layer sha256:2b8f1c4d6e9a0b3c5d7e9f1a3b5c7d9e1f3a5b7c9d1e3f5a7b9c1d3e5f7a9b1c
+2026-10-08T02:13:33.1209337Z #16 writing layer sha256:2b8f1c4d6e9a0b3c5d7e9f1a3b5c7d9e1f3a5b7c9d1e3f5a7b9c1d3e5f7a9b1c 0.7s done
+2026-10-08T02:13:33.1210486Z #16 writing layer sha256:4e7a9c1b3d5f7e9a1c3b5d7f9e1a3c5b7d9f1e3a5c7b9d1f3e5a7c9b1d3f5e7a 0.1s done
+2026-10-08T02:13:33.1211431Z #16 writing layer sha256:8c0e2a4b6d8f0a2c4e6b8d0f2a4c6e8b0d2f4a6c8e0b2d4f6a8c0e2b4d6f8a0c 0.1s done
+2026-10-08T02:13:33.2814509Z #16 writing config sha256:a3c5e7b9d1f3a5c7e9b1d3f5a7c9e1b3d5f7a9c1e3b5d7f9a1c3e5b7d9f1a3c5 0.1s done
+2026-10-08T02:13:33.3920731Z #16 writing cache manifest sha256:f1d3b5a7c9e1f3d5b7a9c1e3f5d7b9a1c3e5f7d9b1a3c5e7f9d1b3a5c7e9f1d3 0.1s done
+2026-10-08T02:13:33.3921652Z #16 DONE 1.7s
+2026-10-08T02:13:33.3922204Z ------
+2026-10-08T02:13:33.3922741Z  > [builder 6/6] RUN npm run build:
+2026-10-08T02:13:33.3923354Z 6.572 src/services/orderSummary.ts(55,9): error TS2353: Object literal may only specify known properties, and 'customerId' does not exist in type 'OrderDto'.
+2026-10-08T02:13:33.3924092Z 6.598
+2026-10-08T02:13:33.3924599Z 6.598 Found 4 errors in 2 files.
+2026-10-08T02:13:33.3925143Z 6.598
+2026-10-08T02:13:33.3925650Z 6.598 Errors  Files
+2026-10-08T02:13:33.3926188Z 6.598      2  src/routes/orders.ts:42
+2026-10-08T02:13:33.3926740Z 6.598      2  src/services/orderSummary.ts:19
+2026-10-08T02:13:33.3927279Z 6.649 npm notice
+2026-10-08T02:13:33.3927834Z 6.649 npm notice New minor version of npm available! 10.9.3 -> 11.6.1
+2026-10-08T02:13:33.3928421Z 6.649 npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.6.1
+2026-10-08T02:13:33.3929008Z 6.649 npm notice To update run: npm install -g npm@11.6.1
+2026-10-08T02:13:33.3929551Z 6.649 npm notice
+2026-10-08T02:13:33.3930054Z ------
+2026-10-08T02:13:33.3930672Z Dockerfile:14
+2026-10-08T02:13:33.3931183Z --------------------
+2026-10-08T02:13:33.3931712Z   12 |     COPY tsconfig.json tsconfig.build.json ./
+2026-10-08T02:13:33.3932261Z   13 |     COPY src ./src
+2026-10-08T02:13:33.3932790Z   14 | >>> RUN npm run build
+2026-10-08T02:13:33.3933319Z   15 |
+2026-10-08T02:13:33.3933830Z   16 |     FROM node:22-slim AS runtime
+2026-10-08T02:13:33.3934347Z --------------------
+2026-10-08T02:13:33.3934935Z ERROR: failed to solve: process "/bin/sh -c npm run build" did not complete successfully: exit code: 2
+2026-10-08T02:13:33.4120882Z ##[group]Reference
+2026-10-08T02:13:33.4123517Z builder-3f8a2c1e-6b7d-4e90-a5c2-1d9e8f7b6a43/builder-3f8a2c1e-6b7d-4e90-a5c2-1d9e8f7b6a430/q8w2e4r6t8y0u2i4o6p8a0s2d
+2026-10-08T02:13:33.4124411Z ##[endgroup]
+2026-10-08T02:13:33.4402137Z ##[group]Check build summary support
+2026-10-08T02:13:33.4405328Z Build summary supported!
+2026-10-08T02:13:33.4406022Z ##[endgroup]
+2026-10-08T02:13:33.4891165Z ##[error]buildx failed with: ERROR: failed to solve: process "/bin/sh -c npm run build" did not complete successfully: exit code: 2
+2026-10-08T02:13:33.5103318Z ##[error]Process completed with exit code 1.
+2026-10-08T02:13:33.5221740Z ##[notice]Skipping step 'Render ECS task definition' because a previous step failed.
+2026-10-08T02:13:33.5222915Z ##[notice]Skipping step 'Deploy to Amazon ECS service web-backend' because a previous step failed.
+2026-10-08T02:13:33.5224017Z ##[notice]Skipping step 'Wait for service stability' because a previous step failed.
+2026-10-08T02:13:33.5361094Z Post job cleanup.
+2026-10-08T02:13:33.6912043Z ##[group]Removing temp folder /home/runner/work/_temp/docker-actions-toolkit-a71Kq2
+2026-10-08T02:13:33.6914002Z ##[endgroup]
+2026-10-08T02:13:33.6914884Z ##[group]Post cache
+2026-10-08T02:13:33.6916210Z State not set
+2026-10-08T02:13:33.6916902Z ##[endgroup]
+2026-10-08T02:13:33.7120018Z Post job cleanup.
+2026-10-08T02:13:33.8805521Z ##[group]Removing builder
+2026-10-08T02:13:33.8831117Z [command]/usr/bin/docker buildx rm builder-3f8a2c1e-6b7d-4e90-a5c2-1d9e8f7b6a43
+2026-10-08T02:13:34.1629903Z builder-3f8a2c1e-6b7d-4e90-a5c2-1d9e8f7b6a43 removed
+2026-10-08T02:13:34.1653320Z ##[endgroup]
+2026-10-08T02:13:34.1654212Z ##[group]Cleaning up certificates
+2026-10-08T02:13:34.1657011Z ##[endgroup]
+2026-10-08T02:13:34.1801338Z Post job cleanup.
+2026-10-08T02:13:34.3317205Z Logging out of registry 123456789012.dkr.ecr.ap-northeast-1.amazonaws.com
+2026-10-08T02:13:34.3341029Z [command]/usr/bin/docker logout 123456789012.dkr.ecr.ap-northeast-1.amazonaws.com
+2026-10-08T02:13:34.3512762Z Removing login credentials for 123456789012.dkr.ecr.ap-northeast-1.amazonaws.com
+2026-10-08T02:13:34.3641180Z Post job cleanup.
+2026-10-08T02:13:34.5210933Z Post job cleanup.
+2026-10-08T02:13:34.6109847Z [command]/usr/bin/git version
+2026-10-08T02:13:34.6162008Z git version 2.51.0
+2026-10-08T02:13:34.6218443Z Temporarily overriding HOME='/home/runner/work/_temp/a0b7c3d1-5e2f-4a68-8c91-3d6e0f2b7a54' before making global git config changes
+2026-10-08T02:13:34.6219514Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-08T02:13:34.6225706Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/shop-platform/shop-platform
+2026-10-08T02:13:34.6271310Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-08T02:13:34.6320912Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-08T02:13:34.6571004Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-08T02:13:34.6598119Z http.https://github.com/.extraheader
+2026-10-08T02:13:34.6612035Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-08T02:13:34.6658420Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-08T02:13:34.6921377Z Cleaning up orphan processes

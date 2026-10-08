@@ -1,0 +1,101 @@
+{
+  "kind": "aws",
+  "id": "aws-07",
+  "expected": [
+    "build"
+  ],
+  "cause": {
+    "type": "choice",
+    "choice": "build",
+    "probabilities": {
+      "auth": 0.000018900277999052827,
+      "authorization": 0.00003531036796607561,
+      "config": 0.001031920705918441,
+      "build": 0.9986673072831297,
+      "transient": 0.00003116129035918405,
+      "runtime": 0.000012202936639165966,
+      "resource_state": 0.00020319713798832578
+    },
+    "confidence": 0.998445191830318
+  },
+  "causeCorrect": true,
+  "pick": {
+    "line": 227,
+    "text": "ReportBatch-Prod | 18/31 | 2:11:33 AM | UPDATE_FAILED        | AWS::StepFunctions::StateMachine            | ReportPipeline (ReportPipeline0D1E2F3A) Resource handler returned message: \"Invalid State Machine Definition: 'SCHEMA_VALIDATION_FAILED: The value for the field 'Next' must be a valid state n",
+    "confidence": 0.7552494977909266,
+    "candidates": [
+      {
+        "line": 154,
+        "text": "Bundling asset ReportBatch-Prod/NotifyFailureFn/Code/Stage...",
+        "probability": 0.00005123643855001827
+      },
+      {
+        "line": 213,
+        "text": "ReportBatch-Prod |  9/31 | 2:11:03 AM | UPDATE_IN_PROGRESS   | AWS::Lambda::Function                       | NotifyFailureFn (NotifyFailureFn8D9E0F1A)",
+        "probability": 0.00007935654842037421
+      },
+      {
+        "line": 215,
+        "text": "ReportBatch-Prod | 11/31 | 2:11:08 AM | UPDATE_COMPLETE      | AWS::Lambda::Function                       | NotifyFailureFn (NotifyFailureFn8D9E0F1A)",
+        "probability": 0.00005454090493117985
+      },
+      {
+        "line": 227,
+        "text": "ReportBatch-Prod | 18/31 | 2:11:33 AM | UPDATE_FAILED        | AWS::StepFunctions::StateMachine            | ReportPipeline (ReportPipeline0D1E2F3A) Resource handler returned message: \"Invalid State Machine Definition: 'SCHEMA_VALIDATION_FAILED: The value for the field 'Next' must be a valid state n",
+        "probability": 0.7756453729750161
+      },
+      {
+        "line": 228,
+        "text": "ReportBatch-Prod | 18/31 | 2:11:34 AM | UPDATE_ROLLBACK_IN_P | AWS::CloudFormation::Stack                  | ReportBatch-Prod The following resource(s) failed to update: [ReportPipeline0D1E2F3A].",
+        "probability": 0.0005508433637961905
+      },
+      {
+        "line": 254,
+        "text": "ReportBatch-Prod |  8/31 | 2:12:15 AM | UPDATE_IN_PROGRESS   | AWS::Lambda::Function                       | NotifyFailureFn (NotifyFailureFn8D9E0F1A)",
+        "probability": 0.00009572226919429613
+      },
+      {
+        "line": 256,
+        "text": "ReportBatch-Prod |  6/31 | 2:12:20 AM | UPDATE_COMPLETE      | AWS::Lambda::Function                       | NotifyFailureFn (NotifyFailureFn8D9E0F1A)",
+        "probability": 0.0000700319081807847
+      },
+      {
+        "line": 268,
+        "text": "Failed resources:",
+        "probability": 0.00007935654842037421
+      },
+      {
+        "line": 269,
+        "text": "ReportBatch-Prod | 2:11:33 AM | UPDATE_FAILED        | AWS::StepFunctions::StateMachine            | ReportPipeline (ReportPipeline0D1E2F3A) Resource handler returned message: \"Invalid State Machine Definition: 'SCHEMA_VALIDATION_FAILED: The value for the field 'Next' must be a valid state name at /",
+        "probability": 0.22222612664260794
+      },
+      {
+        "line": 270,
+        "text": "❌  ReportBatch-Prod failed: _ToolkitError: The stack named ReportBatch-Prod failed to deploy: UPDATE_ROLLBACK_COMPLETE: Resource handler returned message: \"Invalid State Machine Definition: 'SCHEMA_VALIDATION_FAILED: The value for the field 'Next' must be a valid state name at /States/AggregateResul",
+        "probability": 0.0010954828374522337
+      },
+      {
+        "line": 276,
+        "text": "❌ Deployment failed: _ToolkitError: The stack named ReportBatch-Prod failed to deploy: UPDATE_ROLLBACK_COMPLETE",
+        "probability": 0.00003308073104923254
+      },
+      {
+        "line": 290,
+        "text": "##[error]Process completed with exit code 1.",
+        "probability": 0.000018848832381395665
+      }
+    ]
+  },
+  "rootLines": [
+    227
+  ],
+  "repeatLines": [
+    269,
+    270
+  ],
+  "lineMark": "ok",
+  "needsHuman": false,
+  "tokens": 25106,
+  "seconds": 1.606147583999991,
+  "ranAt": "2026-10-08T11:38:40.464Z"
+}

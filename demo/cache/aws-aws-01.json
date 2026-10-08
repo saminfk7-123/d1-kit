@@ -1,0 +1,78 @@
+{
+  "kind": "aws",
+  "id": "aws-01",
+  "expected": [
+    "auth"
+  ],
+  "cause": {
+    "type": "choice",
+    "choice": "auth",
+    "probabilities": {
+      "auth": 0.9975275824650651,
+      "authorization": 0.0007541075427320817,
+      "config": 0.000587299544799798,
+      "build": 0.00007466679368266642,
+      "transient": 0.0008027433006664638,
+      "runtime": 0.00003754482168948584,
+      "resource_state": 0.0002160555313644732
+    },
+    "confidence": 0.9971155128759093
+  },
+  "causeCorrect": true,
+  "pick": {
+    "line": 259,
+    "text": "##[error]Could not assume role with OIDC: Not authorized to perform sts:AssumeRoleWithWebIdentity",
+    "confidence": 0.999854892394633,
+    "candidates": [
+      {
+        "line": 139,
+        "text": "npm warn deprecated domexception@4.0.0: Use your platform's native DOMException instead",
+        "probability": 0.00004832184625999347
+      },
+      {
+        "line": 185,
+        "text": "✖ 2 problems (0 errors, 2 warnings)",
+        "probability": 0.00004006021759377126
+      },
+      {
+        "line": 259,
+        "text": "##[error]Could not assume role with OIDC: Not authorized to perform sts:AssumeRoleWithWebIdentity",
+        "probability": 0.9998730308453039
+      },
+      {
+        "line": 260,
+        "text": "Skipping step 'Run npx cdk diff OrderApi-Prod' due to failure in a previous step",
+        "probability": 0.000008397077779405208
+      },
+      {
+        "line": 261,
+        "text": "Skipping step 'Run npx cdk deploy OrderApi-Network OrderApi-Prod --require-approval never --ci' due to failure in a previous step",
+        "probability": 0.000004784510696634766
+      },
+      {
+        "line": 262,
+        "text": "Skipping step 'Run ./scripts/smoke-test.sh order-api' due to failure in a previous step",
+        "probability": 0.000004494631847589502
+      },
+      {
+        "line": 263,
+        "text": "Skipping step 'Run ./scripts/notify-slack.sh' due to failure in a previous step",
+        "probability": 0.00001012880922425932
+      },
+      {
+        "line": 279,
+        "text": "##[error]Process completed with exit code 1.",
+        "probability": 0.000010782061294660148
+      }
+    ]
+  },
+  "rootLines": [
+    259
+  ],
+  "repeatLines": [],
+  "lineMark": "ok",
+  "needsHuman": false,
+  "tokens": 13949,
+  "seconds": 1.0622170830000104,
+  "ranAt": "2026-10-08T11:36:34.211Z"
+}

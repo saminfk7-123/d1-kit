@@ -1,0 +1,330 @@
+2026-10-08T02:13:01.1922416Z Current runner version: '2.328.0'
+2026-10-08T02:13:01.2310140Z ##[group]Operating System
+2026-10-08T02:13:01.2574843Z Ubuntu
+2026-10-08T02:13:01.5010528Z 24.04.3
+2026-10-08T02:13:01.5646620Z LTS
+2026-10-08T02:13:01.7029437Z ##[endgroup]
+2026-10-08T02:13:01.8206969Z ##[group]Runner Image
+2026-10-08T02:13:01.8791736Z Image: ubuntu-24.04
+2026-10-08T02:13:01.9069533Z Version: 20260928.1.0
+2026-10-08T02:13:02.1349014Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260928.1/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-08T02:13:02.2914347Z ##[endgroup]
+2026-10-08T02:13:02.5621516Z ##[group]GITHUB_TOKEN Permissions
+2026-10-08T02:13:02.7802264Z Contents: read
+2026-10-08T02:13:02.8102791Z IdToken: write
+2026-10-08T02:13:02.9268036Z Metadata: read
+2026-10-08T02:13:02.9600140Z ##[endgroup]
+2026-10-08T02:13:03.0622071Z Secret source: Actions
+2026-10-08T02:13:03.2119848Z Prepare workflow directory
+2026-10-08T02:13:03.4824959Z Prepare all required actions
+2026-10-08T02:13:03.7252049Z Getting action download info
+2026-10-08T02:13:03.7454520Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2026-10-08T02:13:03.8925633Z Download action repository 'hashicorp/setup-terraform@v3' (SHA:b9cd54a3c349d3f38e8881555d616ced269862dd)
+2026-10-08T02:13:03.9378779Z Download action repository 'aws-actions/configure-aws-credentials@v4' (SHA:e3dd6a429d7300a6a4c196c26e071d42e0343502)
+2026-10-08T02:13:04.0753009Z Complete job name: deploy-notification
+2026-10-08T02:13:04.3397074Z ##[group]Run actions/checkout@v4
+2026-10-08T02:13:04.5073466Z with:
+2026-10-08T02:13:04.5487049Z   repository: example-org/platform-apps
+2026-10-08T02:13:04.5788915Z   token: ***
+2026-10-08T02:13:04.7898327Z   ssh-strict: true
+2026-10-08T02:13:04.9414153Z   persist-credentials: true
+2026-10-08T02:13:05.0347445Z   clean: true
+2026-10-08T02:13:05.1938318Z   fetch-depth: 1
+2026-10-08T02:13:05.3912918Z   lfs: false
+2026-10-08T02:13:05.6652978Z env:
+2026-10-08T02:13:05.7320643Z   AWS_REGION: ap-northeast-1
+2026-10-08T02:13:06.0045274Z   TF_IN_AUTOMATION: true
+2026-10-08T02:13:06.1081534Z ##[endgroup]
+2026-10-08T02:13:06.1192154Z Syncing repository: example-org/platform-apps
+2026-10-08T02:13:06.2329166Z ##[group]Getting Git version info
+2026-10-08T02:13:06.2863166Z Working directory is '/home/runner/work/platform-apps/platform-apps'
+2026-10-08T02:13:06.3220780Z [command]/usr/bin/git version
+2026-10-08T02:13:06.3834192Z git version 2.51.0
+2026-10-08T02:13:06.4741320Z ##[endgroup]
+2026-10-08T02:13:06.7132616Z Temporarily overriding HOME='/home/runner/work/_temp/5b0c3e9a-2f1d-4c7e-9a8b-0e6d1f2a3b4c' before making global git config changes
+2026-10-08T02:13:06.8164642Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/platform-apps/platform-apps
+2026-10-08T02:13:06.9876333Z Deleting the contents of '/home/runner/work/platform-apps/platform-apps'
+2026-10-08T02:13:07.0302059Z ##[group]Initializing the repository
+2026-10-08T02:13:07.1645756Z [command]/usr/bin/git init /home/runner/work/platform-apps/platform-apps
+2026-10-08T02:13:07.1895371Z Initialized empty Git repository in /home/runner/work/platform-apps/platform-apps/.git/
+2026-10-08T02:13:07.2768721Z [command]/usr/bin/git remote add origin https://github.com/example-org/platform-apps
+2026-10-08T02:13:07.2880481Z ##[endgroup]
+2026-10-08T02:13:07.5175688Z ##[group]Fetching the repository
+2026-10-08T02:13:08.0175685Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +4f2a9c1d7e3b8a6f0c5d2e9b1a7f3c8d6e4b2a90:refs/remotes/origin/main
+2026-10-08T02:13:08.6175682Z remote: Enumerating objects: 512, done.
+2026-10-08T02:13:08.8600708Z remote: Counting objects: 100% (512/512), done.
+2026-10-08T02:13:09.0070542Z remote: Compressing objects: 100% (431/431), done.
+2026-10-08T02:13:09.3010951Z remote: Total 512 (delta 61), reused 288 (delta 30), pack-reused 0 (from 0)
+2026-10-08T02:13:09.3588092Z Receiving objects: 100% (512/512), 1.12 MiB | 9.84 MiB/s, done.
+2026-10-08T02:13:09.4617069Z Resolving deltas: 100% (61/61), done.
+2026-10-08T02:13:09.4988104Z From https://github.com/example-org/platform-apps
+2026-10-08T02:13:09.6048925Z  * [new ref]         4f2a9c1d7e3b8a6f0c5d2e9b1a7f3c8d6e4b2a90 -> origin/main
+2026-10-08T02:13:09.6067717Z ##[endgroup]
+2026-10-08T02:13:09.6705869Z ##[group]Checking out the ref
+2026-10-08T02:13:09.6814899Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-10-08T02:13:09.7339095Z Switched to a new branch 'main'
+2026-10-08T02:13:10.0249007Z branch 'main' set up to track 'origin/main'.
+2026-10-08T02:13:10.0620643Z ##[endgroup]
+2026-10-08T02:13:10.2440797Z [command]/usr/bin/git log -1 --format=%H
+2026-10-08T02:13:10.4876812Z 4f2a9c1d7e3b8a6f0c5d2e9b1a7f3c8d6e4b2a90
+2026-10-08T02:13:10.6026261Z ##[group]Run hashicorp/setup-terraform@v3
+2026-10-08T02:13:10.7772667Z with:
+2026-10-08T02:13:10.9719937Z   terraform_version: 1.9.8
+2026-10-08T02:13:11.1268231Z   terraform_wrapper: false
+2026-10-08T02:13:11.3417547Z   cli_config_credentials_hostname: app.terraform.io
+2026-10-08T02:13:11.5113485Z env:
+2026-10-08T02:13:11.6484940Z   AWS_REGION: ap-northeast-1
+2026-10-08T02:13:11.7085497Z   TF_IN_AUTOMATION: true
+2026-10-08T02:13:11.7428563Z ##[endgroup]
+2026-10-08T02:13:12.1428560Z Downloading Terraform 1.9.8 for linux/amd64
+2026-10-08T02:13:12.9428569Z Extracting Terraform archive
+2026-10-08T02:13:13.1267000Z Adding Terraform to PATH
+2026-10-08T02:13:13.3236096Z ##[group]Run aws-actions/configure-aws-credentials@v4
+2026-10-08T02:13:13.4824459Z with:
+2026-10-08T02:13:13.6337179Z   role-to-assume: arn:aws:iam::123456789012:role/gha-cd-notification-deploy
+2026-10-08T02:13:13.6947193Z   role-session-name: gha-cd-notification
+2026-10-08T02:13:13.7926286Z   aws-region: ap-northeast-1
+2026-10-08T02:13:14.0160693Z   audience: sts.amazonaws.com
+2026-10-08T02:13:14.0190689Z env:
+2026-10-08T02:13:14.1087161Z   AWS_REGION: ap-northeast-1
+2026-10-08T02:13:14.3319606Z   TF_IN_AUTOMATION: true
+2026-10-08T02:13:14.3998374Z ##[endgroup]
+2026-10-08T02:13:14.8998371Z Assuming role with OIDC
+2026-10-08T02:13:15.7998378Z Authenticated as assumedRoleId AROAEXAMPLEROLEID0001:gha-cd-notification
+2026-10-08T02:13:15.9262625Z ##[group]Run terraform -chdir=apps/notification/infra init -input=false
+2026-10-08T02:13:16.1684895Z terraform -chdir=apps/notification/infra init -input=false
+2026-10-08T02:13:16.3238555Z shell: /usr/bin/bash -e {0}
+2026-10-08T02:13:16.5590544Z env:
+2026-10-08T02:13:16.7548181Z   AWS_REGION: ap-northeast-1
+2026-10-08T02:13:16.8143455Z   TF_IN_AUTOMATION: true
+2026-10-08T02:13:16.9285459Z   AWS_DEFAULT_REGION: ap-northeast-1
+2026-10-08T02:13:17.1828154Z   AWS_ACCESS_KEY_ID: ***
+2026-10-08T02:13:17.2451856Z   AWS_SECRET_ACCESS_KEY: ***
+2026-10-08T02:13:17.4294828Z   AWS_SESSION_TOKEN: ***
+2026-10-08T02:13:17.7103615Z ##[endgroup]
+2026-10-08T02:13:18.3103619Z Initializing the backend...
+2026-10-08T02:13:18.4863166Z 
+2026-10-08T02:13:18.5458848Z Successfully configured the backend "s3"! Terraform will automatically
+2026-10-08T02:13:18.6985731Z use this backend unless the backend configuration changes.
+2026-10-08T02:13:19.0985734Z Initializing modules...
+2026-10-08T02:13:19.1484447Z - lambda_common in modules/lambda_common
+2026-10-08T02:13:19.3686504Z - queues in modules/queues
+2026-10-08T02:13:19.6686506Z Initializing provider plugins...
+2026-10-08T02:13:19.9028899Z - Reusing previous version of hashicorp/aws from the dependency lock file
+2026-10-08T02:13:20.1518604Z - Reusing previous version of hashicorp/archive from the dependency lock file
+2026-10-08T02:13:20.6518604Z - Installing hashicorp/aws v5.72.1...
+2026-10-08T02:13:23.7518604Z - Installed hashicorp/aws v5.72.1 (signed by HashiCorp)
+2026-10-08T02:13:23.9933238Z - Installing hashicorp/archive v2.6.0...
+2026-10-08T02:13:24.5933234Z - Installed hashicorp/archive v2.6.0 (signed by HashiCorp)
+2026-10-08T02:13:24.6772446Z 
+2026-10-08T02:13:24.7513613Z Terraform has been successfully initialized!
+2026-10-08T02:13:25.0410298Z ##[group]Run terraform -chdir=apps/notification/infra plan -input=false -out=tfplan
+2026-10-08T02:13:25.2654983Z terraform -chdir=apps/notification/infra plan -input=false -out=tfplan
+2026-10-08T02:13:25.3365339Z shell: /usr/bin/bash -e {0}
+2026-10-08T02:13:25.4945823Z env:
+2026-10-08T02:13:25.6055961Z   AWS_REGION: ap-northeast-1
+2026-10-08T02:13:25.8438346Z   TF_IN_AUTOMATION: true
+2026-10-08T02:13:25.8700172Z ##[endgroup]
+2026-10-08T02:13:27.3700179Z data.aws_caller_identity.current: Reading...
+2026-10-08T02:13:27.6679490Z data.aws_region.current: Reading...
+2026-10-08T02:13:27.9040382Z data.aws_iam_policy_document.lambda_assume: Reading...
+2026-10-08T02:13:27.9116433Z data.aws_iam_policy_document.lambda_assume: Read complete after 0s [id=2690255455]
+2026-10-08T02:13:28.1174701Z data.aws_region.current: Read complete after 0s [id=ap-northeast-1]
+2026-10-08T02:13:28.1470057Z data.aws_caller_identity.current: Read complete after 0s [id=123456789012]
+2026-10-08T02:13:28.4077504Z data.archive_file.shared_layer: Reading...
+2026-10-08T02:13:28.6854191Z data.archive_file.shared_layer: Read complete after 1s [id=9d1f0c7e2b3a4f5e6d7c8b9a0f1e2d3c4b5a6978]
+2026-10-08T02:13:28.7241955Z aws_lambda_layer_version.shared_libs: Refreshing state... [id=arn:aws:lambda:ap-northeast-1:123456789012:layer:notification-shared-libs:41]
+2026-10-08T02:13:28.9838331Z aws_iam_role.lambda_exec: Refreshing state... [id=notification-lambda-exec]
+2026-10-08T02:13:29.0804890Z aws_sqs_queue.dlq: Refreshing state... [id=https://sqs.ap-northeast-1.amazonaws.com/123456789012/notification-dlq]
+2026-10-08T02:13:29.3313351Z aws_sqs_queue.events: Refreshing state... [id=https://sqs.ap-northeast-1.amazonaws.com/123456789012/notification-events]
+2026-10-08T02:13:29.5891965Z aws_sqs_queue.email: Refreshing state... [id=https://sqs.ap-northeast-1.amazonaws.com/123456789012/notification-email]
+2026-10-08T02:13:29.8876841Z aws_sqs_queue.sms: Refreshing state... [id=https://sqs.ap-northeast-1.amazonaws.com/123456789012/notification-sms]
+2026-10-08T02:13:30.1323100Z aws_iam_role_policy_attachment.basic: Refreshing state... [id=notification-lambda-exec-20250412093011223400000001]
+2026-10-08T02:13:30.3126315Z aws_iam_role_policy.sqs_access: Refreshing state... [id=notification-lambda-exec:sqs-access]
+2026-10-08T02:13:30.3801085Z aws_cloudwatch_log_group.lambda["dispatcher"]: Refreshing state... [id=/aws/lambda/notification-dispatcher]
+2026-10-08T02:13:30.6703041Z aws_cloudwatch_log_group.lambda["email"]: Refreshing state... [id=/aws/lambda/notification-email-sender]
+2026-10-08T02:13:30.8268001Z aws_cloudwatch_log_group.lambda["sms"]: Refreshing state... [id=/aws/lambda/notification-sms-sender]
+2026-10-08T02:13:31.1018349Z aws_cloudwatch_log_group.lambda["push"]: Refreshing state... [id=/aws/lambda/notification-push-sender]
+2026-10-08T02:13:31.2069002Z aws_lambda_function.fn["email"]: Refreshing state... [id=notification-email-sender]
+2026-10-08T02:13:31.2548686Z aws_lambda_function.fn["sms"]: Refreshing state... [id=notification-sms-sender]
+2026-10-08T02:13:31.3003481Z aws_lambda_function.fn["push"]: Refreshing state... [id=notification-push-sender]
+2026-10-08T02:13:31.3311813Z aws_lambda_function.fn["dispatcher"]: Refreshing state... [id=notification-dispatcher]
+2026-10-08T02:13:31.3567422Z aws_lambda_function.fn["renderer"]: Refreshing state... [id=notification-template-renderer]
+2026-10-08T02:13:31.4584933Z aws_lambda_function.fn["redriver"]: Refreshing state... [id=notification-dlq-redriver]
+2026-10-08T02:13:31.4920870Z aws_lambda_function.fn["webhook"]: Refreshing state... [id=notification-webhook-sender]
+2026-10-08T02:13:31.5101832Z aws_lambda_function.fn["audit"]: Refreshing state... [id=notification-audit-logger]
+2026-10-08T02:13:31.5622335Z aws_lambda_event_source_mapping.email: Refreshing state... [id=3e965156-1a2b-4c3d-8e9f-0a1b2c3d4e5f]
+2026-10-08T02:13:31.8269218Z aws_lambda_event_source_mapping.sms: Refreshing state... [id=3e409752-1a2b-4c3d-8e9f-0a1b2c3d4e5f]
+2026-10-08T02:13:31.8610971Z aws_lambda_event_source_mapping.events: Refreshing state... [id=3e602152-1a2b-4c3d-8e9f-0a1b2c3d4e5f]
+2026-10-08T02:13:32.1405392Z aws_lambda_event_source_mapping.dlq: Refreshing state... [id=3e244171-1a2b-4c3d-8e9f-0a1b2c3d4e5f]
+2026-10-08T02:13:32.2089323Z aws_cloudwatch_metric_alarm.dlq_depth: Refreshing state... [id=notification-dlq-depth]
+2026-10-08T02:13:32.3318712Z aws_sns_topic.alerts: Refreshing state... [id=arn:aws:sns:ap-northeast-1:123456789012:notification-alerts]
+2026-10-08T02:13:33.5318712Z 
+2026-10-08T02:13:33.7607250Z Terraform used the selected providers to generate the following execution
+2026-10-08T02:13:33.9694827Z plan. Resource actions are indicated with the following symbols:
+2026-10-08T02:13:34.1455659Z   + create
+2026-10-08T02:13:34.2324806Z   ~ update in-place
+2026-10-08T02:13:34.4064055Z -/+ destroy and then create replacement
+2026-10-08T02:13:34.6143487Z 
+2026-10-08T02:13:34.8750468Z Terraform will perform the following actions:
+2026-10-08T02:13:34.9320984Z 
+2026-10-08T02:13:35.1364567Z   # aws_lambda_layer_version.shared_libs must be replaced
+2026-10-08T02:13:35.3865294Z -/+ resource "aws_lambda_layer_version" "shared_libs" {
+2026-10-08T02:13:35.5370138Z       ~ arn                         = "arn:aws:lambda:ap-northeast-1:123456789012:layer:notification-shared-libs:41" -> (known after apply)
+2026-10-08T02:13:35.6975788Z       ~ source_code_hash            = "q2XyV0b8c3Kf1m9NwZ7pL4tR6sU5vA0eD1gH2jI3kL4=" -> "Zf8kP3nQ1rT5wX7yB9cE2gJ4lM6oR8tV0xA2dF4hK6m=" # forces replacement
+2026-10-08T02:13:35.7850313Z       ~ version                     = "41" -> (known after apply)
+2026-10-08T02:13:35.9560186Z         # (4 unchanged attributes hidden)
+2026-10-08T02:13:36.1862697Z     }
+2026-10-08T02:13:36.3808531Z 
+2026-10-08T02:13:36.4689210Z   # aws_lambda_function.fn["email"] will be updated in-place
+2026-10-08T02:13:36.4803715Z   ~ resource "aws_lambda_function" "fn" {
+2026-10-08T02:13:36.6328464Z         id                             = "notification-email-sender"
+2026-10-08T02:13:36.7376120Z       ~ layers                         = [
+2026-10-08T02:13:36.9244192Z           - "arn:aws:lambda:ap-northeast-1:123456789012:layer:notification-shared-libs:41",
+2026-10-08T02:13:37.1736680Z           + (known after apply),
+2026-10-08T02:13:37.1985022Z         ]
+2026-10-08T02:13:37.3337282Z         # (27 unchanged attributes hidden)
+2026-10-08T02:13:37.5643046Z     }
+2026-10-08T02:13:37.7339709Z 
+2026-10-08T02:13:38.0235431Z   # aws_lambda_function.fn["sms"] will be updated in-place
+2026-10-08T02:13:38.1359858Z   ~ resource "aws_lambda_function" "fn" {
+2026-10-08T02:13:38.1488269Z         id                             = "notification-sms-sender"
+2026-10-08T02:13:38.3638275Z       ~ layers                         = [
+2026-10-08T02:13:38.6595965Z           - "arn:aws:lambda:ap-northeast-1:123456789012:layer:notification-shared-libs:41",
+2026-10-08T02:13:38.6923735Z           + (known after apply),
+2026-10-08T02:13:38.8877837Z         ]
+2026-10-08T02:13:39.1409373Z         # (27 unchanged attributes hidden)
+2026-10-08T02:13:39.2845079Z     }
+2026-10-08T02:13:39.3890445Z 
+2026-10-08T02:13:39.6153036Z   # aws_lambda_function.fn["push"] will be updated in-place
+2026-10-08T02:13:39.7284030Z   ~ resource "aws_lambda_function" "fn" {
+2026-10-08T02:13:39.9490205Z         id                             = "notification-push-sender"
+2026-10-08T02:13:39.9682433Z       ~ layers                         = [
+2026-10-08T02:13:40.1217107Z           - "arn:aws:lambda:ap-northeast-1:123456789012:layer:notification-shared-libs:41",
+2026-10-08T02:13:40.2322718Z           + (known after apply),
+2026-10-08T02:13:40.2850362Z         ]
+2026-10-08T02:13:40.4794990Z         # (27 unchanged attributes hidden)
+2026-10-08T02:13:40.7146824Z     }
+2026-10-08T02:13:40.8903154Z 
+2026-10-08T02:13:41.0271504Z   # aws_lambda_function.fn["dispatcher"] will be updated in-place
+2026-10-08T02:13:41.1147357Z   ~ resource "aws_lambda_function" "fn" {
+2026-10-08T02:13:41.2494271Z         id                             = "notification-dispatcher"
+2026-10-08T02:13:41.3997017Z       ~ layers                         = [
+2026-10-08T02:13:41.5026679Z           - "arn:aws:lambda:ap-northeast-1:123456789012:layer:notification-shared-libs:41",
+2026-10-08T02:13:41.7939081Z           + (known after apply),
+2026-10-08T02:13:41.9029589Z         ]
+2026-10-08T02:13:42.1033745Z         # (27 unchanged attributes hidden)
+2026-10-08T02:13:42.2449136Z     }
+2026-10-08T02:13:42.3066698Z 
+2026-10-08T02:13:42.5197622Z   # aws_lambda_function.fn["renderer"] will be updated in-place
+2026-10-08T02:13:42.7545818Z   ~ resource "aws_lambda_function" "fn" {
+2026-10-08T02:13:43.0017281Z         id                             = "notification-template-renderer"
+2026-10-08T02:13:43.1666394Z       ~ layers                         = [
+2026-10-08T02:13:43.2327186Z           - "arn:aws:lambda:ap-northeast-1:123456789012:layer:notification-shared-libs:41",
+2026-10-08T02:13:43.3094913Z           + (known after apply),
+2026-10-08T02:13:43.5963600Z         ]
+2026-10-08T02:13:43.6083013Z         # (27 unchanged attributes hidden)
+2026-10-08T02:13:43.7039070Z     }
+2026-10-08T02:13:43.9970210Z 
+2026-10-08T02:13:44.2185659Z   # aws_lambda_function.fn["redriver"] will be updated in-place
+2026-10-08T02:13:44.3099854Z   ~ resource "aws_lambda_function" "fn" {
+2026-10-08T02:13:44.3142873Z         id                             = "notification-dlq-redriver"
+2026-10-08T02:13:44.4136791Z       ~ layers                         = [
+2026-10-08T02:13:44.5386150Z           - "arn:aws:lambda:ap-northeast-1:123456789012:layer:notification-shared-libs:41",
+2026-10-08T02:13:44.7995991Z           + (known after apply),
+2026-10-08T02:13:44.9549663Z         ]
+2026-10-08T02:13:45.0999456Z         # (27 unchanged attributes hidden)
+2026-10-08T02:13:45.3717666Z     }
+2026-10-08T02:13:45.5242381Z 
+2026-10-08T02:13:45.5688675Z   # aws_lambda_function.fn["webhook"] will be updated in-place
+2026-10-08T02:13:45.8497916Z   ~ resource "aws_lambda_function" "fn" {
+2026-10-08T02:13:46.0471884Z         id                             = "notification-webhook-sender"
+2026-10-08T02:13:46.1707193Z       ~ layers                         = [
+2026-10-08T02:13:46.4678584Z           - "arn:aws:lambda:ap-northeast-1:123456789012:layer:notification-shared-libs:41",
+2026-10-08T02:13:46.4880717Z           + (known after apply),
+2026-10-08T02:13:46.5832792Z         ]
+2026-10-08T02:13:46.6517176Z         # (27 unchanged attributes hidden)
+2026-10-08T02:13:46.9001074Z     }
+2026-10-08T02:13:46.9797788Z 
+2026-10-08T02:13:47.0635170Z   # aws_lambda_function.fn["audit"] will be updated in-place
+2026-10-08T02:13:47.1859263Z   ~ resource "aws_lambda_function" "fn" {
+2026-10-08T02:13:47.3972013Z         id                             = "notification-audit-logger"
+2026-10-08T02:13:47.4547057Z       ~ layers                         = [
+2026-10-08T02:13:47.5023185Z           - "arn:aws:lambda:ap-northeast-1:123456789012:layer:notification-shared-libs:41",
+2026-10-08T02:13:47.5747441Z           + (known after apply),
+2026-10-08T02:13:47.7057738Z         ]
+2026-10-08T02:13:47.9534418Z         # (27 unchanged attributes hidden)
+2026-10-08T02:13:48.1589097Z     }
+2026-10-08T02:13:48.4198275Z 
+2026-10-08T02:13:48.6054859Z Plan: 1 to add, 8 to change, 1 to destroy.
+2026-10-08T02:13:48.6560211Z 
+2026-10-08T02:13:48.7231595Z ─────────────────────────────────────────────────────────────────────────────
+2026-10-08T02:13:48.9066582Z 
+2026-10-08T02:13:49.0736833Z Saved the plan to: tfplan
+2026-10-08T02:13:49.2019539Z 
+2026-10-08T02:13:49.4778775Z To perform exactly these actions, run the following command to apply:
+2026-10-08T02:13:49.6844719Z     terraform apply "tfplan"
+2026-10-08T02:13:50.1844714Z ##[group]Run terraform -chdir=apps/notification/infra apply -input=false -auto-approve tfplan
+2026-10-08T02:13:50.2070305Z terraform -chdir=apps/notification/infra apply -input=false -auto-approve tfplan
+2026-10-08T02:13:50.5048392Z shell: /usr/bin/bash -e {0}
+2026-10-08T02:13:50.7034329Z env:
+2026-10-08T02:13:50.8233530Z   AWS_REGION: ap-northeast-1
+2026-10-08T02:13:51.0999446Z   TF_IN_AUTOMATION: true
+2026-10-08T02:13:51.2072904Z ##[endgroup]
+2026-10-08T02:13:52.6072901Z aws_lambda_layer_version.shared_libs: Creating...
+2026-10-08T02:14:02.6072901Z aws_lambda_layer_version.shared_libs: Still creating... [10s elapsed]
+2026-10-08T02:14:05.7072906Z aws_lambda_layer_version.shared_libs: Creation complete after 13s [id=arn:aws:lambda:ap-northeast-1:123456789012:layer:notification-shared-libs:42]
+2026-10-08T02:14:05.7272907Z aws_lambda_function.fn["email"]: Modifying... [id=notification-email-sender]
+2026-10-08T02:14:05.7472906Z aws_lambda_function.fn["sms"]: Modifying... [id=notification-sms-sender]
+2026-10-08T02:14:05.7672909Z aws_lambda_function.fn["push"]: Modifying... [id=notification-push-sender]
+2026-10-08T02:14:05.7872900Z aws_lambda_function.fn["dispatcher"]: Modifying... [id=notification-dispatcher]
+2026-10-08T02:14:05.8072907Z aws_lambda_function.fn["renderer"]: Modifying... [id=notification-template-renderer]
+2026-10-08T02:14:05.8272905Z aws_lambda_function.fn["redriver"]: Modifying... [id=notification-dlq-redriver]
+2026-10-08T02:14:05.8472908Z aws_lambda_function.fn["webhook"]: Modifying... [id=notification-webhook-sender]
+2026-10-08T02:14:05.8672903Z aws_lambda_function.fn["audit"]: Modifying... [id=notification-audit-logger]
+2026-10-08T02:14:11.8672900Z aws_lambda_function.fn["audit"]: Modifications complete after 6s [id=notification-audit-logger]
+2026-10-08T02:14:15.3672900Z aws_lambda_function.fn["email"]: Still modifying... [id=notification-email-sender, 10s elapsed]
+2026-10-08T02:14:15.9672909Z aws_lambda_function.fn["sms"]: Still modifying... [id=notification-sms-sender, 10s elapsed]
+2026-10-08T02:14:16.5672908Z aws_lambda_function.fn["push"]: Still modifying... [id=notification-push-sender, 10s elapsed]
+2026-10-08T02:14:17.1672905Z aws_lambda_function.fn["dispatcher"]: Still modifying... [id=notification-dispatcher, 10s elapsed]
+2026-10-08T02:14:17.7672905Z aws_lambda_function.fn["renderer"]: Still modifying... [id=notification-template-renderer, 10s elapsed]
+2026-10-08T02:14:18.3672907Z aws_lambda_function.fn["redriver"]: Still modifying... [id=notification-dlq-redriver, 10s elapsed]
+2026-10-08T02:14:18.9672909Z aws_lambda_function.fn["webhook"]: Still modifying... [id=notification-webhook-sender, 10s elapsed]
+2026-10-08T02:14:20.2672901Z aws_lambda_function.fn["sms"]: Modifications complete after 12s [id=notification-sms-sender]
+2026-10-08T02:14:21.2672909Z aws_lambda_function.fn["redriver"]: Modifications complete after 13s [id=notification-dlq-redriver]
+2026-10-08T02:14:22.8672902Z aws_lambda_function.fn["email"]: Still modifying... [id=notification-email-sender, 20s elapsed]
+2026-10-08T02:14:24.4672901Z aws_lambda_function.fn["push"]: Still modifying... [id=notification-push-sender, 20s elapsed]
+2026-10-08T02:14:26.0672900Z aws_lambda_function.fn["dispatcher"]: Still modifying... [id=notification-dispatcher, 20s elapsed]
+2026-10-08T02:14:27.6672907Z aws_lambda_function.fn["renderer"]: Still modifying... [id=notification-template-renderer, 20s elapsed]
+2026-10-08T02:14:29.2672904Z aws_lambda_function.fn["webhook"]: Still modifying... [id=notification-webhook-sender, 20s elapsed]
+2026-10-08T02:14:31.0672901Z aws_lambda_function.fn["push"]: Modifications complete after 22s [id=notification-push-sender]
+2026-10-08T02:14:33.0672908Z aws_lambda_function.fn["webhook"]: Modifications complete after 24s [id=notification-webhook-sender]
+2026-10-08T02:14:35.4672900Z aws_lambda_function.fn["email"]: Still modifying... [id=notification-email-sender, 30s elapsed]
+2026-10-08T02:14:37.8672903Z aws_lambda_function.fn["dispatcher"]: Still modifying... [id=notification-dispatcher, 30s elapsed]
+2026-10-08T02:14:40.2672903Z aws_lambda_function.fn["renderer"]: Still modifying... [id=notification-template-renderer, 30s elapsed]
+2026-10-08T02:14:50.2672901Z aws_lambda_function.fn["email"]: Still modifying... [id=notification-email-sender, 40s elapsed]
+2026-10-08T02:14:50.5672900Z aws_lambda_function.fn["dispatcher"]: Still modifying... [id=notification-dispatcher, 40s elapsed]
+2026-10-08T02:14:53.4672905Z aws_lambda_function.fn["renderer"]: Modifications complete after 43s [id=notification-template-renderer]
+2026-10-08T02:15:00.4672905Z aws_lambda_function.fn["email"]: Still modifying... [id=notification-email-sender, 50s elapsed]
+2026-10-08T02:15:01.3672906Z aws_lambda_function.fn["dispatcher"]: Modifications complete after 51s [id=notification-dispatcher]
+2026-10-08T02:15:05.5672905Z ╷
+2026-10-08T02:15:05.8448019Z │ Error: updating Lambda Function (notification-email-sender) configuration: operation error Lambda: UpdateFunctionConfiguration, exceeded maximum number of attempts, 25, https response error StatusCode: 429, RequestID: 7c2e4b91-3a5d-4f8e-b1c6-9d0a2e7f5b38, TooManyRequestsException: Rate exceeded
+2026-10-08T02:15:05.8931117Z │ 
+2026-10-08T02:15:06.1143194Z │   with aws_lambda_function.fn["email"],
+2026-10-08T02:15:06.3032890Z │   on lambda.tf line 34, in resource "aws_lambda_function" "fn":
+2026-10-08T02:15:06.4470637Z │   34: resource "aws_lambda_function" "fn" {
+2026-10-08T02:15:06.6228013Z │ 
+2026-10-08T02:15:06.8868528Z ╵
+2026-10-08T02:15:06.9868520Z ##[error]Process completed with exit code 1.
+2026-10-08T02:15:07.3868528Z Post job cleanup.
+2026-10-08T02:15:07.6868528Z Post job cleanup.
+2026-10-08T02:15:07.8822307Z [command]/usr/bin/git version
+2026-10-08T02:15:08.0396572Z git version 2.51.0
+2026-10-08T02:15:08.3346799Z Temporarily overriding HOME='/home/runner/work/_temp/a1c4e7b0-6d2f-4b9a-8e3c-5f7a9b1d3e2c' before making global git config changes
+2026-10-08T02:15:08.6117708Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/platform-apps/platform-apps
+2026-10-08T02:15:08.8542442Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-08T02:15:09.1290644Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-08T02:15:09.2994436Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-08T02:15:09.4870527Z http.https://github.com/example-org/platform-apps.extraheader
+2026-10-08T02:15:09.6537934Z [command]/usr/bin/git config --local --unset-all http.https://github.com/example-org/platform-apps.extraheader
+2026-10-08T02:15:09.8537932Z Cleaning up orphan processes

@@ -1,0 +1,5 @@
+STEP: Deploy schema changes (schemachange)
+2026-10-04T01:20:44Z Applying change script V1.42__add_orders_index.sql
+2026-10-04T01:20:45Z snowflake.connector.errors.ProgrammingError: 003001 (42501): SQL access control error:
+2026-10-04T01:20:45Z Insufficient privileges to operate on schema 'SALES'
+2026-10-04T01:20:45Z ##[error]Process completed with exit code 1.

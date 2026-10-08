@@ -1,0 +1,36 @@
+PR: fix(res.send): preserve ETag generation with Transfer-Encoding
+
+diff --git a/lib/response.js b/lib/response.js
+--- a/lib/response.js
++++ b/lib/response.js
+@@ -162,10 +162,8 @@ res.send = function send(body) {
+   var etagFn = app.get('etag fn')
+   var generateETag = !this.get('ETag') && typeof etagFn === 'function'
+ 
+-  // Because Content-Length and Transfer-Encoding can't be present in the response headers together,
+-  // Content-Length should be added only if there is no Transfer-Encoding header
+   var len;
+-  if (chunk !== undefined && !this.get('Transfer-Encoding')) {
++  if (chunk !== undefined) {
+     if (Buffer.isBuffer(chunk)) {
+       // get length of Buffer
+       len = chunk.length
+@@ -179,7 +177,11 @@ res.send = function send(body) {
+       len = chunk.length
+     }
+ 
+-    this.set('Content-Length', len);
++    // Because Content-Length and Transfer-Encoding can't be present in the response headers together,
++    // Content-Length should be added only if there is no Transfer-Encoding header
++    if (!this.get('Transfer-Encoding')) {
++      this.set('Content-Length', len);
++    }
+   }
+ 
+   // populate ETag
+diff --git a/test/res.send.js b/test/res.send.js
++    it('should still generate an ETag', function(done){
++      ...
++        .expect('ETag', 'W/"5-qvTGHdzF6KLavt4PO0gs2a6pQ00"')
++        .expect(200, 'hello', done);
++    })

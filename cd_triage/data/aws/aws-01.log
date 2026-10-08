@@ -1,0 +1,279 @@
+2026-10-08T02:13:01.1399862Z Current runner version: '2.328.0'
+2026-10-08T02:13:01.1600300Z ##[group]Operating System
+2026-10-08T02:13:01.1641168Z Ubuntu
+2026-10-08T02:13:01.1692759Z 24.04.3
+2026-10-08T02:13:01.1726468Z LTS
+2026-10-08T02:13:01.1837741Z ##[endgroup]
+2026-10-08T02:13:01.2057391Z ##[group]Runner Image
+2026-10-08T02:13:01.2181528Z Image: ubuntu-24.04
+2026-10-08T02:13:01.2396669Z Version: 20260928.112.1
+2026-10-08T02:13:01.2462943Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260928.112/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-08T02:13:01.2780109Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260928.112
+2026-10-08T02:13:01.3254229Z ##[endgroup]
+2026-10-08T02:13:01.3549060Z ##[group]GITHUB_TOKEN Permissions
+2026-10-08T02:13:01.4037310Z Contents: read
+2026-10-08T02:13:01.4317862Z IdToken: write
+2026-10-08T02:13:01.4466222Z Metadata: read
+2026-10-08T02:13:01.4738869Z ##[endgroup]
+2026-10-08T02:13:01.4896562Z Secret source: Actions
+2026-10-08T02:13:01.4952579Z Prepare workflow directory
+2026-10-08T02:13:01.5273835Z Prepare all required actions
+2026-10-08T02:13:01.5327061Z Getting action download info
+2026-10-08T02:13:01.5611429Z Download action repository 'actions/checkout@v4' (SHA:08eba0b27e820071cde6df949e0beb9ba4906955)
+2026-10-08T02:13:01.5718378Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+2026-10-08T02:13:01.5935035Z Download action repository 'aws-actions/configure-aws-credentials@v4' (SHA:b47578312673ae6fa5b5096b330d9fbac3d116df)
+2026-10-08T02:13:01.6170507Z Complete job name: deploy-order-api (prod)
+2026-10-08T02:13:02.2424743Z ##[group]Run actions/checkout@v4
+2026-10-08T02:13:02.2822963Z with:
+2026-10-08T02:13:02.2868484Z   repository: example-shop/platform-deploy
+2026-10-08T02:13:02.3133455Z   token: ***
+2026-10-08T02:13:02.3499534Z   ssh-strict: true
+2026-10-08T02:13:02.3805961Z   ssh-user: git
+2026-10-08T02:13:02.3869406Z   persist-credentials: true
+2026-10-08T02:13:02.3956065Z   clean: true
+2026-10-08T02:13:02.4036297Z   sparse-checkout-cone-mode: true
+2026-10-08T02:13:02.4250031Z   fetch-depth: 1
+2026-10-08T02:13:02.4633499Z   fetch-tags: false
+2026-10-08T02:13:02.5029095Z   show-progress: true
+2026-10-08T02:13:02.5202455Z   lfs: false
+2026-10-08T02:13:02.5501669Z   submodules: false
+2026-10-08T02:13:02.5901121Z   set-safe-directory: true
+2026-10-08T02:13:02.6321904Z env:
+2026-10-08T02:13:02.6561581Z   APP_NAME: order-api
+2026-10-08T02:13:02.6596614Z   AWS_REGION: ap-northeast-1
+2026-10-08T02:13:02.6921947Z   DEPLOY_ENV: prod-canary
+2026-10-08T02:13:02.7067816Z ##[endgroup]
+2026-10-08T02:13:02.7511895Z Syncing repository: example-shop/platform-deploy
+2026-10-08T02:13:02.7528067Z ##[group]Getting Git version info
+2026-10-08T02:13:02.7709019Z Working directory is '/home/runner/work/platform-deploy/platform-deploy'
+2026-10-08T02:13:02.7771970Z [command]/usr/bin/git version
+2026-10-08T02:13:02.7884984Z git version 2.51.0
+2026-10-08T02:13:02.7954003Z ##[endgroup]
+2026-10-08T02:13:02.8155967Z Temporarily overriding HOME='/home/runner/work/_temp/3c1f9a2e-5b7d-4e21-9a0c-7d2f6b8e1a44' before making global git config changes
+2026-10-08T02:13:02.8200857Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-08T02:13:02.8404664Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/platform-deploy/platform-deploy
+2026-10-08T02:13:02.8846936Z Deleting the contents of '/home/runner/work/platform-deploy/platform-deploy'
+2026-10-08T02:13:02.9279604Z ##[group]Initializing the repository
+2026-10-08T02:13:02.9634275Z [command]/usr/bin/git init /home/runner/work/platform-deploy/platform-deploy
+2026-10-08T02:13:02.9977226Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-08T02:13:03.0456302Z hint: is subject to change. To configure the initial branch name to use in all
+2026-10-08T02:13:03.0502382Z hint: of your new repositories, which will suppress this warning, call:
+2026-10-08T02:13:03.0622203Z hint:
+2026-10-08T02:13:03.0633179Z hint: 	git config --global init.defaultBranch <name>
+2026-10-08T02:13:03.0728434Z Initialized empty Git repository in /home/runner/work/platform-deploy/platform-deploy/.git/
+2026-10-08T02:13:03.0735466Z [command]/usr/bin/git remote add origin https://github.com/example-shop/platform-deploy
+2026-10-08T02:13:03.1005089Z ##[endgroup]
+2026-10-08T02:13:03.1290422Z ##[group]Disabling automatic garbage collection
+2026-10-08T02:13:03.1637218Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-08T02:13:03.2112570Z ##[endgroup]
+2026-10-08T02:13:03.2343618Z ##[group]Setting up auth
+2026-10-08T02:13:03.2542846Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-08T02:13:03.2742937Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-08T02:13:03.3061900Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-08T02:13:03.3161253Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-08T02:13:03.3384361Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-08T02:13:03.3557690Z ##[endgroup]
+2026-10-08T02:13:03.3613379Z ##[group]Fetching the repository
+2026-10-08T02:13:03.3693251Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +4e7a91c0d2b35f8816a0c3e9b7d24f15a6c8e0d3:refs/remotes/origin/release/2026-10-canary
+2026-10-08T02:13:03.4167989Z From https://github.com/example-shop/platform-deploy
+2026-10-08T02:13:03.4185603Z  * [new ref]         4e7a91c0d2b35f8816a0c3e9b7d24f15a6c8e0d3 -> origin/release/2026-10-canary
+2026-10-08T02:13:03.4494562Z ##[endgroup]
+2026-10-08T02:13:03.4813595Z ##[group]Determining the checkout info
+2026-10-08T02:13:03.5116727Z ##[endgroup]
+2026-10-08T02:13:03.5182537Z [command]/usr/bin/git sparse-checkout disable
+2026-10-08T02:13:03.5679127Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-08T02:13:03.5921924Z ##[group]Checking out the ref
+2026-10-08T02:13:03.5969431Z [command]/usr/bin/git checkout --progress --force -B release/2026-10-canary refs/remotes/origin/release/2026-10-canary
+2026-10-08T02:13:03.6345524Z Switched to a new branch 'release/2026-10-canary'
+2026-10-08T02:13:03.6587442Z branch 'release/2026-10-canary' set up to track 'origin/release/2026-10-canary'.
+2026-10-08T02:13:03.6848033Z ##[endgroup]
+2026-10-08T02:13:03.7323778Z [command]/usr/bin/git log -1 --format=%H
+2026-10-08T02:13:03.7507848Z 4e7a91c0d2b35f8816a0c3e9b7d24f15a6c8e0d3
+2026-10-08T02:13:04.8735158Z ##[group]Run actions/setup-node@v4
+2026-10-08T02:13:04.8887701Z with:
+2026-10-08T02:13:04.9237324Z   node-version: 20
+2026-10-08T02:13:04.9498932Z   cache: npm
+2026-10-08T02:13:04.9680003Z   cache-dependency-path: apps/order-api/package-lock.json
+2026-10-08T02:13:04.9948638Z   always-auth: false
+2026-10-08T02:13:05.0116813Z   check-latest: false
+2026-10-08T02:13:05.0425363Z   token: ***
+2026-10-08T02:13:05.0829376Z env:
+2026-10-08T02:13:05.1200613Z   APP_NAME: order-api
+2026-10-08T02:13:05.1304577Z   AWS_REGION: ap-northeast-1
+2026-10-08T02:13:05.1485570Z   DEPLOY_ENV: prod-canary
+2026-10-08T02:13:05.1980424Z ##[endgroup]
+2026-10-08T02:13:05.2219183Z Found in cache @ /opt/hostedtoolcache/node/20.19.5/x64
+2026-10-08T02:13:05.2566985Z ##[group]Environment details
+2026-10-08T02:13:05.2793365Z node: v20.19.5
+2026-10-08T02:13:05.3271095Z npm: 10.8.2
+2026-10-08T02:13:05.3315961Z yarn: 1.22.22
+2026-10-08T02:13:05.3433253Z ##[endgroup]
+2026-10-08T02:13:05.3605437Z [command]/opt/hostedtoolcache/node/20.19.5/x64/bin/npm config get cache
+2026-10-08T02:13:05.3919349Z /home/runner/.npm
+2026-10-08T02:13:05.4340367Z Cache hit for: node-cache-Linux-x64-npm-9b0e3f6c1d2a7e84c5b1f0a9d3e6c2b7f8a1d4e5c9b2a6f0e3d7c1b5a8f2e4d6
+2026-10-08T02:13:05.4795415Z Received 50331648 of 98214733 (51.2%), 47.9 MBs/sec
+2026-10-08T02:13:05.5196231Z Received 98214733 of 98214733 (100.0%), 52.3 MBs/sec
+2026-10-08T02:13:05.5614381Z Cache Size: ~94 MB (98214733 B)
+2026-10-08T02:13:05.6069723Z [command]/usr/bin/tar -xf /home/runner/work/_temp/b2d9e7a1-6c4f-4a83-8e15-2f0c9d7b3a61/cache.tzst -P -C /home/runner/work/platform-deploy/platform-deploy --use-compress-program unzstd
+2026-10-08T02:13:05.6311352Z Cache restored successfully
+2026-10-08T02:13:05.6531145Z Cache restored from key: node-cache-Linux-x64-npm-9b0e3f6c1d2a7e84c5b1f0a9d3e6c2b7f8a1d4e5c9b2a6f0e3d7c1b5a8f2e4d6
+2026-10-08T02:13:06.0311896Z ##[group]Run npm ci
+2026-10-08T02:13:06.0546151Z npm ci
+2026-10-08T02:13:06.0909932Z shell: /usr/bin/bash -e {0}
+2026-10-08T02:13:06.1406520Z env:
+2026-10-08T02:13:06.1486347Z   APP_NAME: order-api
+2026-10-08T02:13:06.1890562Z   AWS_REGION: ap-northeast-1
+2026-10-08T02:13:06.2198299Z   DEPLOY_ENV: prod-canary
+2026-10-08T02:13:06.2688545Z ##[endgroup]
+2026-10-08T02:13:06.2770728Z npm warn EBADENGINE Unsupported engine {
+2026-10-08T02:13:06.2840560Z npm warn EBADENGINE   package: '@example-shop/eslint-config@3.2.0',
+2026-10-08T02:13:06.3241241Z npm warn EBADENGINE   required: { node: '>=22' },
+2026-10-08T02:13:06.3506902Z npm warn EBADENGINE   current: { node: 'v20.19.5', npm: '10.8.2' }
+2026-10-08T02:13:06.3726643Z npm warn EBADENGINE }
+2026-10-08T02:13:06.4140593Z npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+2026-10-08T02:13:06.4159453Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2026-10-08T02:13:06.4309473Z npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+2026-10-08T02:13:06.4692495Z npm warn deprecated @humanwhocodes/config-array@0.13.0: Use @eslint/config-array instead
+2026-10-08T02:13:06.4825886Z npm warn deprecated @humanwhocodes/object-schema@2.0.3: Use @eslint/object-schema instead
+2026-10-08T02:13:06.5243810Z npm warn deprecated querystring@0.2.0: The querystring API is considered Legacy. new code should use the URLSearchParams API instead.
+2026-10-08T02:13:06.5699275Z npm warn deprecated domexception@4.0.0: Use your platform's native DOMException instead
+2026-10-08T02:13:06.6148639Z npm warn deprecated abab@2.0.6: Use your platform's native atob() and btoa() methods instead
+2026-10-08T02:13:06.6557088Z npm warn deprecated eslint@8.57.1: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+2026-10-08T02:13:06.6770298Z 
+2026-10-08T02:13:06.6840022Z > order-api@1.14.0 prepare
+2026-10-08T02:13:06.7104160Z > husky || true
+2026-10-08T02:13:06.7541202Z 
+2026-10-08T02:13:06.7847432Z HUSKY=0 skip install
+2026-10-08T02:13:06.7937747Z 
+2026-10-08T02:13:28.0937749Z added 1187 packages, and audited 1188 packages in 21s
+2026-10-08T02:13:28.1301718Z 
+2026-10-08T02:13:28.1337288Z 214 packages are looking for funding
+2026-10-08T02:13:28.1604997Z   run `npm fund` for details
+2026-10-08T02:13:28.1998201Z 
+2026-10-08T02:13:28.2440400Z 6 vulnerabilities (4 moderate, 2 high)
+2026-10-08T02:13:28.2568404Z 
+2026-10-08T02:13:28.2594291Z To address issues that do not require attention, run:
+2026-10-08T02:13:28.2850618Z   npm audit fix
+2026-10-08T02:13:28.2869401Z 
+2026-10-08T02:13:28.3093819Z To address all issues (including breaking changes), run:
+2026-10-08T02:13:28.3580629Z   npm audit fix --force
+2026-10-08T02:13:28.3839144Z 
+2026-10-08T02:13:28.4068058Z Run `npm audit` for details.
+2026-10-08T02:13:29.4334318Z ##[group]Run npm run build
+2026-10-08T02:13:29.4805358Z npm run build
+2026-10-08T02:13:29.5244244Z shell: /usr/bin/bash -e {0}
+2026-10-08T02:13:29.5706023Z env:
+2026-10-08T02:13:29.6126822Z   APP_NAME: order-api
+2026-10-08T02:13:29.6338066Z   AWS_REGION: ap-northeast-1
+2026-10-08T02:13:29.6561911Z   DEPLOY_ENV: prod-canary
+2026-10-08T02:13:29.6899136Z ##[endgroup]
+2026-10-08T02:13:29.6940324Z 
+2026-10-08T02:13:29.7333372Z > order-api@1.14.0 build
+2026-10-08T02:13:29.7803425Z > npm run lint && npm run typecheck && npm run bundle && npm run test -- --ci
+2026-10-08T02:13:29.7879192Z 
+2026-10-08T02:13:29.8363123Z 
+2026-10-08T02:13:29.8737731Z > order-api@1.14.0 lint
+2026-10-08T02:13:29.8939877Z > eslint "src/**/*.ts" "infra/**/*.ts"
+2026-10-08T02:13:29.9025453Z 
+2026-10-08T02:13:29.9110386Z 
+2026-10-08T02:13:29.9607456Z /home/runner/work/platform-deploy/platform-deploy/apps/order-api/src/handlers/createOrder.ts
+2026-10-08T02:13:29.9780313Z   42:11  warning  'traceId' is assigned a value but never used  @typescript-eslint/no-unused-vars
+2026-10-08T02:13:29.9961831Z 
+2026-10-08T02:13:30.0324290Z /home/runner/work/platform-deploy/platform-deploy/apps/order-api/src/worker/processOrder.ts
+2026-10-08T02:13:30.0496597Z   118:5  warning  Unexpected console statement  no-console
+2026-10-08T02:13:30.0719620Z 
+2026-10-08T02:13:30.0914878Z ✖ 2 problems (0 errors, 2 warnings)
+2026-10-08T02:13:30.1228718Z 
+2026-10-08T02:13:30.1709291Z 
+2026-10-08T02:13:30.2201913Z > order-api@1.14.0 typecheck
+2026-10-08T02:13:30.2687901Z > tsc --noEmit -p tsconfig.json
+2026-10-08T02:13:30.2734514Z 
+2026-10-08T02:13:30.2759112Z 
+2026-10-08T02:13:30.2897982Z > order-api@1.14.0 bundle
+2026-10-08T02:13:30.3308774Z > node scripts/bundle.mjs
+2026-10-08T02:13:30.3514718Z 
+2026-10-08T02:13:30.3974709Z [bundle] esbuild 0.23.1, target=node20, format=cjs, minify=true
+2026-10-08T02:13:30.4224535Z [bundle] src/handlers/createOrder.ts -> dist/createOrder/index.js (412.6kb)
+2026-10-08T02:13:30.4273810Z [bundle] src/handlers/getOrder.ts -> dist/getOrder/index.js (398.1kb)
+2026-10-08T02:13:30.4674612Z [bundle] src/handlers/listOrders.ts -> dist/listOrders/index.js (401.9kb)
+2026-10-08T02:13:30.4890141Z [bundle] src/worker/processOrder.ts -> dist/processOrder/index.js (455.3kb)
+2026-10-08T02:13:30.5028260Z [bundle] src/worker/dlqRedrive.ts -> dist/dlqRedrive/index.js (211.7kb)
+2026-10-08T02:13:30.5347314Z [bundle] ▲ [WARNING] "import.meta" is not available with the "cjs" output format and will be empty [empty-import-meta]
+2026-10-08T02:13:30.5393763Z [bundle]     node_modules/@example-shop/otel-lite/dist/index.mjs:14:22:
+2026-10-08T02:13:30.5431741Z [bundle]       14 │   const here = new URL(import.meta.url);
+2026-10-08T02:13:30.5661365Z [bundle]          ╵                        ~~~~~~~~~~~
+2026-10-08T02:13:32.4661368Z [bundle] done in 1834ms (5 entry points)
+2026-10-08T02:13:32.4873154Z 
+2026-10-08T02:13:32.5185890Z > order-api@1.14.0 test
+2026-10-08T02:13:32.5451713Z > jest --ci
+2026-10-08T02:13:32.5921082Z 
+2026-10-08T02:13:32.6055722Z PASS test/handlers/getOrder.test.ts
+2026-10-08T02:13:32.6160604Z PASS test/handlers/listOrders.test.ts
+2026-10-08T02:13:32.6476798Z PASS test/worker/dlqRedrive.test.ts
+2026-10-08T02:13:32.6857744Z   ● Console
+2026-10-08T02:13:32.7083362Z 
+2026-10-08T02:13:32.7222270Z     console.warn
+2026-10-08T02:13:32.7719550Z       [dlqRedrive] queue url not set, using mock
+2026-10-08T02:13:32.7732158Z 
+2026-10-08T02:13:32.8009923Z       at Object.<anonymous> (src/worker/dlqRedrive.ts:23:13)
+2026-10-08T02:13:32.8269473Z 
+2026-10-08T02:13:32.8737121Z PASS test/handlers/createOrder.test.ts
+2026-10-08T02:13:32.9067996Z PASS test/worker/processOrder.test.ts
+2026-10-08T02:13:32.9397968Z PASS test/infra/network-stack.test.ts
+2026-10-08T02:13:32.9816096Z PASS test/infra/api-stack.test.ts (8.412 s)
+2026-10-08T02:13:33.0301394Z 
+2026-10-08T02:13:33.0646823Z Test Suites: 7 passed, 7 total
+2026-10-08T02:13:33.0821462Z Tests:       64 passed, 64 total
+2026-10-08T02:13:33.1026795Z Snapshots:   3 passed, 3 total
+2026-10-08T02:13:48.2026790Z Time:        14.903 s
+2026-10-08T02:13:48.2446100Z Ran all test suites.
+2026-10-08T02:13:48.6082614Z ##[group]Run aws-actions/configure-aws-credentials@v4
+2026-10-08T02:13:48.6300830Z with:
+2026-10-08T02:13:48.6347656Z   role-to-assume: arn:aws:iam::123456789012:role/gha-cd-deploy
+2026-10-08T02:13:48.6783574Z   role-session-name: gha-order-api-11872043516
+2026-10-08T02:13:48.7084974Z   aws-region: ap-northeast-1
+2026-10-08T02:13:48.7112362Z   role-duration-seconds: 3600
+2026-10-08T02:13:48.7195347Z   audience: sts.amazonaws.com
+2026-10-08T02:13:48.7202135Z   output-credentials: false
+2026-10-08T02:13:48.7683218Z   unset-current-credentials: false
+2026-10-08T02:13:48.7848360Z   disable-retry: false
+2026-10-08T02:13:48.8331374Z   retry-max-attempts: 12
+2026-10-08T02:13:48.8444212Z   special-characters-workaround: false
+2026-10-08T02:13:48.8449746Z env:
+2026-10-08T02:13:48.8496274Z   APP_NAME: order-api
+2026-10-08T02:13:48.8750143Z   AWS_REGION: ap-northeast-1
+2026-10-08T02:13:48.8877990Z   DEPLOY_ENV: prod-canary
+2026-10-08T02:13:48.8927961Z ##[endgroup]
+2026-10-08T02:13:51.1121229Z Assuming role with OIDC
+2026-10-08T02:13:52.8204570Z Assuming role with OIDC
+2026-10-08T02:13:55.8186873Z Assuming role with OIDC
+2026-10-08T02:13:57.7411018Z Assuming role with OIDC
+2026-10-08T02:14:03.5073382Z Assuming role with OIDC
+2026-10-08T02:14:08.2950569Z Assuming role with OIDC
+2026-10-08T02:14:11.7426385Z Assuming role with OIDC
+2026-10-08T02:14:16.8460247Z Assuming role with OIDC
+2026-10-08T02:14:19.0933409Z Assuming role with OIDC
+2026-10-08T02:14:23.8094370Z Assuming role with OIDC
+2026-10-08T02:14:29.4337238Z Assuming role with OIDC
+2026-10-08T02:14:34.0703848Z Assuming role with OIDC
+2026-10-08T02:14:34.0777808Z ##[error]Could not assume role with OIDC: Not authorized to perform sts:AssumeRoleWithWebIdentity
+2026-10-08T02:14:34.1155479Z Skipping step 'Run npx cdk diff OrderApi-Prod' due to failure in a previous step
+2026-10-08T02:14:34.1573760Z Skipping step 'Run npx cdk deploy OrderApi-Network OrderApi-Prod --require-approval never --ci' due to failure in a previous step
+2026-10-08T02:14:34.1987839Z Skipping step 'Run ./scripts/smoke-test.sh order-api' due to failure in a previous step
+2026-10-08T02:14:34.2387823Z Skipping step 'Run ./scripts/notify-slack.sh' due to failure in a previous step
+2026-10-08T02:14:34.6387821Z Post job cleanup.
+2026-10-08T02:14:35.2387820Z Post job cleanup.
+2026-10-08T02:14:35.7387820Z Post job cleanup.
+2026-10-08T02:14:35.7458705Z [command]/usr/bin/git version
+2026-10-08T02:14:35.7938666Z git version 2.51.0
+2026-10-08T02:14:35.8357398Z Temporarily overriding HOME='/home/runner/work/_temp/9f2c4b1e-7a3d-4c58-b0e6-1d8a5f3c7e92' before making global git config changes
+2026-10-08T02:14:35.8387530Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-08T02:14:35.8702513Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/platform-deploy/platform-deploy
+2026-10-08T02:14:35.8949710Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-08T02:14:35.9180901Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-08T02:14:35.9556298Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-08T02:14:36.0005731Z http.https://github.com/.extraheader
+2026-10-08T02:14:36.0337081Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-08T02:14:36.0711227Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-08T02:14:36.3711224Z Cleaning up orphan processes
+2026-10-08T02:14:36.4116784Z ##[error]Process completed with exit code 1.

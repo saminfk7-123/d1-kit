@@ -1,0 +1,310 @@
+2026-10-08T02:09:41.2214305Z Current runner version: '2.328.0'
+2026-10-08T02:09:41.2241187Z ##[group]Runner Image Provisioner
+2026-10-08T02:09:41.2242019Z Hosted Compute Agent
+2026-10-08T02:09:41.2242573Z Version: 20260915.391
+2026-10-08T02:09:41.2243166Z Commit: 4f2a9c1d7e83b0a5c6d2e19f8b7a3c4d5e6f7a8b
+2026-10-08T02:09:41.2243820Z Build Date: 2026-09-15T18:22:04Z
+2026-10-08T02:09:41.2244398Z ##[endgroup]
+2026-10-08T02:09:41.2245012Z ##[group]Operating System
+2026-10-08T02:09:41.2245588Z Ubuntu
+2026-10-08T02:09:41.2246034Z 24.04.3
+2026-10-08T02:09:41.2246477Z LTS
+2026-10-08T02:09:41.2246925Z ##[endgroup]
+2026-10-08T02:09:41.2247419Z ##[group]Runner Image
+2026-10-08T02:09:41.2247935Z Image: ubuntu-24.04
+2026-10-08T02:09:41.2248451Z Version: 20260928.1.0
+2026-10-08T02:09:41.2249482Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260928.1/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-08T02:09:41.2250937Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260928.1
+2026-10-08T02:09:41.2251802Z ##[endgroup]
+2026-10-08T02:09:41.2253614Z ##[group]GITHUB_TOKEN Permissions
+2026-10-08T02:09:41.2255672Z Contents: read
+2026-10-08T02:09:41.2256190Z IdToken: write
+2026-10-08T02:09:41.2256702Z Metadata: read
+2026-10-08T02:09:41.2257199Z ##[endgroup]
+2026-10-08T02:09:41.2259431Z Secret source: Actions
+2026-10-08T02:09:41.2260146Z Prepare workflow directory
+2026-10-08T02:09:41.2731954Z Prepare all required actions
+2026-10-08T02:09:41.2772438Z Getting action download info
+2026-10-08T02:09:41.6620417Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2026-10-08T02:09:41.7704592Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+2026-10-08T02:09:41.8741207Z Download action repository 'aws-actions/configure-aws-credentials@v4' (SHA:b47578312673ae6fa5b5096b330d9fbac3d116df)
+2026-10-08T02:09:42.0991325Z Complete job name: deploy (report-batch)
+2026-10-08T02:09:42.1592773Z ##[group]Run actions/checkout@v4
+2026-10-08T02:09:42.1593522Z with:
+2026-10-08T02:09:42.1593985Z   repository: example-org/platform-apps
+2026-10-08T02:09:42.1594751Z   token: ***
+2026-10-08T02:09:42.1595173Z   ssh-strict: true
+2026-10-08T02:09:42.1595598Z   ssh-user: git
+2026-10-08T02:09:42.1596041Z   persist-credentials: true
+2026-10-08T02:09:42.1596518Z   clean: true
+2026-10-08T02:09:42.1596958Z   fetch-depth: 1
+2026-10-08T02:09:42.1597386Z   lfs: false
+2026-10-08T02:09:42.1597803Z   submodules: false
+2026-10-08T02:09:42.1598244Z ##[endgroup]
+2026-10-08T02:09:42.2913574Z Syncing repository: example-org/platform-apps
+2026-10-08T02:09:42.2915428Z ##[group]Getting Git version info
+2026-10-08T02:09:42.2916242Z Working directory is '/home/runner/work/platform-apps/platform-apps'
+2026-10-08T02:09:42.2917421Z [command]/usr/bin/git version
+2026-10-08T02:09:42.2989047Z git version 2.51.0
+2026-10-08T02:09:42.3013755Z ##[endgroup]
+2026-10-08T02:09:42.3029861Z Temporarily overriding HOME='/home/runner/work/_temp/6d1f0e2a-91c4-4b0e-a5f3-2c7d8e9b1a40' before making global git config changes
+2026-10-08T02:09:42.3049120Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/platform-apps/platform-apps
+2026-10-08T02:09:42.3093381Z Deleting the contents of '/home/runner/work/platform-apps/platform-apps'
+2026-10-08T02:09:42.3097504Z ##[group]Initializing the repository
+2026-10-08T02:09:42.3101090Z [command]/usr/bin/git init /home/runner/work/platform-apps/platform-apps
+2026-10-08T02:09:42.3186211Z Initialized empty Git repository in /home/runner/work/platform-apps/platform-apps/.git/
+2026-10-08T02:09:42.3199370Z [command]/usr/bin/git remote add origin https://github.com/example-org/platform-apps
+2026-10-08T02:09:42.3246581Z ##[endgroup]
+2026-10-08T02:09:42.3251006Z ##[group]Fetching the repository
+2026-10-08T02:09:42.3259021Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +8c3e1f7a2b9d4c6e0f1a2b3c4d5e6f7a8b9c0d1e:refs/remotes/origin/main
+2026-10-08T02:09:43.6120934Z From https://github.com/example-org/platform-apps
+2026-10-08T02:09:43.6122815Z  * [new ref]         8c3e1f7a2b9d4c6e0f1a2b3c4d5e6f7a8b9c0d1e -> origin/main
+2026-10-08T02:09:43.6151622Z ##[endgroup]
+2026-10-08T02:09:43.6153347Z ##[group]Checking out the ref
+2026-10-08T02:09:43.6159204Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-10-08T02:09:43.6880419Z Switched to a new branch 'main'
+2026-10-08T02:09:43.6884201Z branch 'main' set up to track 'origin/main'.
+2026-10-08T02:09:43.6898135Z ##[endgroup]
+2026-10-08T02:09:43.6942018Z [command]/usr/bin/git log -1 --format=%H
+2026-10-08T02:09:43.6970313Z 8c3e1f7a2b9d4c6e0f1a2b3c4d5e6f7a8b9c0d1e
+2026-10-08T02:09:43.7231478Z ##[group]Run actions/setup-node@v4
+2026-10-08T02:09:43.7232120Z with:
+2026-10-08T02:09:43.7232559Z   node-version: 20
+2026-10-08T02:09:43.7233003Z   cache: npm
+2026-10-08T02:09:43.7233494Z   cache-dependency-path: apps/report-batch/package-lock.json
+2026-10-08T02:09:43.7234212Z   always-auth: false
+2026-10-08T02:09:43.7234672Z   check-latest: false
+2026-10-08T02:09:43.7235264Z   token: ***
+2026-10-08T02:09:43.7235692Z ##[endgroup]
+2026-10-08T02:09:43.9014382Z Found in cache @ /opt/hostedtoolcache/node/20.19.5/x64
+2026-10-08T02:09:43.9020551Z ##[group]Environment details
+2026-10-08T02:09:44.2817023Z node: v20.19.5
+2026-10-08T02:09:44.2817788Z npm: 10.8.2
+2026-10-08T02:09:44.2818190Z yarn: 1.22.22
+2026-10-08T02:09:44.2819302Z ##[endgroup]
+2026-10-08T02:09:44.2861093Z [command]/opt/hostedtoolcache/node/20.19.5/x64/bin/npm config get cache
+2026-10-08T02:09:44.4512887Z /home/runner/.npm
+2026-10-08T02:09:44.6930129Z Cache hit for: node-cache-Linux-x64-npm-3b7c1e9a5d2f4e6a8c0b1d3f5e7a9c2b4d6f8e0a1c3b5d7f9e2a4c6b8d0f1e3a
+2026-10-08T02:09:45.3311845Z Received 41943040 of 58719232 (71.4%), 40.0 MBs/sec
+2026-10-08T02:09:45.5728410Z Received 58719232 of 58719232 (100.0%), 46.2 MBs/sec
+2026-10-08T02:09:45.5735719Z Cache Size: ~56 MB (58719232 B)
+2026-10-08T02:09:45.5769264Z [command]/usr/bin/tar -xf /home/runner/work/_temp/0b7e2d4c-1a3f-4e5b-9c8d-7f6e5a4b3c2d/cache.tzst -P -C /home/runner/work/platform-apps/platform-apps --use-compress-program unzstd
+2026-10-08T02:09:46.2105310Z Cache restored successfully
+2026-10-08T02:09:46.2203772Z Cache restored from key: node-cache-Linux-x64-npm-3b7c1e9a5d2f4e6a8c0b1d3f5e7a9c2b4d6f8e0a1c3b5d7f9e2a4c6b8d0f1e3a
+2026-10-08T02:09:46.2390118Z ##[group]Run aws-actions/configure-aws-credentials@v4
+2026-10-08T02:09:46.2390872Z with:
+2026-10-08T02:09:46.2391513Z   role-to-assume: arn:aws:iam::123456789012:role/github-actions-cd-deploy
+2026-10-08T02:09:46.2392291Z   aws-region: ap-northeast-1
+2026-10-08T02:09:46.2392778Z   role-session-name: gha-cd-report-batch
+2026-10-08T02:09:46.2393289Z   audience: sts.amazonaws.com
+2026-10-08T02:09:46.2393753Z ##[endgroup]
+2026-10-08T02:09:46.3907461Z Assuming role with OIDC
+2026-10-08T02:09:46.9182047Z Authenticated as assumedRoleId AROAEXAMPLE7QK3LZ2M9:gha-cd-report-batch
+2026-10-08T02:09:46.9302519Z ##[group]Run npm ci
+2026-10-08T02:09:46.9303118Z [36;1mnpm ci[0m
+2026-10-08T02:09:46.9338921Z shell: /usr/bin/bash -e {0}
+2026-10-08T02:09:46.9339364Z env:
+2026-10-08T02:09:46.9339801Z   AWS_DEFAULT_REGION: ap-northeast-1
+2026-10-08T02:09:46.9340265Z   AWS_REGION: ap-northeast-1
+2026-10-08T02:09:46.9340733Z   AWS_ACCESS_KEY_ID: ***
+2026-10-08T02:09:46.9341180Z   AWS_SECRET_ACCESS_KEY: ***
+2026-10-08T02:09:46.9341623Z   AWS_SESSION_TOKEN: ***
+2026-10-08T02:09:46.9342051Z ##[endgroup]
+2026-10-08T02:09:48.0127734Z npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it.
+2026-10-08T02:09:48.1405590Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2026-10-08T02:09:52.7742818Z
+2026-10-08T02:09:52.7744090Z added 412 packages, and audited 413 packages in 6s
+2026-10-08T02:09:52.7744531Z
+2026-10-08T02:09:52.7744903Z 48 packages are looking for funding
+2026-10-08T02:09:52.7745385Z   run `npm fund` for details
+2026-10-08T02:09:52.7836127Z
+2026-10-08T02:09:52.7836880Z found 0 vulnerabilities
+2026-10-08T02:09:52.8031741Z ##[group]Run npm run build && npx cdk synth ReportBatch-Prod --quiet
+2026-10-08T02:09:52.8032508Z [36;1mnpm run build && npx cdk synth ReportBatch-Prod --quiet[0m
+2026-10-08T02:09:52.8064712Z shell: /usr/bin/bash -e {0}
+2026-10-08T02:09:52.8065173Z env:
+2026-10-08T02:09:52.8065604Z   AWS_DEFAULT_REGION: ap-northeast-1
+2026-10-08T02:09:52.8066037Z   AWS_REGION: ap-northeast-1
+2026-10-08T02:09:52.8066494Z   CDK_DEFAULT_ACCOUNT: 123456789012
+2026-10-08T02:09:52.8066961Z ##[endgroup]
+2026-10-08T02:09:52.9811263Z
+2026-10-08T02:09:52.9812014Z > report-batch@1.14.0 build
+2026-10-08T02:09:52.9812543Z > tsc -p tsconfig.json
+2026-10-08T02:09:52.9812972Z
+2026-10-08T02:09:59.4413807Z Bundling asset ReportBatch-Prod/FetchFn/Code/Stage...
+2026-10-08T02:10:00.1259032Z
+2026-10-08T02:10:00.1259881Z   cdk.out/bundling-temp-7c1d2e3f/index.js  184.2kb
+2026-10-08T02:10:00.1260412Z
+2026-10-08T02:10:00.1260830Z ⚡ Done in 58ms
+2026-10-08T02:10:00.2101957Z Bundling asset ReportBatch-Prod/TransformFn/Code/Stage...
+2026-10-08T02:10:00.7843021Z
+2026-10-08T02:10:00.7843790Z   cdk.out/bundling-temp-9a4b5c6d/index.js  212.7kb
+2026-10-08T02:10:00.7844285Z
+2026-10-08T02:10:00.7844671Z ⚡ Done in 61ms
+2026-10-08T02:10:00.8622406Z Bundling asset ReportBatch-Prod/AggregateFn/Code/Stage...
+2026-10-08T02:10:01.3390781Z
+2026-10-08T02:10:01.3391502Z   cdk.out/bundling-temp-2e8f1a0b/index.js  167.9kb
+2026-10-08T02:10:01.3391997Z
+2026-10-08T02:10:01.3392411Z ⚡ Done in 49ms
+2026-10-08T02:10:01.4213560Z Bundling asset ReportBatch-Prod/PublishFn/Code/Stage...
+2026-10-08T02:10:01.9142088Z
+2026-10-08T02:10:01.9142837Z   cdk.out/bundling-temp-5f3c7d9e/index.js  143.1kb
+2026-10-08T02:10:01.9143322Z
+2026-10-08T02:10:01.9143704Z ⚡ Done in 44ms
+2026-10-08T02:10:02.0004316Z Bundling asset ReportBatch-Prod/NotifyFailureFn/Code/Stage...
+2026-10-08T02:10:02.4417822Z
+2026-10-08T02:10:02.4418556Z   cdk.out/bundling-temp-0d6e4a2c/index.js  98.4kb
+2026-10-08T02:10:02.4419035Z
+2026-10-08T02:10:02.4419441Z ⚡ Done in 37ms
+2026-10-08T02:10:04.9127510Z [Warning at /ReportBatch-Prod/ReportCluster] Support for 'containerInsights' has been deprecated, use 'containerInsightsV2' instead. [ack: @aws-cdk/aws-ecs:deprecatedContainerInsights]
+2026-10-08T02:10:05.3302948Z Successfully synthesized to /home/runner/work/platform-apps/platform-apps/apps/report-batch/cdk.out
+2026-10-08T02:10:05.3303751Z Supply a stack id (ReportBatch-Prod) to display its template.
+2026-10-08T02:10:05.3511289Z ##[group]Run npx cdk deploy ReportBatch-Prod --require-approval never --progress events
+2026-10-08T02:10:05.3512071Z [36;1mnpx cdk deploy ReportBatch-Prod --require-approval never --progress events[0m
+2026-10-08T02:10:05.3545132Z shell: /usr/bin/bash -e {0}
+2026-10-08T02:10:05.3545589Z env:
+2026-10-08T02:10:05.3546011Z   AWS_DEFAULT_REGION: ap-northeast-1
+2026-10-08T02:10:05.3546453Z   AWS_REGION: ap-northeast-1
+2026-10-08T02:10:05.3546912Z   CDK_DEFAULT_ACCOUNT: 123456789012
+2026-10-08T02:10:05.3547346Z ##[endgroup]
+2026-10-08T02:10:09.1182436Z
+2026-10-08T02:10:09.1183301Z ✨  Synthesis time: 3.71s
+2026-10-08T02:10:09.1183745Z
+2026-10-08T02:10:09.3021774Z ReportBatch-Prod: start: Building ReportBatch-Prod Template
+2026-10-08T02:10:09.3024418Z ReportBatch-Prod: success: Built ReportBatch-Prod Template
+2026-10-08T02:10:09.3510882Z ReportBatch-Prod: start: Publishing 1f7c2a9e4b3d5c6a8e0f1b2d3c4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e:123456789012-ap-northeast-1
+2026-10-08T02:10:09.3519034Z ReportBatch-Prod: start: Publishing 8e2d4f6a1c3b5d7e9f0a2c4e6b8d0f1a3c5e7b9d2f4a6c8e0b1d3f5a7c9e2b4d:123456789012-ap-northeast-1
+2026-10-08T02:10:09.3524512Z ReportBatch-Prod: start: Publishing 3a5c7e9b1d2f4a6c8e0b2d4f6a8c1e3b5d7f9a2c4e6b8d0f1a3c5e7b9d2f4a6c:123456789012-ap-northeast-1
+2026-10-08T02:10:09.3529870Z ReportBatch-Prod: start: Publishing c4e6a8b0d2f1e3a5c7b9d1f3e5a7c9b2d4f6e8a0c1b3d5f7e9a2c4b6d8f0e1a3:123456789012-ap-northeast-1
+2026-10-08T02:10:09.3535146Z ReportBatch-Prod: start: Publishing 9b1d3f5a7c2e4b6d8f0a1c3e5b7d9f2a4c6e8b0d1f3a5c7e9b2d4f6a8c0e1b3d:123456789012-ap-northeast-1
+2026-10-08T02:10:09.3540221Z ReportBatch-Prod: start: Publishing d7f9a1c3e5b2d4f6a8c0e2b4d6f8a1c3e5b7d9f2a4c6e8b0d1f3a5c7e9b2d4f6:123456789012-ap-northeast-1
+2026-10-08T02:10:10.8813095Z ReportBatch-Prod: success: Published 1f7c2a9e4b3d5c6a8e0f1b2d3c4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e:123456789012-ap-northeast-1
+2026-10-08T02:10:10.9927314Z ReportBatch-Prod: success: Published 8e2d4f6a1c3b5d7e9f0a2c4e6b8d0f1a3c5e7b9d2f4a6c8e0b1d3f5a7c9e2b4d:123456789012-ap-northeast-1
+2026-10-08T02:10:11.0418052Z ReportBatch-Prod: success: Published 3a5c7e9b1d2f4a6c8e0b2d4f6a8c1e3b5d7f9a2c4e6b8d0f1a3c5e7b9d2f4a6c:123456789012-ap-northeast-1
+2026-10-08T02:10:11.1736628Z ReportBatch-Prod: success: Published c4e6a8b0d2f1e3a5c7b9d1f3e5a7c9b2d4f6e8a0c1b3d5f7e9a2c4b6d8f0e1a3:123456789012-ap-northeast-1
+2026-10-08T02:10:11.2240917Z ReportBatch-Prod: success: Published 9b1d3f5a7c2e4b6d8f0a1c3e5b7d9f2a4c6e8b0d1f3a5c7e9b2d4f6a8c0e1b3d:123456789012-ap-northeast-1
+2026-10-08T02:10:11.6091354Z ReportBatch-Prod: success: Published d7f9a1c3e5b2d4f6a8c0e2b4d6f8a1c3e5b7d9f2a4c6e8b0d1f3a5c7e9b2d4f6:123456789012-ap-northeast-1
+2026-10-08T02:10:11.6301528Z ReportBatch-Prod: deploying... [1/1]
+2026-10-08T02:10:11.9714862Z ReportBatch-Prod: creating CloudFormation changeset...
+2026-10-08T02:10:23.4402375Z ReportBatch-Prod |  0/31 | 2:10:21 AM | UPDATE_IN_PROGRESS   | AWS::CloudFormation::Stack                  | ReportBatch-Prod User Initiated
+2026-10-08T02:10:28.1129031Z ReportBatch-Prod |  0/31 | 2:10:26 AM | UPDATE_IN_PROGRESS   | AWS::IAM::Role                              | FetchFn/ServiceRole (FetchFnServiceRole6A1B2C3D)
+2026-10-08T02:10:28.1131420Z ReportBatch-Prod |  0/31 | 2:10:26 AM | UPDATE_IN_PROGRESS   | AWS::IAM::Role                              | TransformFn/ServiceRole (TransformFnServiceRoleE4F5A6B7)
+2026-10-08T02:10:28.1133617Z ReportBatch-Prod |  0/31 | 2:10:26 AM | UPDATE_IN_PROGRESS   | AWS::IAM::Role                              | AggregateFn/ServiceRole (AggregateFnServiceRole8C9D0E1F)
+2026-10-08T02:10:28.1135905Z ReportBatch-Prod |  0/31 | 2:10:26 AM | UPDATE_IN_PROGRESS   | AWS::IAM::Role                              | PublishFn/ServiceRole (PublishFnServiceRole2A3B4C5D)
+2026-10-08T02:10:28.1138022Z ReportBatch-Prod |  0/31 | 2:10:27 AM | UPDATE_IN_PROGRESS   | AWS::ECS::TaskDefinition                    | RenderTask/TaskDef (RenderTaskTaskDef7E8F9A0B)
+2026-10-08T02:10:29.6620913Z ReportBatch-Prod |  0/31 | 2:10:27 AM | UPDATE_IN_PROGRESS   | AWS::Logs::LogGroup                         | RenderTask/LogGroup (RenderTaskLogGroup1C2D3E4F)
+2026-10-08T02:10:31.2044816Z ReportBatch-Prod |  1/31 | 2:10:29 AM | UPDATE_COMPLETE      | AWS::Logs::LogGroup                         | RenderTask/LogGroup (RenderTaskLogGroup1C2D3E4F)
+2026-10-08T02:10:43.8102735Z ReportBatch-Prod |  2/31 | 2:10:42 AM | UPDATE_COMPLETE      | AWS::IAM::Role                              | FetchFn/ServiceRole (FetchFnServiceRole6A1B2C3D)
+2026-10-08T02:10:43.8105088Z ReportBatch-Prod |  3/31 | 2:10:42 AM | UPDATE_COMPLETE      | AWS::IAM::Role                              | TransformFn/ServiceRole (TransformFnServiceRoleE4F5A6B7)
+2026-10-08T02:10:44.3317204Z ReportBatch-Prod |  4/31 | 2:10:43 AM | UPDATE_COMPLETE      | AWS::IAM::Role                              | AggregateFn/ServiceRole (AggregateFnServiceRole8C9D0E1F)
+2026-10-08T02:10:44.3319551Z ReportBatch-Prod |  5/31 | 2:10:43 AM | UPDATE_COMPLETE      | AWS::IAM::Role                              | PublishFn/ServiceRole (PublishFnServiceRole2A3B4C5D)
+2026-10-08T02:10:46.0918830Z ReportBatch-Prod |  5/31 | 2:10:44 AM | UPDATE_IN_PROGRESS   | AWS::IAM::Policy                            | FetchFn/ServiceRole/DefaultPolicy (FetchFnServiceRoleDefaultPolicy5E6F7A8B)
+2026-10-08T02:10:46.0921117Z ReportBatch-Prod |  5/31 | 2:10:44 AM | UPDATE_IN_PROGRESS   | AWS::IAM::Policy                            | AggregateFn/ServiceRole/DefaultPolicy (AggregateFnServiceRoleDefaultPolicy9C0D1E2F)
+2026-10-08T02:10:46.0923380Z ReportBatch-Prod |  5/31 | 2:10:45 AM | UPDATE_IN_PROGRESS   | AWS::IAM::Policy                            | PublishFn/ServiceRole/DefaultPolicy (PublishFnServiceRoleDefaultPolicy3A4B5C6D)
+2026-10-08T02:10:48.7731406Z ReportBatch-Prod |  6/31 | 2:10:47 AM | UPDATE_COMPLETE      | AWS::ECS::TaskDefinition                    | RenderTask/TaskDef (RenderTaskTaskDef7E8F9A0B)
+2026-10-08T02:10:48.7733924Z ReportBatch-Prod |  6/31 | 2:10:47 AM | UPDATE_IN_PROGRESS   | AWS::IAM::Policy                            | RenderTask/TaskDef/TaskRole/DefaultPolicy (RenderTaskTaskDefTaskRoleDefaultPolicyB1C2D3E4)
+2026-10-08T02:11:01.4419287Z ReportBatch-Prod |  7/31 | 2:11:00 AM | UPDATE_COMPLETE      | AWS::IAM::Policy                            | FetchFn/ServiceRole/DefaultPolicy (FetchFnServiceRoleDefaultPolicy5E6F7A8B)
+2026-10-08T02:11:01.4421608Z ReportBatch-Prod |  8/31 | 2:11:00 AM | UPDATE_COMPLETE      | AWS::IAM::Policy                            | AggregateFn/ServiceRole/DefaultPolicy (AggregateFnServiceRoleDefaultPolicy9C0D1E2F)
+2026-10-08T02:11:01.9806275Z ReportBatch-Prod |  9/31 | 2:11:01 AM | UPDATE_COMPLETE      | AWS::IAM::Policy                            | PublishFn/ServiceRole/DefaultPolicy (PublishFnServiceRoleDefaultPolicy3A4B5C6D)
+2026-10-08T02:11:03.6611904Z ReportBatch-Prod |  9/31 | 2:11:02 AM | UPDATE_IN_PROGRESS   | AWS::Lambda::Function                       | FetchFn (FetchFnABC12345)
+2026-10-08T02:11:03.6614120Z ReportBatch-Prod |  9/31 | 2:11:02 AM | UPDATE_IN_PROGRESS   | AWS::Lambda::Function                       | TransformFn (TransformFnD6E7F8A9)
+2026-10-08T02:11:03.6616395Z ReportBatch-Prod |  9/31 | 2:11:02 AM | UPDATE_IN_PROGRESS   | AWS::Lambda::Function                       | AggregateFn (AggregateFn0B1C2D3E)
+2026-10-08T02:11:03.6618563Z ReportBatch-Prod |  9/31 | 2:11:02 AM | UPDATE_IN_PROGRESS   | AWS::Lambda::Function                       | PublishFn (PublishFn4F5A6B7C)
+2026-10-08T02:11:03.6620781Z ReportBatch-Prod |  9/31 | 2:11:03 AM | UPDATE_IN_PROGRESS   | AWS::Lambda::Function                       | NotifyFailureFn (NotifyFailureFn8D9E0F1A)
+2026-10-08T02:11:04.2297418Z ReportBatch-Prod | 10/31 | 2:11:03 AM | UPDATE_COMPLETE      | AWS::IAM::Policy                            | RenderTask/TaskDef/TaskRole/DefaultPolicy (RenderTaskTaskDefTaskRoleDefaultPolicyB1C2D3E4)
+2026-10-08T02:11:09.8851627Z ReportBatch-Prod | 11/31 | 2:11:08 AM | UPDATE_COMPLETE      | AWS::Lambda::Function                       | NotifyFailureFn (NotifyFailureFn8D9E0F1A)
+2026-10-08T02:11:10.4102291Z ReportBatch-Prod | 12/31 | 2:11:09 AM | UPDATE_COMPLETE      | AWS::Lambda::Function                       | FetchFn (FetchFnABC12345)
+2026-10-08T02:11:10.4104583Z ReportBatch-Prod | 13/31 | 2:11:09 AM | UPDATE_COMPLETE      | AWS::Lambda::Function                       | PublishFn (PublishFn4F5A6B7C)
+2026-10-08T02:11:11.0376940Z ReportBatch-Prod | 14/31 | 2:11:10 AM | UPDATE_COMPLETE      | AWS::Lambda::Function                       | TransformFn (TransformFnD6E7F8A9)
+2026-10-08T02:11:11.5528163Z ReportBatch-Prod | 15/31 | 2:11:10 AM | UPDATE_COMPLETE      | AWS::Lambda::Function                       | AggregateFn (AggregateFn0B1C2D3E)
+2026-10-08T02:11:13.2210472Z ReportBatch-Prod | 15/31 | 2:11:12 AM | UPDATE_IN_PROGRESS   | AWS::Lambda::Version                        | FetchFn/CurrentVersion (FetchFnCurrentVersionA1B2C3D4e5f6a7b8c9d0e1f2a3b4c5d6)
+2026-10-08T02:11:13.2212901Z ReportBatch-Prod | 15/31 | 2:11:12 AM | UPDATE_IN_PROGRESS   | AWS::Logs::LogGroup                         | ReportPipeline/LogGroup (ReportPipelineLogGroup2B3C4D5E)
+2026-10-08T02:11:14.8836317Z ReportBatch-Prod | 16/31 | 2:11:14 AM | UPDATE_COMPLETE      | AWS::Logs::LogGroup                         | ReportPipeline/LogGroup (ReportPipelineLogGroup2B3C4D5E)
+2026-10-08T02:11:15.1179024Z ReportBatch-Prod | 17/31 | 2:11:14 AM | UPDATE_COMPLETE      | AWS::Lambda::Version                        | FetchFn/CurrentVersion (FetchFnCurrentVersionA1B2C3D4e5f6a7b8c9d0e1f2a3b4c5d6)
+2026-10-08T02:11:15.6643518Z ReportBatch-Prod | 17/31 | 2:11:15 AM | UPDATE_IN_PROGRESS   | AWS::IAM::Policy                            | ReportPipeline/Role/DefaultPolicy (ReportPipelineRoleDefaultPolicy6F7A8B9C)
+2026-10-08T02:11:31.0081736Z ReportBatch-Prod | 18/31 | 2:11:30 AM | UPDATE_COMPLETE      | AWS::IAM::Policy                            | ReportPipeline/Role/DefaultPolicy (ReportPipelineRoleDefaultPolicy6F7A8B9C)
+2026-10-08T02:11:32.7425190Z ReportBatch-Prod | 18/31 | 2:11:32 AM | UPDATE_IN_PROGRESS   | AWS::StepFunctions::StateMachine            | ReportPipeline (ReportPipeline0D1E2F3A)
+2026-10-08T02:11:34.1907622Z ReportBatch-Prod | 18/31 | 2:11:33 AM | UPDATE_FAILED        | AWS::StepFunctions::StateMachine            | ReportPipeline (ReportPipeline0D1E2F3A) Resource handler returned message: "Invalid State Machine Definition: 'SCHEMA_VALIDATION_FAILED: The value for the field 'Next' must be a valid state name at /States/AggregateResults/Next' (Service: Sfn, Status Code: 400, Request ID: 5e7a9c1b-3d2f-4a6e-8b0c-1d3e5f7a9b2c)" (RequestToken: a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d, HandlerErrorCode: InvalidRequest)
+2026-10-08T02:11:35.0136481Z ReportBatch-Prod | 18/31 | 2:11:34 AM | UPDATE_ROLLBACK_IN_P | AWS::CloudFormation::Stack                  | ReportBatch-Prod The following resource(s) failed to update: [ReportPipeline0D1E2F3A].
+2026-10-08T02:11:41.5520918Z ReportBatch-Prod | 18/31 | 2:11:40 AM | UPDATE_IN_PROGRESS   | AWS::IAM::Role                              | FetchFn/ServiceRole (FetchFnServiceRole6A1B2C3D)
+2026-10-08T02:11:41.5523233Z ReportBatch-Prod | 18/31 | 2:11:40 AM | UPDATE_IN_PROGRESS   | AWS::IAM::Role                              | TransformFn/ServiceRole (TransformFnServiceRoleE4F5A6B7)
+2026-10-08T02:11:41.5525519Z ReportBatch-Prod | 18/31 | 2:11:40 AM | UPDATE_IN_PROGRESS   | AWS::IAM::Role                              | AggregateFn/ServiceRole (AggregateFnServiceRole8C9D0E1F)
+2026-10-08T02:11:41.5527744Z ReportBatch-Prod | 18/31 | 2:11:40 AM | UPDATE_IN_PROGRESS   | AWS::IAM::Role                              | PublishFn/ServiceRole (PublishFnServiceRole2A3B4C5D)
+2026-10-08T02:11:41.5529970Z ReportBatch-Prod | 18/31 | 2:11:41 AM | UPDATE_IN_PROGRESS   | AWS::ECS::TaskDefinition                    | RenderTask/TaskDef (RenderTaskTaskDef7E8F9A0B)
+2026-10-08T02:11:42.0614427Z ReportBatch-Prod | 18/31 | 2:11:41 AM | UPDATE_IN_PROGRESS   | AWS::Logs::LogGroup                         | RenderTask/LogGroup (RenderTaskLogGroup1C2D3E4F)
+2026-10-08T02:11:42.0616801Z ReportBatch-Prod | 18/31 | 2:11:41 AM | UPDATE_IN_PROGRESS   | AWS::Logs::LogGroup                         | ReportPipeline/LogGroup (ReportPipelineLogGroup2B3C4D5E)
+2026-10-08T02:11:43.7310582Z ReportBatch-Prod | 17/31 | 2:11:43 AM | UPDATE_COMPLETE      | AWS::Logs::LogGroup                         | RenderTask/LogGroup (RenderTaskLogGroup1C2D3E4F)
+2026-10-08T02:11:43.7312907Z ReportBatch-Prod | 16/31 | 2:11:43 AM | UPDATE_COMPLETE      | AWS::Logs::LogGroup                         | ReportPipeline/LogGroup (ReportPipelineLogGroup2B3C4D5E)
+2026-10-08T02:11:56.2048810Z ReportBatch-Prod | 15/31 | 2:11:55 AM | UPDATE_COMPLETE      | AWS::IAM::Role                              | FetchFn/ServiceRole (FetchFnServiceRole6A1B2C3D)
+2026-10-08T02:11:56.2051104Z ReportBatch-Prod | 14/31 | 2:11:55 AM | UPDATE_COMPLETE      | AWS::IAM::Role                              | TransformFn/ServiceRole (TransformFnServiceRoleE4F5A6B7)
+2026-10-08T02:11:56.7192385Z ReportBatch-Prod | 13/31 | 2:11:56 AM | UPDATE_COMPLETE      | AWS::IAM::Role                              | AggregateFn/ServiceRole (AggregateFnServiceRole8C9D0E1F)
+2026-10-08T02:11:56.7194671Z ReportBatch-Prod | 12/31 | 2:11:56 AM | UPDATE_COMPLETE      | AWS::IAM::Role                              | PublishFn/ServiceRole (PublishFnServiceRole2A3B4C5D)
+2026-10-08T02:11:58.3307719Z ReportBatch-Prod | 12/31 | 2:11:57 AM | UPDATE_IN_PROGRESS   | AWS::IAM::Policy                            | FetchFn/ServiceRole/DefaultPolicy (FetchFnServiceRoleDefaultPolicy5E6F7A8B)
+2026-10-08T02:11:58.3309984Z ReportBatch-Prod | 12/31 | 2:11:57 AM | UPDATE_IN_PROGRESS   | AWS::IAM::Policy                            | AggregateFn/ServiceRole/DefaultPolicy (AggregateFnServiceRoleDefaultPolicy9C0D1E2F)
+2026-10-08T02:11:58.3312251Z ReportBatch-Prod | 12/31 | 2:11:57 AM | UPDATE_IN_PROGRESS   | AWS::IAM::Policy                            | PublishFn/ServiceRole/DefaultPolicy (PublishFnServiceRoleDefaultPolicy3A4B5C6D)
+2026-10-08T02:12:01.9025734Z ReportBatch-Prod | 11/31 | 2:12:01 AM | UPDATE_COMPLETE      | AWS::ECS::TaskDefinition                    | RenderTask/TaskDef (RenderTaskTaskDef7E8F9A0B)
+2026-10-08T02:12:01.9028127Z ReportBatch-Prod | 11/31 | 2:12:01 AM | UPDATE_IN_PROGRESS   | AWS::IAM::Policy                            | RenderTask/TaskDef/TaskRole/DefaultPolicy (RenderTaskTaskDefTaskRoleDefaultPolicyB1C2D3E4)
+2026-10-08T02:12:13.4421609Z ReportBatch-Prod | 10/31 | 2:12:12 AM | UPDATE_COMPLETE      | AWS::IAM::Policy                            | FetchFn/ServiceRole/DefaultPolicy (FetchFnServiceRoleDefaultPolicy5E6F7A8B)
+2026-10-08T02:12:13.4423918Z ReportBatch-Prod |  9/31 | 2:12:12 AM | UPDATE_COMPLETE      | AWS::IAM::Policy                            | AggregateFn/ServiceRole/DefaultPolicy (AggregateFnServiceRoleDefaultPolicy9C0D1E2F)
+2026-10-08T02:12:13.9810452Z ReportBatch-Prod |  8/31 | 2:12:13 AM | UPDATE_COMPLETE      | AWS::IAM::Policy                            | PublishFn/ServiceRole/DefaultPolicy (PublishFnServiceRoleDefaultPolicy3A4B5C6D)
+2026-10-08T02:12:15.6234095Z ReportBatch-Prod |  8/31 | 2:12:14 AM | UPDATE_IN_PROGRESS   | AWS::Lambda::Function                       | FetchFn (FetchFnABC12345)
+2026-10-08T02:12:15.6236318Z ReportBatch-Prod |  8/31 | 2:12:14 AM | UPDATE_IN_PROGRESS   | AWS::Lambda::Function                       | TransformFn (TransformFnD6E7F8A9)
+2026-10-08T02:12:15.6238560Z ReportBatch-Prod |  8/31 | 2:12:14 AM | UPDATE_IN_PROGRESS   | AWS::Lambda::Function                       | AggregateFn (AggregateFn0B1C2D3E)
+2026-10-08T02:12:15.6240804Z ReportBatch-Prod |  8/31 | 2:12:14 AM | UPDATE_IN_PROGRESS   | AWS::Lambda::Function                       | PublishFn (PublishFn4F5A6B7C)
+2026-10-08T02:12:15.6243012Z ReportBatch-Prod |  8/31 | 2:12:15 AM | UPDATE_IN_PROGRESS   | AWS::Lambda::Function                       | NotifyFailureFn (NotifyFailureFn8D9E0F1A)
+2026-10-08T02:12:16.7105523Z ReportBatch-Prod |  7/31 | 2:12:16 AM | UPDATE_COMPLETE      | AWS::IAM::Policy                            | RenderTask/TaskDef/TaskRole/DefaultPolicy (RenderTaskTaskDefTaskRoleDefaultPolicyB1C2D3E4)
+2026-10-08T02:12:21.3381047Z ReportBatch-Prod |  6/31 | 2:12:20 AM | UPDATE_COMPLETE      | AWS::Lambda::Function                       | NotifyFailureFn (NotifyFailureFn8D9E0F1A)
+2026-10-08T02:12:21.8826934Z ReportBatch-Prod |  5/31 | 2:12:21 AM | UPDATE_COMPLETE      | AWS::Lambda::Function                       | FetchFn (FetchFnABC12345)
+2026-10-08T02:12:21.8829180Z ReportBatch-Prod |  4/31 | 2:12:21 AM | UPDATE_COMPLETE      | AWS::Lambda::Function                       | PublishFn (PublishFn4F5A6B7C)
+2026-10-08T02:12:22.4170293Z ReportBatch-Prod |  3/31 | 2:12:21 AM | UPDATE_COMPLETE      | AWS::Lambda::Function                       | TransformFn (TransformFnD6E7F8A9)
+2026-10-08T02:12:22.9415786Z ReportBatch-Prod |  2/31 | 2:12:22 AM | UPDATE_COMPLETE      | AWS::Lambda::Function                       | AggregateFn (AggregateFn0B1C2D3E)
+2026-10-08T02:12:24.5502461Z ReportBatch-Prod |  2/31 | 2:12:24 AM | UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS | AWS::CloudFormation::Stack | ReportBatch-Prod
+2026-10-08T02:12:26.1873308Z ReportBatch-Prod |  1/31 | 2:12:25 AM | DELETE_IN_PROGRESS   | AWS::Lambda::Version                        | FetchFn/CurrentVersion (FetchFnCurrentVersionA1B2C3D4e5f6a7b8c9d0e1f2a3b4c5d6)
+2026-10-08T02:12:27.3009144Z ReportBatch-Prod |  1/31 | 2:12:26 AM | DELETE_SKIPPED       | AWS::Lambda::Version                        | FetchFn/CurrentVersion (FetchFnCurrentVersionA1B2C3D4e5f6a7b8c9d0e1f2a3b4c5d6)
+2026-10-08T02:12:27.8114562Z ReportBatch-Prod |  1/31 | 2:12:27 AM | DELETE_IN_PROGRESS   | AWS::ECS::TaskDefinition                    | RenderTask/TaskDef (RenderTaskTaskDef7E8F9A0B)
+2026-10-08T02:12:28.9461237Z ReportBatch-Prod |  1/31 | 2:12:28 AM | DELETE_COMPLETE      | AWS::ECS::TaskDefinition                    | RenderTask/TaskDef (RenderTaskTaskDef7E8F9A0B)
+2026-10-08T02:12:29.6620104Z ReportBatch-Prod |  0/31 | 2:12:29 AM | UPDATE_ROLLBACK_COMPLETE | AWS::CloudFormation::Stack              | ReportBatch-Prod
+2026-10-08T02:12:32.7034118Z
+2026-10-08T02:12:32.7035017Z Failed resources:
+2026-10-08T02:12:32.7037206Z ReportBatch-Prod | 2:11:33 AM | UPDATE_FAILED        | AWS::StepFunctions::StateMachine            | ReportPipeline (ReportPipeline0D1E2F3A) Resource handler returned message: "Invalid State Machine Definition: 'SCHEMA_VALIDATION_FAILED: The value for the field 'Next' must be a valid state name at /States/AggregateResults/Next' (Service: Sfn, Status Code: 400, Request ID: 5e7a9c1b-3d2f-4a6e-8b0c-1d3e5f7a9b2c)" (RequestToken: a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d, HandlerErrorCode: InvalidRequest)
+2026-10-08T02:12:32.7442019Z ❌  ReportBatch-Prod failed: _ToolkitError: The stack named ReportBatch-Prod failed to deploy: UPDATE_ROLLBACK_COMPLETE: Resource handler returned message: "Invalid State Machine Definition: 'SCHEMA_VALIDATION_FAILED: The value for the field 'Next' must be a valid state name at /States/AggregateResults/Next' (Service: Sfn, Status Code: 400, Request ID: 5e7a9c1b-3d2f-4a6e-8b0c-1d3e5f7a9b2c)" (RequestToken: a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d, HandlerErrorCode: InvalidRequest)
+2026-10-08T02:12:32.7445630Z     at FullCloudFormationDeployment.monitorDeployment (/home/runner/work/platform-apps/platform-apps/apps/report-batch/node_modules/aws-cdk/lib/index.js:618:10219)
+2026-10-08T02:12:32.7447148Z     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-10-08T02:12:32.7448410Z     at async Object.deployStack2 [as deployStack] (/home/runner/work/platform-apps/platform-apps/apps/report-batch/node_modules/aws-cdk/lib/index.js:621:200384)
+2026-10-08T02:12:32.7449817Z     at async /home/runner/work/platform-apps/platform-apps/apps/report-batch/node_modules/aws-cdk/lib/index.js:621:182316
+2026-10-08T02:12:32.7451052Z
+2026-10-08T02:12:32.7451790Z ❌ Deployment failed: _ToolkitError: The stack named ReportBatch-Prod failed to deploy: UPDATE_ROLLBACK_COMPLETE
+2026-10-08T02:12:32.7713526Z
+2026-10-08T02:12:32.7714418Z NOTICES         (What's this? https://github.com/aws/aws-cdk/wiki/CLI-Notices)
+2026-10-08T02:12:32.7715063Z
+2026-10-08T02:12:32.7715842Z 34892	(cli): Bootstrap stack outdated
+2026-10-08T02:12:32.7716361Z
+2026-10-08T02:12:32.7716985Z 	Overview: The bootstrap stack in aws://123456789012/ap-northeast-1 is outdated.
+2026-10-08T02:12:32.7717614Z 	          We recommend at least version 25, distributed with CDK CLI 2.149.0 or higher.
+2026-10-08T02:12:32.7718166Z
+2026-10-08T02:12:32.7718645Z 	Affected versions: bootstrap: <25
+2026-10-08T02:12:32.7719089Z
+2026-10-08T02:12:32.7719611Z 	More information at: https://github.com/aws/aws-cdk/issues/34892
+2026-10-08T02:12:32.7720105Z
+2026-10-08T02:12:32.7720588Z If you don’t want to see a notice anymore, use "cdk acknowledge <id>". For example, "cdk acknowledge 34892".
+2026-10-08T02:12:32.8901173Z ##[error]Process completed with exit code 1.
+2026-10-08T02:12:32.9017342Z ##[group]Run echo "Smoke test skipped: deploy step did not succeed"
+2026-10-08T02:12:32.9018071Z Skipping step 'Run post-deploy smoke test' due to condition: success()
+2026-10-08T02:12:32.9018733Z ##[endgroup]
+2026-10-08T02:12:32.9064402Z Skipping step 'Notify deploy result to Slack' due to condition: success()
+2026-10-08T02:12:32.9180216Z Post job cleanup.
+2026-10-08T02:12:33.1047731Z Post job cleanup.
+2026-10-08T02:12:33.2219518Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/platform-apps/platform-apps --files-from manifest.txt --use-compress-program zstdmt
+2026-10-08T02:12:33.4120983Z Cache hit occurred on the primary key node-cache-Linux-x64-npm-3b7c1e9a5d2f4e6a8c0b1d3f5e7a9c2b4d6f8e0a1c3b5d7f9e2a4c6b8d0f1e3a, not saving cache.
+2026-10-08T02:12:33.4318227Z Post job cleanup.
+2026-10-08T02:12:33.5602119Z [command]/usr/bin/git version
+2026-10-08T02:12:33.5658124Z git version 2.51.0
+2026-10-08T02:12:33.5712206Z Temporarily overriding HOME='/home/runner/work/_temp/a3e1c7d9-2b4f-4a6c-8e0d-1f3b5d7a9c2e' before making global git config changes
+2026-10-08T02:12:33.5735016Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/platform-apps/platform-apps
+2026-10-08T02:12:33.5788201Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-08T02:12:33.5839214Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-08T02:12:33.6045120Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-08T02:12:33.6071994Z http.https://github.com/.extraheader
+2026-10-08T02:12:33.6088043Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-08T02:12:33.6131902Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all http.https://github.com/.extraheader || :"
+2026-10-08T02:12:33.6402717Z Cleaning up orphan processes

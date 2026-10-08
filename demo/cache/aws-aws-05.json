@@ -1,0 +1,98 @@
+{
+  "kind": "aws",
+  "id": "aws-05",
+  "expected": [
+    "config"
+  ],
+  "cause": {
+    "type": "choice",
+    "choice": "config",
+    "probabilities": {
+      "auth": 0.000042329518287835244,
+      "authorization": 0.00008418229908838682,
+      "config": 0.9925025509236662,
+      "build": 0.0002592997360327061,
+      "transient": 0.0002938250947660973,
+      "runtime": 0.00013038409543677403,
+      "resource_state": 0.006687428332721924
+    },
+    "confidence": 0.9912529760776106
+  },
+  "causeCorrect": true,
+  "pick": {
+    "line": 197,
+    "text": "OrderApi-Prod |  7/27 | 2:11:34 AM | UPDATE_FAILED        | AWS::Lambda::Function | OrderApiFn (OrderApiFnD4E5F6A7) Could not resolve dynamic reference {{resolve:secretsmanager:arn:aws:secretsmanager:ap-northeast-1:123456789012:secret:order-db-credentials-prod-Xk9Pq2:SecretString:password::}}. Secre",
+    "confidence": 0.9989343451651294,
+    "candidates": [
+      {
+        "line": 197,
+        "text": "OrderApi-Prod |  7/27 | 2:11:34 AM | UPDATE_FAILED        | AWS::Lambda::Function | OrderApiFn (OrderApiFnD4E5F6A7) Could not resolve dynamic reference {{resolve:secretsmanager:arn:aws:secretsmanager:ap-northeast-1:123456789012:secret:order-db-credentials-prod-Xk9Pq2:SecretString:password::}}. Secre",
+        "probability": 0.999023149734702
+      },
+      {
+        "line": 200,
+        "text": "OrderApi-Prod |  7/27 | 2:11:37 AM | UPDATE_FAILED        | AWS::ApiGateway::Deployment | OrderApi/Deployment (OrderApiDeployment7C3F1E9Ab2d4c6e8f0a1) Resource handler returned message: \"Invalid permissions on Lambda function (Service: ApiGateway, Status Code: 400, Request ID: 8f2c4a6e-1b3d-4f5a-9c7",
+        "probability": 0.0008039469907027474
+      },
+      {
+        "line": 201,
+        "text": "OrderApi-Prod |  7/27 | 2:11:38 AM | UPDATE_FAILED        | AWS::Lambda::Permission | OrderApi/Default/orders/POST/ApiPermission.OrderApiProdOrderApi5A1B2C3D.POST..orders (OrderApiordersPOSTApiPermissionOrderApiProdOrderApi5A1B2C3DPOSTorders8E9F0A1B) Resource update cancelled",
+        "probability": 0.000042607629566466356
+      },
+      {
+        "line": 203,
+        "text": "OrderApi-Prod |  8/27 | 2:11:41 AM | UPDATE_ROLLBACK_IN_P | AWS::CloudFormation::Stack | OrderApi-Prod The following resource(s) failed to update: [OrderApiFnD4E5F6A7, OrderApiDeployment7C3F1E9Ab2d4c6e8f0a1, OrderApiordersPOSTApiPermissionOrderApiProdOrderApi5A1B2C3DPOSTorders8E9F0A1B].",
+        "probability": 0.000031172407703195815
+      },
+      {
+        "line": 223,
+        "text": "Failed resources:",
+        "probability": 0.00005823772467492465
+      },
+      {
+        "line": 224,
+        "text": "OrderApi-Prod | 2:11:37 AM | UPDATE_FAILED        | AWS::ApiGateway::Deployment | OrderApi/Deployment (OrderApiDeployment7C3F1E9Ab2d4c6e8f0a1) Resource handler returned message: \"Invalid permissions on Lambda function (Service: ApiGateway, Status Code: 400, Request ID: 8f2c4a6e-1b3d-4f5a-9c7e-2d4b6f",
+        "probability": 0.000021424461608507596
+      },
+      {
+        "line": 225,
+        "text": "OrderApi-Prod | 2:11:38 AM | UPDATE_FAILED        | AWS::Lambda::Permission | OrderApi/Default/orders/POST/ApiPermission.OrderApiProdOrderApi5A1B2C3D.POST..orders (OrderApiordersPOSTApiPermissionOrderApiProdOrderApi5A1B2C3DPOSTorders8E9F0A1B) Resource update cancelled",
+        "probability": 0.000003285547599643125
+      },
+      {
+        "line": 227,
+        "text": "❌  OrderApi-Prod failed: _ToolkitError: The stack named OrderApi-Prod failed to deploy: UPDATE_ROLLBACK_COMPLETE: The following resource(s) failed to update: [OrderApiFnD4E5F6A7, OrderApiDeployment7C3F1E9Ab2d4c6e8f0a1, OrderApiordersPOSTApiPermissionOrderApiProdOrderApi5A1B2C3DPOSTorders8E9F0A1B].",
+        "probability": 0.000006955504323026229
+      },
+      {
+        "line": 233,
+        "text": "❌ Deployment failed: _ToolkitError: The stack named OrderApi-Prod failed to deploy: UPDATE_ROLLBACK_COMPLETE: The following resource(s) failed to update: [OrderApiFnD4E5F6A7, OrderApiDeployment7C3F1E9Ab2d4c6e8f0a1, OrderApiordersPOSTApiPermissionOrderApiProdOrderApi5A1B2C3DPOSTorders8E9F0A1B].",
+        "probability": 0.0000037230131800130317
+      },
+      {
+        "line": 244,
+        "text": "##[error]Process completed with exit code 1.",
+        "probability": 0.000001992785353128804
+      },
+      {
+        "line": 248,
+        "text": "Skipping step 'Smoke test /health' due to previous failure",
+        "probability": 0.000002723814629271871
+      },
+      {
+        "line": 249,
+        "text": "Skipping step 'Notify Slack (success)' due to previous failure",
+        "probability": 7.803859570443513e-7
+      }
+    ]
+  },
+  "rootLines": [
+    197
+  ],
+  "repeatLines": [],
+  "lineMark": "ok",
+  "needsHuman": false,
+  "tokens": 19746,
+  "seconds": 1.4057950410000049,
+  "ranAt": "2026-10-08T11:38:20.302Z"
+}

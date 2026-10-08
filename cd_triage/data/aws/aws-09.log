@@ -1,0 +1,284 @@
+2026-10-08T02:13:01.0485200Z Current runner version: '2.328.0'
+2026-10-08T02:13:01.0934520Z ##[group]Runner Image Provisioner
+2026-10-08T02:13:01.1289940Z Hosted Compute Agent
+2026-10-08T02:13:01.1936560Z Version: 20250912.392
+2026-10-08T02:13:01.2239130Z Commit: 2d4a7b1c90e3
+2026-10-08T02:13:01.2740240Z Build Date: 2025-09-12T17:43:12Z
+2026-10-08T02:13:01.3399560Z ##[endgroup]
+2026-10-08T02:13:01.3731890Z ##[group]Operating System
+2026-10-08T02:13:01.4253600Z Ubuntu
+2026-10-08T02:13:01.4800260Z 24.04.3
+2026-10-08T02:13:01.5116620Z LTS
+2026-10-08T02:13:01.5568230Z ##[endgroup]
+2026-10-08T02:13:01.6149620Z ##[group]Runner Image
+2026-10-08T02:13:01.6630430Z Image: ubuntu-24.04
+2026-10-08T02:13:01.7220460Z Version: 20250929.1.0
+2026-10-08T02:13:01.7583320Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250929.1/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-08T02:13:01.7978520Z ##[endgroup]
+2026-10-08T02:13:01.8322900Z ##[group]GITHUB_TOKEN Permissions
+2026-10-08T02:13:01.8825410Z Contents: read
+2026-10-08T02:13:01.9494940Z IdToken: write
+2026-10-08T02:13:02.0031110Z Metadata: read
+2026-10-08T02:13:02.0640790Z ##[endgroup]
+2026-10-08T02:13:02.1094260Z Secret source: Actions
+2026-10-08T02:13:02.1692700Z Prepare workflow directory
+2026-10-08T02:13:02.2033370Z Prepare all required actions
+2026-10-08T02:13:02.2449840Z Getting action download info
+2026-10-08T02:13:02.3019530Z Download action repository 'aws-actions/configure-aws-credentials@v4' (SHA:a03048d87541d1d9fcf2ecf528a4a65ba9bd7838)
+2026-10-08T02:13:02.3609810Z Download action repository 'aws-actions/amazon-ecr-login@v2' (SHA:062b18b96a7aff071d4dc91bc00c4c1a7945b076)
+2026-10-08T02:13:02.4078510Z Download action repository 'docker/setup-buildx-action@v3' (SHA:e468171a9de216ec08956ac3ada2f0791b6bd435)
+2026-10-08T02:13:02.4413590Z Download action repository 'docker/build-push-action@v6' (SHA:263435318d21b8e681c14492fe198d362a7d2c83)
+2026-10-08T02:13:02.4820280Z Download action repository 'aws-actions/amazon-ecs-render-task-definition@v1' (SHA:acd72bc11233ac43bac45ddb7b8e54ada737e6cd)
+2026-10-08T02:13:02.5204240Z Download action repository 'aws-actions/amazon-ecs-deploy-task-definition@v2' (SHA:f7b2b96b7fe1b20b452641919c0559bcc19ab8f9)
+2026-10-08T02:13:02.5616710Z Complete job name: deploy-web-backend
+2026-10-08T02:13:02.6240510Z ##[group]Run actions/checkout@v4
+2026-10-08T02:13:02.6620300Z with:
+2026-10-08T02:13:02.7274860Z   repository: example-org/platform-apps
+2026-10-08T02:13:02.7926610Z   token: ***
+2026-10-08T02:13:02.8248530Z   ssh-strict: true
+2026-10-08T02:13:02.8700060Z   persist-credentials: true
+2026-10-08T02:13:02.9196740Z   clean: true
+2026-10-08T02:13:02.9506130Z   fetch-depth: 1
+2026-10-08T02:13:02.9976020Z ##[endgroup]
+2026-10-08T02:13:03.0638580Z Syncing repository: example-org/platform-apps
+2026-10-08T02:13:03.0983400Z ##[group]Getting Git version info
+2026-10-08T02:13:03.1522140Z Working directory is '/home/runner/work/platform-apps/platform-apps'
+2026-10-08T02:13:03.1870630Z [command]/usr/bin/git version
+2026-10-08T02:13:03.2402110Z git version 2.51.0
+2026-10-08T02:13:03.3060230Z ##[endgroup]
+2026-10-08T02:13:03.3441450Z Temporarily overriding HOME='/home/runner/work/_temp/5b1e0c2a' before making global git config changes
+2026-10-08T02:13:03.3744750Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/platform-apps/platform-apps
+2026-10-08T02:13:03.4078150Z Deleting the contents of '/home/runner/work/platform-apps/platform-apps'
+2026-10-08T02:13:03.4594060Z ##[group]Initializing the repository
+2026-10-08T02:13:03.4901050Z [command]/usr/bin/git init /home/runner/work/platform-apps/platform-apps
+2026-10-08T02:13:03.5234980Z Initialized empty Git repository in /home/runner/work/platform-apps/platform-apps/.git/
+2026-10-08T02:13:03.5733680Z [command]/usr/bin/git remote add origin https://github.com/example-org/platform-apps
+2026-10-08T02:13:03.6402050Z ##[endgroup]
+2026-10-08T02:13:03.9210310Z ##[group]Fetching the repository
+2026-10-08T02:13:03.9669560Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +4e7d1c9a2b6f80e35d1a7c4b9e2f06d8a1c3b5e7:refs/remotes/origin/main
+2026-10-08T02:13:05.3001250Z  * [new ref]         4e7d1c9a2b6f80e35d1a7c4b9e2f06d8a1c3b5e7 -> origin/main
+2026-10-08T02:13:05.3338620Z ##[endgroup]
+2026-10-08T02:13:05.3870540Z ##[group]Checking out the ref
+2026-10-08T02:13:05.4239560Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-10-08T02:13:05.4783120Z Switched to a new branch 'main'
+2026-10-08T02:13:05.5466450Z branch 'main' set up to track 'origin/main'.
+2026-10-08T02:13:05.5788120Z ##[endgroup]
+2026-10-08T02:13:05.6310140Z [command]/usr/bin/git log -1 --format=%H
+2026-10-08T02:13:05.6852690Z 4e7d1c9a2b6f80e35d1a7c4b9e2f06d8a1c3b5e7
+2026-10-08T02:13:05.7212410Z ##[group]Run aws-actions/configure-aws-credentials@v4
+2026-10-08T02:13:05.7619730Z with:
+2026-10-08T02:13:05.8317680Z   role-to-assume: arn:aws:iam::123456789012:role/gha-deploy-web-backend
+2026-10-08T02:13:05.9016870Z   aws-region: ap-northeast-1
+2026-10-08T02:13:05.9365400Z   role-session-name: gha-cd-web-backend
+2026-10-08T02:13:05.9947590Z   audience: sts.amazonaws.com
+2026-10-08T02:13:06.0627960Z ##[endgroup]
+2026-10-08T02:13:06.3785680Z Assuming role with OIDC
+2026-10-08T02:13:07.2496900Z Authenticated as assumedRoleId AROAEXAMPLEFAKEID1234:gha-cd-web-backend
+2026-10-08T02:13:07.2814110Z ##[group]Run aws-actions/amazon-ecr-login@v2
+2026-10-08T02:13:07.3260490Z with:
+2026-10-08T02:13:07.3830140Z   mask-password: true
+2026-10-08T02:13:07.4366240Z   registry-type: private
+2026-10-08T02:13:07.4976090Z   skip-logout: false
+2026-10-08T02:13:07.5310790Z env:
+2026-10-08T02:13:07.5749670Z   AWS_REGION: ap-northeast-1
+2026-10-08T02:13:07.6395280Z   AWS_DEFAULT_REGION: ap-northeast-1
+2026-10-08T02:13:07.6928940Z ##[endgroup]
+2026-10-08T02:13:08.2695180Z Logging into registry 123456789012.dkr.ecr.ap-northeast-1.amazonaws.com
+2026-10-08T02:13:08.3156050Z ##[group]Run docker/setup-buildx-action@v3
+2026-10-08T02:13:08.3850480Z ##[endgroup]
+2026-10-08T02:13:08.4380250Z ##[group]Docker info
+2026-10-08T02:13:08.4687600Z [command]/usr/bin/docker version
+2026-10-08T02:13:08.5307350Z Client: Docker Engine - Community
+2026-10-08T02:13:08.5738830Z  Version:           28.0.4
+2026-10-08T02:13:08.6212260Z  API version:       1.48
+2026-10-08T02:13:08.6597630Z ##[endgroup]
+2026-10-08T02:13:08.7075240Z ##[group]Creating a new builder instance
+2026-10-08T02:13:08.7505120Z [command]/usr/bin/docker buildx create --name builder-3c1f8e2a --driver docker-container --use
+2026-10-08T02:13:08.7840650Z builder-3c1f8e2a
+2026-10-08T02:13:08.8392450Z ##[endgroup]
+2026-10-08T02:13:09.5217010Z ##[group]Booting builder
+2026-10-08T02:13:09.5830650Z #1 [internal] booting buildkit
+2026-10-08T02:13:10.5135340Z #1 pulling image moby/buildkit:buildx-stable-1
+2026-10-08T02:13:12.9626880Z #1 creating container buildx_buildkit_builder-3c1f8e2a0
+2026-10-08T02:13:13.0249900Z #1 DONE 4.1s
+2026-10-08T02:13:13.0748830Z ##[endgroup]
+2026-10-08T02:13:13.1332610Z ##[group]Run docker/build-push-action@v6
+2026-10-08T02:13:13.1731910Z with:
+2026-10-08T02:13:13.2326960Z   context: ./apps/web-backend
+2026-10-08T02:13:13.2796960Z   file: ./apps/web-backend/Dockerfile
+2026-10-08T02:13:13.3189340Z   push: true
+2026-10-08T02:13:13.3874970Z   tags: 123456789012.dkr.ecr.ap-northeast-1.amazonaws.com/web-backend:4e7d1c9a2b6f
+2026-10-08T02:13:13.4335330Z   provenance: false
+2026-10-08T02:13:13.4784520Z ##[endgroup]
+2026-10-08T02:13:13.5428480Z [command]/usr/bin/docker buildx build --file ./apps/web-backend/Dockerfile --iidfile /home/runner/work/_temp/docker-actions-toolkit-x1/build-iidfile.txt --tag 123456789012.dkr.ecr.ap-northeast-1.amazonaws.com/web-backend:4e7d1c9a2b6f --push ./apps/web-backend
+2026-10-08T02:13:13.7219460Z #0 building with "builder-3c1f8e2a" instance using docker-container driver
+2026-10-08T02:13:13.8353460Z #1 [internal] load build definition from Dockerfile
+2026-10-08T02:13:13.9090310Z #1 transferring dockerfile: 912B done
+2026-10-08T02:13:14.0364930Z #1 DONE 0.0s
+2026-10-08T02:13:14.5207710Z #2 [internal] load metadata for public.ecr.aws/docker/library/node:20-bookworm-slim
+2026-10-08T02:13:14.5848110Z #2 DONE 1.1s
+2026-10-08T02:13:14.7228320Z #3 [internal] load .dockerignore
+2026-10-08T02:13:14.7966520Z #3 transferring context: 214B done
+2026-10-08T02:13:14.9323740Z #3 DONE 0.0s
+2026-10-08T02:13:15.2101610Z #4 [build 1/6] FROM public.ecr.aws/docker/library/node:20-bookworm-slim@sha256:3f0a9c7e1b52d48a6e0c9f17b2d34e85a6c1f09b7e2d3a4c58b6f1e0d9a7c2b4
+2026-10-08T02:13:15.4272100Z #4 resolve public.ecr.aws/docker/library/node:20-bookworm-slim@sha256:3f0a9c7e1b52d48a6e0c9f17b2d34e85a6c1f09b7e2d3a4c58b6f1e0d9a7c2b4 done
+2026-10-08T02:13:16.1586100Z #4 sha256:7a2f5c... 28.23MB / 28.23MB 1.4s done
+2026-10-08T02:13:17.1965760Z #4 extracting sha256:7a2f5c0e9b1d 1.6s done
+2026-10-08T02:13:17.2732640Z #4 DONE 3.4s
+2026-10-08T02:13:17.3643740Z #5 [internal] load build context
+2026-10-08T02:13:17.5822220Z #5 transferring context: 1.84MB 0.1s done
+2026-10-08T02:13:17.7195370Z #5 DONE 0.2s
+2026-10-08T02:13:17.8962620Z #6 [build 2/6] WORKDIR /app
+2026-10-08T02:13:17.9675140Z #6 DONE 0.1s
+2026-10-08T02:13:18.0724690Z #7 [build 3/6] COPY package.json package-lock.json ./
+2026-10-08T02:13:18.1434530Z #7 DONE 0.0s
+2026-10-08T02:13:18.2773070Z #8 [build 4/6] RUN npm ci --no-audit --no-fund
+2026-10-08T02:13:28.5160310Z #8 9.812 added 412 packages in 9s
+2026-10-08T02:13:29.0944260Z #8 DONE 10.4s
+2026-10-08T02:13:29.1596740Z #9 [build 5/6] COPY . .
+2026-10-08T02:13:29.2557860Z #9 DONE 0.1s
+2026-10-08T02:13:29.4884010Z #10 [build 6/6] RUN npm run build && npm prune --omit=dev
+2026-10-08T02:13:30.2152030Z #10 0.611 > web-backend@3.14.0 build
+2026-10-08T02:13:30.3058430Z #10 0.612 > tsc -p tsconfig.build.json
+2026-10-08T02:13:39.8669550Z #10 7.904 removed 287 packages, and audited 126 packages in 1s
+2026-10-08T02:13:40.1610610Z #10 DONE 8.3s
+2026-10-08T02:13:40.2782980Z #11 [final 2/3] COPY --from=build /app/dist ./dist
+2026-10-08T02:13:40.4000340Z #11 DONE 0.1s
+2026-10-08T02:13:40.5304540Z #12 [final 3/3] COPY --from=build /app/node_modules ./node_modules
+2026-10-08T02:13:41.1277830Z #12 DONE 0.6s
+2026-10-08T02:13:41.1957210Z #13 exporting to image
+2026-10-08T02:13:41.2595980Z #13 exporting layers
+2026-10-08T02:13:43.6126590Z #13 exporting layers 2.3s done
+2026-10-08T02:13:43.6865250Z #13 exporting manifest sha256:2c7e19f0a4b83d5e6f71a2c9b0d4e8f3a6c1b5d7e9f02a4c6e8b1d3f5a7c9e0b done
+2026-10-08T02:13:43.7969000Z #13 exporting config sha256:91d4b7e2c06f3a85e1d9c2b7f4a0e6d3c8b5a1f7e2d9c4b06a3f8e1d5c7b2a9f done
+2026-10-08T02:13:43.9971250Z #13 pushing layers
+2026-10-08T02:13:51.5866640Z #13 pushing layers 6.2s done
+2026-10-08T02:13:51.7422490Z #13 pushing manifest for 123456789012.dkr.ecr.ap-northeast-1.amazonaws.com/web-backend:4e7d1c9a2b6f@sha256:b81f3e6a0c94d72e5f1a8b3c6d9e0f2a4b7c1d3e5f8a0b2c4d6e8f1a3b5c7d9e
+2026-10-08T02:13:52.2305780Z #13 pushing manifest for 123456789012.dkr.ecr.ap-northeast-1.amazonaws.com/web-backend:4e7d1c9a2b6f@sha256:b81f3e6a0c94d72e5f1a8b3c6d9e0f2a4b7c1d3e5f8a0b2c4d6e8f1a3b5c7d9e 0.8s done
+2026-10-08T02:13:52.3046460Z #13 DONE 9.6s
+2026-10-08T02:13:52.3529140Z ##[group]Build summary
+2026-10-08T02:13:52.4052840Z Image digest: sha256:b81f3e6a0c94d72e5f1a8b3c6d9e0f2a4b7c1d3e5f8a0b2c4d6e8f1a3b5c7d9e
+2026-10-08T02:13:52.4508150Z ##[endgroup]
+2026-10-08T02:13:52.4877370Z ##[group]Run aws-actions/amazon-ecs-render-task-definition@v1
+2026-10-08T02:13:52.5370190Z with:
+2026-10-08T02:13:52.6048760Z   task-definition: apps/web-backend/deploy/task-definition.json
+2026-10-08T02:13:52.6562930Z   container-name: web-backend
+2026-10-08T02:13:52.7239440Z   image: 123456789012.dkr.ecr.ap-northeast-1.amazonaws.com/web-backend:4e7d1c9a2b6f
+2026-10-08T02:13:52.7550950Z   environment-variables: NODE_ENV=production
+APP_VERSION=3.14.0
+2026-10-08T02:13:52.8248210Z ##[endgroup]
+2026-10-08T02:13:52.8903810Z Rendered task definition written to /home/runner/work/_temp/task-definition-2b81-c4d0.json
+2026-10-08T02:13:52.9421550Z ##[group]Run aws-actions/amazon-ecs-deploy-task-definition@v2
+2026-10-08T02:13:52.9930950Z with:
+2026-10-08T02:13:53.0445800Z   task-definition: /home/runner/work/_temp/task-definition-2b81-c4d0.json
+2026-10-08T02:13:53.1109610Z   service: web-backend
+2026-10-08T02:13:53.1435840Z   cluster: prod-web
+2026-10-08T02:13:53.1992960Z   wait-for-service-stability: true
+2026-10-08T02:13:53.2509820Z   wait-for-minutes: 10
+2026-10-08T02:13:53.2929950Z   force-new-deployment: false
+2026-10-08T02:13:53.3519920Z ##[endgroup]
+2026-10-08T02:13:55.1168030Z Deployment started. Watch this deployment's progress in the Amazon ECS console: https://ap-northeast-1.console.aws.amazon.com/ecs/v2/clusters/prod-web/services/web-backend/events?region=ap-northeast-1
+2026-10-08T02:13:55.3898300Z Registered task definition arn:aws:ecs:ap-northeast-1:123456789012:task-definition/web-backend:187
+2026-10-08T02:13:56.0856000Z Updated service web-backend in cluster prod-web
+2026-10-08T02:13:56.2781650Z Waiting for the service web-backend to become stable. Will wait for 10 minutes
+2026-10-08T02:23:56.3773820Z ##[error]Resource is not in the state servicesStable
+2026-10-08T02:23:56.4328520Z ##[group]Run aws ecs describe-services --cluster prod-web --services web-backend --query 'services[0].{status:status,running:runningCount,desired:desiredCount,deployments:deployments[].{id:id,status:status,rollout:rolloutState,taskDef:taskDefinition,running:runningCount,failed:failedTasks}}' --output yaml
+2026-10-08T02:23:56.4649700Z aws ecs describe-services --cluster prod-web --services web-backend --query 'services[0].{...}' --output yaml
+2026-10-08T02:23:56.5190870Z shell: /usr/bin/bash -e {0}
+2026-10-08T02:23:56.5640130Z env:
+2026-10-08T02:23:56.6291620Z   AWS_REGION: ap-northeast-1
+2026-10-08T02:23:56.6684060Z ##[endgroup]
+2026-10-08T02:23:56.6809910Z deployments:
+2026-10-08T02:23:56.6928280Z - failed: 6
+2026-10-08T02:23:56.7038280Z   id: ecs-svc/4718203956127734812
+2026-10-08T02:23:56.7168350Z   rollout: IN_PROGRESS
+2026-10-08T02:23:56.7231230Z   running: 0
+2026-10-08T02:23:56.7338990Z   status: PRIMARY
+2026-10-08T02:23:56.7448050Z   taskDef: arn:aws:ecs:ap-northeast-1:123456789012:task-definition/web-backend:187
+2026-10-08T02:23:56.7562290Z - failed: 0
+2026-10-08T02:23:56.7654820Z   id: ecs-svc/2290184736501928374
+2026-10-08T02:23:56.7720340Z   rollout: COMPLETED
+2026-10-08T02:23:56.7795470Z   running: 2
+2026-10-08T02:23:56.7904120Z   status: ACTIVE
+2026-10-08T02:23:56.7978630Z   taskDef: arn:aws:ecs:ap-northeast-1:123456789012:task-definition/web-backend:186
+2026-10-08T02:23:56.8043820Z desired: 2
+2026-10-08T02:23:56.8132200Z running: 2
+2026-10-08T02:23:56.8229820Z status: ACTIVE
+2026-10-08T02:23:56.8744050Z ##[group]Run # Collect ECS diagnostics
+2026-10-08T02:23:56.9054440Z # Collect ECS diagnostics
+2026-10-08T02:23:56.9664670Z echo "--- service events (latest 20) ---"
+2026-10-08T02:23:57.0098200Z aws ecs describe-services --cluster prod-web --services web-backend --query 'services[0].events[:20].[createdAt,message]' --output text
+2026-10-08T02:23:57.0711330Z echo "--- last stopped task ---"
+2026-10-08T02:23:57.1014760Z TASK=$(aws ecs list-tasks --cluster prod-web --service-name web-backend --desired-status STOPPED --query 'taskArns[0]' --output text)
+2026-10-08T02:23:57.1696380Z aws ecs describe-tasks --cluster prod-web --tasks "$TASK" --query 'tasks[0].{lastStatus:lastStatus,stopCode:stopCode,stoppedReason:stoppedReason,taskDefinitionArn:taskDefinitionArn,containers:containers[].{name:name,exitCode:exitCode,reason:reason,lastStatus:lastStatus}}' --output yaml
+2026-10-08T02:23:57.2232480Z echo "--- container log tail ---"
+2026-10-08T02:23:57.2923030Z aws logs tail /ecs/prod-web/web-backend --since 15m --format short | tail -n 25
+2026-10-08T02:23:57.3617560Z shell: /usr/bin/bash -e {0}
+2026-10-08T02:23:57.4250670Z env:
+2026-10-08T02:23:57.4593160Z   AWS_REGION: ap-northeast-1
+2026-10-08T02:23:57.5032670Z ##[endgroup]
+2026-10-08T02:23:58.1313100Z --- service events (latest 20) ---
+2026-10-08T02:23:58.1557900Z 2026-10-08T02:23:10.000000+00:00	(service web-backend) has started 1 tasks: (task 9f2c4e1a7b3d4c58a0e6f2b9d1c7e304).
+2026-10-08T02:23:58.1708650Z 2026-10-08T02:22:58.000000+00:00	(service web-backend) has stopped 1 running tasks: (task 7a1b3c5d9e2f4a68b0c1d3e5f7a9b2c4).
+2026-10-08T02:23:58.1864030Z 2026-10-08T02:22:39.000000+00:00	(service web-backend) (port 8080) is unhealthy in (target-group arn:aws:elasticloadbalancing:ap-northeast-1:123456789012:targetgroup/web-backend-tg/6c2e9a41b7d3f058) due to (reason Health checks failed with these codes: [502]).
+2026-10-08T02:23:58.2001730Z 2026-10-08T02:21:16.000000+00:00	(service web-backend) has started 1 tasks: (task 7a1b3c5d9e2f4a68b0c1d3e5f7a9b2c4).
+2026-10-08T02:23:58.2140940Z 2026-10-08T02:21:04.000000+00:00	(service web-backend) has stopped 1 running tasks: (task 3e8d2f6a1c9b4e07a5d3f1b8c6e2a940).
+2026-10-08T02:23:58.2411040Z 2026-10-08T02:20:45.000000+00:00	(service web-backend) (port 8080) is unhealthy in (target-group arn:aws:elasticloadbalancing:ap-northeast-1:123456789012:targetgroup/web-backend-tg/6c2e9a41b7d3f058) due to (reason Health checks failed with these codes: [502]).
+2026-10-08T02:23:58.2687230Z 2026-10-08T02:19:22.000000+00:00	(service web-backend) has started 1 tasks: (task 3e8d2f6a1c9b4e07a5d3f1b8c6e2a940).
+2026-10-08T02:23:58.2866820Z 2026-10-08T02:19:10.000000+00:00	(service web-backend) has stopped 1 running tasks: (task c05f7b2e9a1d4c36b8e0f2a4d6c8b1e3).
+2026-10-08T02:23:58.3105390Z 2026-10-08T02:18:51.000000+00:00	(service web-backend) (port 8080) is unhealthy in (target-group arn:aws:elasticloadbalancing:ap-northeast-1:123456789012:targetgroup/web-backend-tg/6c2e9a41b7d3f058) due to (reason Health checks failed with these codes: [502]).
+2026-10-08T02:23:58.3300190Z 2026-10-08T02:17:28.000000+00:00	(service web-backend) has started 1 tasks: (task c05f7b2e9a1d4c36b8e0f2a4d6c8b1e3).
+2026-10-08T02:23:58.3503710Z 2026-10-08T02:17:16.000000+00:00	(service web-backend) has stopped 1 running tasks: (task 58a2d9f1e4c7403b9e6a2c8f0d1b5e7a).
+2026-10-08T02:23:58.3682830Z 2026-10-08T02:16:57.000000+00:00	(service web-backend) (port 8080) is unhealthy in (target-group arn:aws:elasticloadbalancing:ap-northeast-1:123456789012:targetgroup/web-backend-tg/6c2e9a41b7d3f058) due to (reason Health checks failed with these codes: [502]).
+2026-10-08T02:23:58.3904380Z 2026-10-08T02:15:34.000000+00:00	(service web-backend) has started 1 tasks: (task 58a2d9f1e4c7403b9e6a2c8f0d1b5e7a).
+2026-10-08T02:23:58.4062160Z 2026-10-08T02:15:22.000000+00:00	(service web-backend) has stopped 1 running tasks: (task b6e0c3a8f2d14e95a7c1b9d3f5e8a024).
+2026-10-08T02:23:58.4223180Z 2026-10-08T02:15:03.000000+00:00	(service web-backend) (port 8080) is unhealthy in (target-group arn:aws:elasticloadbalancing:ap-northeast-1:123456789012:targetgroup/web-backend-tg/6c2e9a41b7d3f058) due to (reason Health checks failed with these codes: [502]).
+2026-10-08T02:23:58.4426030Z 2026-10-08T02:14:48.418000+00:00	(service web-backend) registered 1 targets in (target-group arn:aws:elasticloadbalancing:ap-northeast-1:123456789012:targetgroup/web-backend-tg/6c2e9a41b7d3f058)
+2026-10-08T02:23:58.4577610Z 2026-10-08T02:14:27.902000+00:00	(service web-backend) has started 1 tasks: (task b6e0c3a8f2d14e95a7c1b9d3f5e8a024).
+2026-10-08T02:23:58.4767890Z 2026-10-08T01:42:10.334000+00:00	(service web-backend) has reached a steady state.
+2026-10-08T02:23:58.5038910Z 2026-10-08T00:42:07.115000+00:00	(service web-backend) has reached a steady state.
+2026-10-08T02:23:59.0598990Z --- last stopped task ---
+2026-10-08T02:23:59.0667250Z containers:
+2026-10-08T02:23:59.0791250Z - exitCode: 1
+2026-10-08T02:23:59.0855870Z   lastStatus: STOPPED
+2026-10-08T02:23:59.0935970Z   name: web-backend
+2026-10-08T02:23:59.1064100Z   reason: null
+2026-10-08T02:23:59.1172520Z - exitCode: 0
+2026-10-08T02:23:59.1250180Z   lastStatus: STOPPED
+2026-10-08T02:23:59.1314870Z   name: log-router
+2026-10-08T02:23:59.1396880Z   reason: null
+2026-10-08T02:23:59.1480890Z lastStatus: STOPPED
+2026-10-08T02:23:59.1604910Z stopCode: EssentialContainerExited
+2026-10-08T02:23:59.1742950Z stoppedReason: Essential container in task exited
+2026-10-08T02:23:59.1865850Z taskDefinitionArn: arn:aws:ecs:ap-northeast-1:123456789012:task-definition/web-backend:187
+2026-10-08T02:24:00.6401250Z --- container log tail ---
+2026-10-08T02:24:00.6535700Z 2026-10-08T02:23:11 web-backend/web-backend/9f2c4e1a7b3d4c58a0e6f2b9d1c7e304 [info] web-backend v3.14.0 starting (NODE_ENV=production)
+2026-10-08T02:24:00.6665830Z 2026-10-08T02:23:11 web-backend/web-backend/9f2c4e1a7b3d4c58a0e6f2b9d1c7e304 [info] loading config from environment
+2026-10-08T02:24:00.6799430Z 2026-10-08T02:23:12 web-backend/web-backend/9f2c4e1a7b3d4c58a0e6f2b9d1c7e304 [info] db pool initialised (host=web-backend-db.cluster-c1example.ap-northeast-1.rds.amazonaws.com, max=10)
+2026-10-08T02:24:00.6936830Z 2026-10-08T02:23:12 web-backend/web-backend/9f2c4e1a7b3d4c58a0e6f2b9d1c7e304 [info] session store: redis (host=10.0.12.34, port=6379, tls=false)
+2026-10-08T02:24:00.7004380Z 2026-10-08T02:23:12 web-backend/web-backend/9f2c4e1a7b3d4c58a0e6f2b9d1c7e304 [info] http server listening on 0.0.0.0:8080
+2026-10-08T02:24:00.7089790Z 2026-10-08T02:23:17 web-backend/web-backend/9f2c4e1a7b3d4c58a0e6f2b9d1c7e304 [warn] redis reconnect attempt 1/5
+2026-10-08T02:24:00.7169560Z 2026-10-08T02:23:22 web-backend/web-backend/9f2c4e1a7b3d4c58a0e6f2b9d1c7e304 [warn] redis reconnect attempt 2/5
+2026-10-08T02:24:00.7277890Z 2026-10-08T02:23:27 web-backend/web-backend/9f2c4e1a7b3d4c58a0e6f2b9d1c7e304 [warn] redis reconnect attempt 3/5
+2026-10-08T02:24:00.7377230Z 2026-10-08T02:23:32 web-backend/web-backend/9f2c4e1a7b3d4c58a0e6f2b9d1c7e304 [warn] redis reconnect attempt 4/5
+2026-10-08T02:24:00.7464990Z 2026-10-08T02:23:37 web-backend/web-backend/9f2c4e1a7b3d4c58a0e6f2b9d1c7e304 [warn] redis reconnect attempt 5/5
+2026-10-08T02:24:00.7591960Z 2026-10-08T02:23:42 web-backend/web-backend/9f2c4e1a7b3d4c58a0e6f2b9d1c7e304 Error: connect ECONNREFUSED 10.0.12.34:6379
+2026-10-08T02:24:00.7683890Z 2026-10-08T02:23:42 web-backend/web-backend/9f2c4e1a7b3d4c58a0e6f2b9d1c7e304     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+2026-10-08T02:24:00.7760600Z 2026-10-08T02:23:42 web-backend/web-backend/9f2c4e1a7b3d4c58a0e6f2b9d1c7e304 [fatal] Redis connection failed, exiting
+2026-10-08T02:24:01.0223930Z ##[error]Process completed with exit code 1.
+2026-10-08T02:24:01.5070930Z Post job cleanup.
+2026-10-08T02:24:01.5615120Z [command]/usr/bin/docker buildx rm builder-3c1f8e2a
+2026-10-08T02:24:01.6142500Z builder-3c1f8e2a removed
+2026-10-08T02:24:01.8998340Z Post job cleanup.
+2026-10-08T02:24:01.9372870Z Logging out of registry 123456789012.dkr.ecr.ap-northeast-1.amazonaws.com
+2026-10-08T02:24:02.1216340Z Post job cleanup.
+2026-10-08T02:24:02.2936380Z Post job cleanup.
+2026-10-08T02:24:02.3304610Z [command]/usr/bin/git version
+2026-10-08T02:24:02.3822160Z git version 2.51.0
+2026-10-08T02:24:02.4197580Z Temporarily overriding HOME='/home/runner/work/_temp/a7e3f0b1' before making global git config changes
+2026-10-08T02:24:02.4782220Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-08T02:24:02.5345730Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-08T02:24:02.5700810Z http.https://github.com/.extraheader
+2026-10-08T02:24:02.6250960Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-08T02:24:02.9732070Z Cleaning up orphan processes
+

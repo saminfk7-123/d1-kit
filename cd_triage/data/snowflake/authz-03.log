@@ -1,0 +1,10 @@
+STEP: Deploy native app (snow app deploy)
+2026-10-06T07:30:01Z + snow app deploy --connection ci
+2026-10-06T07:30:03Z Uploading files to stage APP_PKG.STAGE_CONTENT.APP_CODE_STAGE
+2026-10-06T07:30:04Z ╭─ Error ──────────────────────────────────────────────────────╮
+2026-10-06T07:30:04Z │ 003001 (42501): SQL access control error: Insufficient       │
+2026-10-06T07:30:04Z │ privileges to operate on application package 'APP_PKG'.      │
+2026-10-06T07:30:04Z │ Current role CI_DEPLOY_ROLE requires the MANAGE VERSIONS      │
+2026-10-06T07:30:04Z │ privilege.                                                    │
+2026-10-06T07:30:04Z ╰──────────────────────────────────────────────────────────────╯
+2026-10-06T07:30:04Z ##[error]Process completed with exit code 1.

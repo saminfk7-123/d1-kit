@@ -1,0 +1,14 @@
+{
+  "aws-01": ["auth"],
+  "aws-02": ["authorization"],
+  "aws-03": ["authorization"],
+  "aws-04": ["config"],
+  "aws-05": ["config"],
+  "aws-06": ["build"],
+  "aws-07": ["build"],
+  "aws-08": ["transient"],
+  "aws-09": ["runtime"],
+  "aws-10": ["resource_state"],
+  "aws-11": ["authorization", "build"],
+  "aws-12": ["runtime", "transient"]
+}

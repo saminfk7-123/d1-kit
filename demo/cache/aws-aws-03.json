@@ -1,0 +1,88 @@
+{
+  "kind": "aws",
+  "id": "aws-03",
+  "expected": [
+    "authorization"
+  ],
+  "cause": {
+    "type": "choice",
+    "choice": "authorization",
+    "probabilities": {
+      "auth": 0.00000741010292888685,
+      "authorization": 0.9998333625884579,
+      "config": 0.00006204397303026941,
+      "build": 0.000035351623924635814,
+      "transient": 0.00004539238364041883,
+      "runtime": 0.000004222145351814533,
+      "resource_state": 0.000012217182665714186
+    },
+    "confidence": 0.9998055896865342
+  },
+  "causeCorrect": true,
+  "pick": {
+    "line": 213,
+    "text": "OrderApi-Prod | 11/31 | 2:14:26 AM | CREATE_FAILED        | AWS::Lambda::Function | OrderExportFn (OrderExportFn7F2D9B41) Resource handler returned message: \"User: arn:aws:sts::123456789012:assumed-role/cdk-hnb659fds-cfn-exec-role-123456789012-ap-northeast-1/AWSCloudFormation is not authorized to pe",
+    "confidence": 0.9986838918988783,
+    "candidates": [
+      {
+        "line": 213,
+        "text": "OrderApi-Prod | 11/31 | 2:14:26 AM | CREATE_FAILED        | AWS::Lambda::Function | OrderExportFn (OrderExportFn7F2D9B41) Resource handler returned message: \"User: arn:aws:sts::123456789012:assumed-role/cdk-hnb659fds-cfn-exec-role-123456789012-ap-northeast-1/AWSCloudFormation is not authorized to pe",
+        "probability": 0.9988155027089904
+      },
+      {
+        "line": 214,
+        "text": "OrderApi-Prod | 11/31 | 2:14:27 AM | CREATE_FAILED        | AWS::Lambda::EventSourceMapping | WorkerFnSqsEventSourceOrderQueue (WorkerFnSqsEventSourceOrderQueue5D3C1A90) Resource creation cancelled",
+        "probability": 0.0008037799842157847
+      },
+      {
+        "line": 215,
+        "text": "OrderApi-Prod | 11/31 | 2:14:28 AM | UPDATE_ROLLBACK_IN_P | AWS::CloudFormation::Stack | OrderApi-Prod The following resource(s) failed to create: [WorkerFnSqsEventSourceOrderQueue5D3C1A90, OrderExportFn7F2D9B41].",
+        "probability": 0.0002777787971961579
+      },
+      {
+        "line": 242,
+        "text": "Failed resources:",
+        "probability": 0.00001567120737380992
+      },
+      {
+        "line": 243,
+        "text": "OrderApi-Prod | 2:16:08 AM | CREATE_FAILED        | AWS::Lambda::EventSourceMapping | WorkerFnSqsEventSourceOrderQueue (WorkerFnSqsEventSourceOrderQueue5D3C1A90) Resource creation cancelled",
+        "probability": 0.00005469788829210153
+      },
+      {
+        "line": 245,
+        "text": "❌  OrderApi-Prod failed: Error: The stack named OrderApi-Prod failed to deploy: UPDATE_ROLLBACK_COMPLETE",
+        "probability": 0.000011465300239143193
+      },
+      {
+        "line": 251,
+        "text": "The stack named OrderApi-Prod failed to deploy: UPDATE_ROLLBACK_COMPLETE",
+        "probability": 0.000003962301738166463
+      },
+      {
+        "line": 252,
+        "text": "##[error]Process completed with exit code 1.",
+        "probability": 0.000005765115011158979
+      },
+      {
+        "line": 253,
+        "text": "Skipping step 'Run npm run test:smoke -- --stage prod' due to previous failure.",
+        "probability": 0.000007879977932482686
+      },
+      {
+        "line": 254,
+        "text": "Skipping step 'Run ./scripts/notify-deploy.sh order-api' due to previous failure.",
+        "probability": 0.0000034967190110374617
+      }
+    ]
+  },
+  "rootLines": [
+    213
+  ],
+  "repeatLines": [],
+  "lineMark": "ok",
+  "needsHuman": false,
+  "tokens": 19573,
+  "seconds": 1.2200170830000134,
+  "ranAt": "2026-10-08T11:36:48.523Z"
+}

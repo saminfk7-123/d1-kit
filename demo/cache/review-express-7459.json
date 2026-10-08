@@ -1,0 +1,71 @@
+{
+  "kind": "review",
+  "id": "express-7459",
+  "expected": 3,
+  "evaluation": {
+    "category": {
+      "type": "choice",
+      "choice": "logic_change",
+      "probabilities": {
+        "typo_comment": 0.0002412845522343007,
+        "dev_docs": 0.0001374797937359958,
+        "reference_docs": 0.00016583228588851518,
+        "tests_only": 0.0025940546396088435,
+        "ui_style": 0.0001291503141084967,
+        "feature_add": 0.0009542993711874885,
+        "logic_change": 0.9235472645660286,
+        "shared_code": 0.012375542545018922,
+        "refactor": 0.05904039738804422,
+        "logging_monitoring": 0.00045077910425075197,
+        "build_infra": 0.00010706937101808874,
+        "critical": 0.0002568460688758899
+      },
+      "confidence": 0.916597015890213
+    },
+    "behavior": {
+      "type": "noul",
+      "noul": 0.9241418283357702
+    },
+    "used_by_everyone": {
+      "type": "noul",
+      "noul": 0.997018966738684
+    },
+    "conditional": {
+      "type": "noul",
+      "noul": 0.9626731126558706
+    },
+    "security": {
+      "type": "noul",
+      "noul": 0.0474258704848281
+    },
+    "hard_to_undo": {
+      "type": "noul",
+      "noul": 0.04208772611333754
+    }
+  },
+  "decision": {
+    "type": "score",
+    "score": 2.995118219206549,
+    "legend": {
+      "0": "No one is affected.",
+      "1": "Affects only maintainers, or the behavior users see does not change.",
+      "2": "Changes behavior only in a part that some users run, such as one optional feature or module.",
+      "3": "Changes behavior in a part that every user runs, even if the change only happens under a specific condition; or relates to security; or a mistake would be hard to undo."
+    },
+    "probabilities": {
+      "0": 0.00008445264472161614,
+      "1": 0.00040290122659656535,
+      "2": 0.0038226204060930395,
+      "3": 0.9956900257225889
+    },
+    "confidence": 0.9942533676301185
+  },
+  "d1Level": 3,
+  "floor": 0,
+  "level": 3,
+  "needsHuman": false,
+  "correct": true,
+  "tokens": 4685,
+  "seconds": 0.9866644159999995,
+  "ranAt": "2026-10-08T11:35:47.571Z"
+}

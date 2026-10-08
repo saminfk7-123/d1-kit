@@ -1,0 +1,83 @@
+{
+  "kind": "aws",
+  "id": "aws-02",
+  "expected": [
+    "authorization"
+  ],
+  "cause": {
+    "type": "choice",
+    "choice": "authorization",
+    "probabilities": {
+      "auth": 0.000005093501019195508,
+      "authorization": 0.99995508581709,
+      "config": 0.000012218673754744337,
+      "build": 0.000006961990446443821,
+      "transient": 0.000010782941742253566,
+      "runtime": 0.0000014593124748117802,
+      "resource_state": 0.000008397763472680416
+    },
+    "confidence": 0.9999476001199383
+  },
+  "causeCorrect": true,
+  "pick": {
+    "line": 279,
+    "text": "Error: setting SQS Queue (https://sqs.ap-northeast-1.amazonaws.com/123456789012/notification-dlq) attribute (RedrivePolicy): operation error SQS: SetQueueAttributes, https response error StatusCode: 403, RequestID: 7c2e9a41-5d3b-5f8e-a0c6-1b4d9e7f2a83, api error AccessDenied: User: arn:aws:sts::1234",
+    "confidence": 0.9998434801639364,
+    "candidates": [
+      {
+        "line": 179,
+        "text": "aws_cloudwatch_metric_alarm.notifier_errors: Refreshing state... [id=notification-notifier-errors]",
+        "probability": 0.0000047844509645443086
+      },
+      {
+        "line": 212,
+        "text": "+ treat_missing_data                    = \"notBreaching\"",
+        "probability": 0.000006143356643371072
+      },
+      {
+        "line": 224,
+        "text": "~ timeout                        = 30 -> 60",
+        "probability": 0.000006539569106024727
+      },
+      {
+        "line": 234,
+        "text": "~ visibility_timeout_seconds        = 180 -> 360",
+        "probability": 0.000009515016904568404
+      },
+      {
+        "line": 279,
+        "text": "Error: setting SQS Queue (https://sqs.ap-northeast-1.amazonaws.com/123456789012/notification-dlq) attribute (RedrivePolicy): operation error SQS: SetQueueAttributes, https response error StatusCode: 403, RequestID: 7c2e9a41-5d3b-5f8e-a0c6-1b4d9e7f2a83, api error AccessDenied: User: arn:aws:sts::1234",
+        "probability": 0.9998608712568324
+      },
+      {
+        "line": 290,
+        "text": "Apply complete! Resources: 1 added, 2 changed, 0 destroyed. Failed: 1.",
+        "probability": 0.00010229607220675433
+      },
+      {
+        "line": 291,
+        "text": "##[error]Terraform exited with code 1.",
+        "probability": 0.000004222263156778233
+      },
+      {
+        "line": 292,
+        "text": "##[error]Process completed with exit code 1.",
+        "probability": 0.000002901916199887805
+      },
+      {
+        "line": 294,
+        "text": "Skipping step: previous step failed",
+        "probability": 0.0000027260979853646454
+      }
+    ]
+  },
+  "rootLines": [
+    279
+  ],
+  "repeatLines": [],
+  "lineMark": "ok",
+  "needsHuman": false,
+  "tokens": 16543,
+  "seconds": 1.0582040830000041,
+  "ranAt": "2026-10-08T11:36:41.278Z"
+}

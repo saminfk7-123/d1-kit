@@ -1,0 +1,5 @@
+STEP: Deploy schema changes (schemachange)
+2026-10-09T02:31:17Z Applying change script V1.43__create_daily_summary.sql
+2026-10-09T02:31:18Z snowflake.connector.errors.ProgrammingError: 001003 (42000): SQL compilation error:
+2026-10-09T02:31:18Z syntax error line 4 at position 2 unexpected 'FORM'.
+2026-10-09T02:31:18Z ##[error]Process completed with exit code 1.

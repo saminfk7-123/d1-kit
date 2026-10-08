@@ -1,0 +1,44 @@
+{
+  "kind": "snowflake",
+  "id": "auth-01",
+  "expected": [
+    "auth"
+  ],
+  "cause": {
+    "type": "choice",
+    "choice": "auth",
+    "probabilities": {
+      "auth": 0.9025536861410192,
+      "authorization": 0.000876102567550081,
+      "config": 0.0951284543921423,
+      "build": 0.0005656543317384024,
+      "transient": 0.000876102567550081
+    },
+    "confidence": 0.878192107676274
+  },
+  "causeCorrect": true,
+  "pick": {
+    "line": 7,
+    "text": "snowflake.connector.errors.DatabaseError: 250001 (08001): Failed to connect to DB: acme-xy12345.snowflakecomputing.com:443. Incorrect username or password was specified.",
+    "confidence": 0.9999891555625131,
+    "candidates": [
+      {
+        "line": 7,
+        "text": "snowflake.connector.errors.DatabaseError: 250001 (08001): Failed to connect to DB: acme-xy12345.snowflakecomputing.com:443. Incorrect username or password was specified.",
+        "probability": 0.9999945777812566
+      },
+      {
+        "line": 8,
+        "text": "##[error]Process completed with exit code 1.",
+        "probability": 0.0000054222187434849715
+      }
+    ]
+  },
+  "rootLines": [],
+  "repeatLines": [],
+  "lineMark": "unknown",
+  "needsHuman": false,
+  "tokens": 875,
+  "seconds": 0.7716928750000079,
+  "ranAt": "2026-10-08T11:41:18.346Z"
+}

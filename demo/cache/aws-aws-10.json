@@ -1,0 +1,111 @@
+{
+  "kind": "aws",
+  "id": "aws-10",
+  "expected": [
+    "resource_state"
+  ],
+  "cause": {
+    "type": "choice",
+    "choice": "resource_state",
+    "probabilities": {
+      "auth": 0.00007480226617802403,
+      "authorization": 0.00003761294153809817,
+      "config": 0.000230407200618801,
+      "build": 0.00013974903139386244,
+      "transient": 0.00013128206560692493,
+      "runtime": 0.00004829597293130817,
+      "resource_state": 0.9993378505217331
+    },
+    "confidence": 0.9992274922753553
+  },
+  "causeCorrect": true,
+  "pick": {
+    "line": 195,
+    "text": "OrderApi-Prod | 0/27 | 2:11:55 AM | CREATE_FAILED        | AWS::SQS::Queue | OrderEventsDeadLetterQueue (OrderEventsDeadLetterQueue9F2E7A41) Resource handler returned message: \"Resource of type 'AWS::SQS::Queue' with identifier 'order-events-dlq' already exists.\" (RequestToken: 6d1e8f2a-4b3c-5d6e-9f",
+    "confidence": 0.9760808026093171,
+    "candidates": [
+      {
+        "line": 111,
+        "text": "added 512 packages, and audited 513 packages in 11s",
+        "probability": 0.00008293439765318039
+      },
+      {
+        "line": 195,
+        "text": "OrderApi-Prod | 0/27 | 2:11:55 AM | CREATE_FAILED        | AWS::SQS::Queue | OrderEventsDeadLetterQueue (OrderEventsDeadLetterQueue9F2E7A41) Resource handler returned message: \"Resource of type 'AWS::SQS::Queue' with identifier 'order-events-dlq' already exists.\" (RequestToken: 6d1e8f2a-4b3c-5d6e-9f",
+        "probability": 0.9777893167086515
+      },
+      {
+        "line": 196,
+        "text": "OrderApi-Prod | 1/27 | 2:11:55 AM | UPDATE_FAILED        | AWS::IAM::Policy | OrderEventsWorkerServiceRoleDefaultPolicy (OrderEventsWorkerServiceRoleDefaultPolicyC3D4E5F6) Resource update cancelled",
+        "probability": 0.00014555426201198396
+      },
+      {
+        "line": 197,
+        "text": "OrderApi-Prod | 1/27 | 2:11:56 AM | UPDATE_FAILED        | AWS::Lambda::Function | CreateOrderFn (CreateOrderFn8A1C2D3E) Resource update cancelled",
+        "probability": 0.00009397698440673039
+      },
+      {
+        "line": 198,
+        "text": "OrderApi-Prod | 1/27 | 2:11:56 AM | UPDATE_FAILED        | AWS::Lambda::Function | GetOrderFn (GetOrderFn4B5C6D7E) Resource update cancelled",
+        "probability": 0.00009397698440673039
+      },
+      {
+        "line": 199,
+        "text": "OrderApi-Prod | 1/27 | 2:11:56 AM | CREATE_FAILED        | AWS::CloudWatch::Alarm | OrderEventsDlqDepthAlarm (OrderEventsDlqDepthAlarm2B8C1E07) Resource creation cancelled",
+        "probability": 0.0010755091202875905
+      },
+      {
+        "line": 200,
+        "text": "OrderApi-Prod | 1/27 | 2:11:57 AM | UPDATE_ROLLBACK_IN_P | AWS::CloudFormation::Stack | OrderApi-Prod The following resource(s) failed to create: [OrderEventsDeadLetterQueue9F2E7A41, OrderEventsDlqDepthAlarm2B8C1E07]. The following resource(s) failed to update: [CreateOrderFn8A1C2D3E, GetOrderFn4B5C",
+        "probability": 0.00012845130788421733
+      },
+      {
+        "line": 214,
+        "text": "Failed resources:",
+        "probability": 0.0000645893122386546
+      },
+      {
+        "line": 215,
+        "text": "OrderApi-Prod | 2:11:55 AM | CREATE_FAILED        | AWS::SQS::Queue | OrderEventsDeadLetterQueue (OrderEventsDeadLetterQueue9F2E7A41) Resource handler returned message: \"Resource of type 'AWS::SQS::Queue' with identifier 'order-events-dlq' already exists.\" (RequestToken: 6d1e8f2a-4b3c-5d6e-9f0a-1b2c",
+        "probability": 0.020293368336291542
+      },
+      {
+        "line": 217,
+        "text": "❌  OrderApi-Prod failed: _ToolkitError: The stack named OrderApi-Prod failed to deploy: UPDATE_ROLLBACK_COMPLETE: Resource handler returned message: \"Resource of type 'AWS::SQS::Queue' with identifier 'order-events-dlq' already exists.\" (RequestToken: 6d1e8f2a-4b3c-5d6e-9f0a-1b2c3d4e5f60, HandlerErr",
+        "probability": 0.00008293439765318039
+      },
+      {
+        "line": 224,
+        "text": "❌ Deployment failed: _ToolkitError: The stack named OrderApi-Prod failed to deploy: UPDATE_ROLLBACK_COMPLETE",
+        "probability": 0.00011335788134076201
+      },
+      {
+        "line": 235,
+        "text": "##[error]Process completed with exit code 1.",
+        "probability": 0.000008741221202150514
+      },
+      {
+        "line": 236,
+        "text": "Skipping step 'Run smoke tests against /health' due to previous failure.",
+        "probability": 0.00001738399413462389
+      },
+      {
+        "line": 237,
+        "text": "Skipping step 'Notify Slack on success' due to previous failure.",
+        "probability": 0.00000990509183689561
+      }
+    ]
+  },
+  "rootLines": [
+    195
+  ],
+  "repeatLines": [
+    215,
+    217
+  ],
+  "lineMark": "ok",
+  "needsHuman": false,
+  "tokens": 17458,
+  "seconds": 1.3874425000000628,
+  "ranAt": "2026-10-08T11:39:17.880Z"
+}

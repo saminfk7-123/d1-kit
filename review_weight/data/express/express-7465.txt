@@ -1,0 +1,52 @@
+PR: ci: add npm staged publication with dist-tag support
+
+diff --git a/.github/workflows/npm-publish.yml b/.github/workflows/npm-publish.yml
+new file mode 100644
+--- /dev/null
++++ b/.github/workflows/npm-publish.yml
+@@ -0,0 +1,78 @@
++name: Publish package to npm
++on:
++  release:
++    types: [published]
++permissions:
++  contents: read
++jobs:
++  publish:
++    name: Publish to npm
++    runs-on: ubuntu-latest
++    permissions:
++      contents: read
++      id-token: write
++    steps:
++      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
++        with:
++          persist-credentials: false
++      - name: Setup Node.js
++        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
++        with:
++          node-version: "lts/*"
++          registry-url: "https://registry.npmjs.org"
++      - name: Upgrade npm
++        run: npm install -g npm@latest
++      # Derive the npm dist-tag from the package version rather than from the
++      # release target branch. Publishing a maintenance line must never overwrite "latest":
++      #   prerelease (e.g. 3.0.0-beta.1)        -> next
++      #   major >= current npm "latest" major   -> latest
++      #   major <  current npm "latest" major   -> latest-<major>
++      - name: Resolve npm dist-tag from package version
++        id: dist-tag
++        run: |
++          node <<'JS'
++          const { name, version } = JSON.parse(fs.readFileSync('package.json', 'utf8'))
++          const latest = execFileSync('npm', ['view', name, 'version'], { encoding: 'utf8' }).trim()
++          let tag
++          if (prerelease) tag = 'next'
++          else if (major >= latestMajor) tag = 'latest'
++          else tag = `latest-${major}`
++          fs.appendFileSync(process.env.GITHUB_OUTPUT, `tag=${tag}\n`)
++          JS
++      - name: Stage publish to npm
++        env:
++          NPM_DIST_TAG: ${{ steps.dist-tag.outputs.tag }}
++        run: npm stage publish --tag "$NPM_DIST_TAG"

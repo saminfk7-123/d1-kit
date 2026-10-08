@@ -1,0 +1,164 @@
+{
+  "kind": "aws",
+  "id": "aws-09",
+  "expected": [
+    "runtime"
+  ],
+  "cause": {
+    "type": "choice",
+    "choice": "runtime",
+    "probabilities": {
+      "auth": 0.0002481188276033129,
+      "authorization": 0.0001705294100779425,
+      "config": 0.047283067837530265,
+      "build": 0.0005952058416893391,
+      "transient": 0.0008135503151602007,
+      "runtime": 0.9497058190440208,
+      "resource_state": 0.0011837087239180242
+    },
+    "confidence": 0.9413234555513577
+  },
+  "causeCorrect": true,
+  "pick": {
+    "line": 267,
+    "text": "2026-10-08T02:23:42 web-backend/web-backend/9f2c4e1a7b3d4c58a0e6f2b9d1c7e304 [fatal] Redis connection failed, exiting",
+    "confidence": 0.2818476771245488,
+    "candidates": [
+      {
+        "line": 184,
+        "text": "##[error]Resource is not in the state servicesStable",
+        "probability": 0.24187509530825305
+      },
+      {
+        "line": 185,
+        "text": "##[group]Run aws ecs describe-services --cluster prod-web --services web-backend --query 'services[0].{status:status,running:runningCount,desired:desiredCount,deployments:deployments[].{id:id,status:status,rollout:rolloutState,taskDef:taskDefinition,running:runningCount,failed:failedTasks}}' --outpu",
+        "probability": 0.000872338010240601
+      },
+      {
+        "line": 192,
+        "text": "- failed: 6",
+        "probability": 0.001269244315545199
+      },
+      {
+        "line": 198,
+        "text": "- failed: 0",
+        "probability": 0.00023478659031393915
+      },
+      {
+        "line": 211,
+        "text": "echo \"--- last stopped task ---\"",
+        "probability": 0.000872338010240601
+      },
+      {
+        "line": 212,
+        "text": "TASK=$(aws ecs list-tasks --cluster prod-web --service-name web-backend --desired-status STOPPED --query 'taskArns[0]' --output text)",
+        "probability": 0.0006793772015259598
+      },
+      {
+        "line": 213,
+        "text": "aws ecs describe-tasks --cluster prod-web --tasks \"$TASK\" --query 'tasks[0].{lastStatus:lastStatus,stopCode:stopCode,stoppedReason:stoppedReason,taskDefinitionArn:taskDefinitionArn,containers:containers[].{name:name,exitCode:exitCode,reason:reason,lastStatus:lastStatus}}' --output yaml",
+        "probability": 0.00034161247317426245
+      },
+      {
+        "line": 222,
+        "text": "2026-10-08T02:22:58.000000+00:00\t(service web-backend) has stopped 1 running tasks: (task 7a1b3c5d9e2f4a68b0c1d3e5f7a9b2c4).",
+        "probability": 0.0005995485619202143
+      },
+      {
+        "line": 223,
+        "text": "2026-10-08T02:22:39.000000+00:00\t(service web-backend) (port 8080) is unhealthy in (target-group arn:aws:elasticloadbalancing:ap-northeast-1:123456789012:targetgroup/web-backend-tg/6c2e9a41b7d3f058) due to (reason Health checks failed with these codes: [502]).",
+        "probability": 0.1467046611253708
+      },
+      {
+        "line": 225,
+        "text": "2026-10-08T02:21:04.000000+00:00\t(service web-backend) has stopped 1 running tasks: (task 3e8d2f6a1c9b4e07a5d3f1b8c6e2a940).",
+        "probability": 0.0004120631022352631
+      },
+      {
+        "line": 226,
+        "text": "2026-10-08T02:20:45.000000+00:00\t(service web-backend) (port 8080) is unhealthy in (target-group arn:aws:elasticloadbalancing:ap-northeast-1:123456789012:targetgroup/web-backend-tg/6c2e9a41b7d3f058) due to (reason Health checks failed with these codes: [502]).",
+        "probability": 0.006055225972195238
+      },
+      {
+        "line": 228,
+        "text": "2026-10-08T02:19:10.000000+00:00\t(service web-backend) has stopped 1 running tasks: (task c05f7b2e9a1d4c36b8e0f2a4d6c8b1e3).",
+        "probability": 0.00015158961606122402
+      },
+      {
+        "line": 229,
+        "text": "2026-10-08T02:18:51.000000+00:00\t(service web-backend) (port 8080) is unhealthy in (target-group arn:aws:elasticloadbalancing:ap-northeast-1:123456789012:targetgroup/web-backend-tg/6c2e9a41b7d3f058) due to (reason Health checks failed with these codes: [502]).",
+        "probability": 0.00568835566414764
+      },
+      {
+        "line": 231,
+        "text": "2026-10-08T02:17:16.000000+00:00\t(service web-backend) has stopped 1 running tasks: (task 58a2d9f1e4c7403b9e6a2c8f0d1b5e7a).",
+        "probability": 0.00036364441139201924
+      },
+      {
+        "line": 232,
+        "text": "2026-10-08T02:16:57.000000+00:00\t(service web-backend) (port 8080) is unhealthy in (target-group arn:aws:elasticloadbalancing:ap-northeast-1:123456789012:targetgroup/web-backend-tg/6c2e9a41b7d3f058) due to (reason Health checks failed with these codes: [502]).",
+        "probability": 0.04762803020732221
+      },
+      {
+        "line": 234,
+        "text": "2026-10-08T02:15:22.000000+00:00\t(service web-backend) has stopped 1 running tasks: (task b6e0c3a8f2d14e95a7c1b9d3f5e8a024).",
+        "probability": 0.001531000157278309
+      },
+      {
+        "line": 235,
+        "text": "2026-10-08T02:15:03.000000+00:00\t(service web-backend) (port 8080) is unhealthy in (target-group arn:aws:elasticloadbalancing:ap-northeast-1:123456789012:targetgroup/web-backend-tg/6c2e9a41b7d3f058) due to (reason Health checks failed with these codes: [502]).",
+        "probability": 0.12946640903786244
+      },
+      {
+        "line": 240,
+        "text": "--- last stopped task ---",
+        "probability": 0.000125672205728542
+      },
+      {
+        "line": 243,
+        "text": "lastStatus: STOPPED",
+        "probability": 0.00034161247317426245
+      },
+      {
+        "line": 247,
+        "text": "lastStatus: STOPPED",
+        "probability": 0.00026604806161507487
+      },
+      {
+        "line": 250,
+        "text": "lastStatus: STOPPED",
+        "probability": 0.0005995485619202143
+      },
+      {
+        "line": 252,
+        "text": "stoppedReason: Essential container in task exited",
+        "probability": 0.001531000157278309
+      },
+      {
+        "line": 265,
+        "text": "2026-10-08T02:23:42 web-backend/web-backend/9f2c4e1a7b3d4c58a0e6f2b9d1c7e304 Error: connect ECONNREFUSED 10.0.12.34:6379",
+        "probability": 0.10082854074013008
+      },
+      {
+        "line": 267,
+        "text": "2026-10-08T02:23:42 web-backend/web-backend/9f2c4e1a7b3d4c58a0e6f2b9d1c7e304 [fatal] Redis connection failed, exiting",
+        "probability": 0.3105737700395668
+      },
+      {
+        "line": 268,
+        "text": "##[error]Process completed with exit code 1.",
+        "probability": 0.0009884879955076112
+      }
+    ]
+  },
+  "rootLines": [
+    265,
+    267
+  ],
+  "repeatLines": [],
+  "lineMark": "ok",
+  "needsHuman": true,
+  "tokens": 19971,
+  "seconds": 1.204479583999986,
+  "ranAt": "2026-10-08T11:39:00.076Z"
+}

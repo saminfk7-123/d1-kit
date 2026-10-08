@@ -1,0 +1,49 @@
+{
+  "kind": "aws",
+  "id": "aws-12",
+  "expected": [
+    "runtime",
+    "transient"
+  ],
+  "cause": {
+    "type": "choice",
+    "choice": "runtime",
+    "probabilities": {
+      "auth": 0.00008464477687418144,
+      "authorization": 0.00003998332332850273,
+      "config": 0.000551953016285468,
+      "build": 0.0000959150979751654,
+      "transient": 0.0005185118735578678,
+      "runtime": 0.9979545615875745,
+      "resource_state": 0.000754430324404296
+    },
+    "confidence": 0.9976136551855035
+  },
+  "causeCorrect": true,
+  "pick": {
+    "line": 275,
+    "text": "##[error]Resource is not in the state servicesStable",
+    "confidence": 0.9997372964797631,
+    "candidates": [
+      {
+        "line": 275,
+        "text": "##[error]Resource is not in the state servicesStable",
+        "probability": 0.9998686482398815
+      },
+      {
+        "line": 276,
+        "text": "##[error]Process completed with exit code 1.",
+        "probability": 0.00013135176011855098
+      }
+    ]
+  },
+  "rootLines": [
+    275
+  ],
+  "repeatLines": [],
+  "lineMark": "ok",
+  "needsHuman": false,
+  "tokens": 15969,
+  "seconds": 1.1034407089999878,
+  "ranAt": "2026-10-08T11:39:37.804Z"
+}

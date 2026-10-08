@@ -1,0 +1,275 @@
+2026-10-08T02:13:01.1546954Z Current runner version: '2.328.0'
+2026-10-08T02:13:01.1685176Z ##[group]Operating System
+2026-10-08T02:13:01.2315842Z Ubuntu
+2026-10-08T02:13:01.2436931Z 24.04.3
+2026-10-08T02:13:01.2465906Z LTS
+2026-10-08T02:13:01.3189014Z ##[endgroup]
+2026-10-08T02:13:01.3269143Z ##[group]Runner Image
+2026-10-08T02:13:01.3954158Z Image: ubuntu-24.04
+2026-10-08T02:13:01.4429334Z Version: 20260928.1.0
+2026-10-08T02:13:01.4658641Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260928.1/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-08T02:13:01.5004683Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260928.1
+2026-10-08T02:13:01.5041284Z ##[endgroup]
+2026-10-08T02:13:01.5400463Z ##[group]GITHUB_TOKEN Permissions
+2026-10-08T02:13:01.5619494Z Contents: read
+2026-10-08T02:13:01.6002125Z IdToken: write
+2026-10-08T02:13:01.6118789Z Metadata: read
+2026-10-08T02:13:01.6564026Z ##[endgroup]
+2026-10-08T02:13:01.7230183Z Secret source: Actions
+2026-10-08T02:13:01.7466213Z Prepare workflow directory
+2026-10-08T02:13:01.8089954Z Prepare all required actions
+2026-10-08T02:13:01.8210058Z Getting action download info
+2026-10-08T02:13:01.8606580Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2026-10-08T02:13:01.8992239Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+2026-10-08T02:13:01.9403868Z Download action repository 'aws-actions/configure-aws-credentials@v4' (SHA:b47578312673ae6fa5b5096b330d9fbac3d116df)
+2026-10-08T02:13:01.9662616Z Complete job name: deploy-report-batch
+2026-10-08T02:13:02.0221009Z ##[group]Run actions/checkout@v4
+2026-10-08T02:13:02.0601756Z with:
+2026-10-08T02:13:02.1196372Z   repository: example-org/platform-apps
+2026-10-08T02:13:02.1505064Z   token: ***
+2026-10-08T02:13:02.1848390Z   ssh-strict: true
+2026-10-08T02:13:02.1957650Z   persist-credentials: true
+2026-10-08T02:13:02.2567084Z   clean: true
+2026-10-08T02:13:02.3250178Z   fetch-depth: 1
+2026-10-08T02:13:02.4102517Z   lfs: false
+2026-10-08T02:13:02.4554882Z   submodules: false
+2026-10-08T02:13:02.5441013Z env:
+2026-10-08T02:13:02.5531096Z   AWS_REGION: ap-northeast-1
+2026-10-08T02:13:02.5799737Z   APP_DIR: apps/report-batch
+2026-10-08T02:13:02.6164882Z   REPORT_BUCKET: rb-prod-reports-123456789012
+2026-10-08T02:13:02.6634276Z   STAGE: prod
+2026-10-08T02:13:02.7408985Z ##[endgroup]
+2026-10-08T02:13:02.8243548Z Syncing repository: example-org/platform-apps
+2026-10-08T02:13:02.8506995Z ##[group]Getting Git version info
+2026-10-08T02:13:02.8642340Z Working directory is '/home/runner/work/platform-apps/platform-apps'
+2026-10-08T02:13:02.8945324Z [command]/usr/bin/git version
+2026-10-08T02:13:02.9711429Z git version 2.51.0
+2026-10-08T02:13:03.0025601Z ##[endgroup]
+2026-10-08T02:13:03.0462532Z Temporarily overriding HOME='/home/runner/work/_temp/5c1f0a3e-8d7b-4a52-9e3c-2f6b1d0a7c44' before making global git config changes
+2026-10-08T02:13:03.0846857Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-08T02:13:03.0883500Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/platform-apps/platform-apps
+2026-10-08T02:13:03.1354531Z Deleting the contents of '/home/runner/work/platform-apps/platform-apps'
+2026-10-08T02:13:03.1731985Z ##[group]Initializing the repository
+2026-10-08T02:13:03.1758815Z [command]/usr/bin/git init /home/runner/work/platform-apps/platform-apps
+2026-10-08T02:13:03.2140605Z Initialized empty Git repository in /home/runner/work/platform-apps/platform-apps/.git/
+2026-10-08T02:13:03.2344026Z [command]/usr/bin/git remote add origin https://github.com/example-org/platform-apps
+2026-10-08T02:13:03.3160331Z ##[endgroup]
+2026-10-08T02:13:03.3547909Z ##[group]Fetching the repository
+2026-10-08T02:13:03.3801797Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +8f3c2a1d9e4b7c6a5f0e1d2c3b4a59687f6e5d4c:refs/remotes/origin/main
+2026-10-08T02:13:05.4187512Z From https://github.com/example-org/platform-apps
+2026-10-08T02:13:05.4518256Z  * [new ref]         8f3c2a1d9e4b7c6a5f0e1d2c3b4a59687f6e5d4c -> origin/main
+2026-10-08T02:13:05.5306122Z ##[endgroup]
+2026-10-08T02:13:05.5743379Z ##[group]Checking out the ref
+2026-10-08T02:13:05.5758685Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-10-08T02:13:05.5820397Z Switched to a new branch 'main'
+2026-10-08T02:13:05.6045645Z branch 'main' set up to track 'origin/main'.
+2026-10-08T02:13:05.6524064Z ##[endgroup]
+2026-10-08T02:13:05.7276071Z [command]/usr/bin/git log -1 --format=%H
+2026-10-08T02:13:05.7854903Z 8f3c2a1d9e4b7c6a5f0e1d2c3b4a59687f6e5d4c
+2026-10-08T02:13:05.8413583Z ##[group]Run actions/setup-node@v4
+2026-10-08T02:13:05.8565500Z with:
+2026-10-08T02:13:05.8650030Z   node-version: 20
+2026-10-08T02:13:05.8874109Z   cache: npm
+2026-10-08T02:13:05.9764232Z   cache-dependency-path: apps/report-batch/package-lock.json
+2026-10-08T02:13:06.0562200Z   always-auth: false
+2026-10-08T02:13:06.1281157Z   check-latest: false
+2026-10-08T02:13:06.2047863Z   token: ***
+2026-10-08T02:13:06.2472160Z env:
+2026-10-08T02:13:06.2635428Z   AWS_REGION: ap-northeast-1
+2026-10-08T02:13:06.3022336Z   APP_DIR: apps/report-batch
+2026-10-08T02:13:06.3879413Z   REPORT_BUCKET: rb-prod-reports-123456789012
+2026-10-08T02:13:06.4508623Z   STAGE: prod
+2026-10-08T02:13:06.4828637Z ##[endgroup]
+2026-10-08T02:13:06.5369847Z Found in cache @ /opt/hostedtoolcache/node/20.19.5/x64
+2026-10-08T02:13:06.5421163Z ##[group]Environment details
+2026-10-08T02:13:06.5976267Z node: v20.19.5
+2026-10-08T02:13:06.6305086Z npm: 10.8.2
+2026-10-08T02:13:06.6590827Z yarn: 1.22.22
+2026-10-08T02:13:06.6839850Z ##[endgroup]
+2026-10-08T02:13:06.6891094Z [command]/opt/hostedtoolcache/node/20.19.5/x64/bin/npm config get cache
+2026-10-08T02:13:06.7226203Z /home/runner/.npm
+2026-10-08T02:13:07.7918213Z Cache hit for: node-cache-Linux-x64-npm-3d9a7e1c64b2f0a85c17e9d4b3a2f6e0c1d8b7a9e5f4c3d2b1a0f9e8d7c6b5a4
+2026-10-08T02:13:07.8224596Z Received 41943040 of 58122914 (72.2%), 39.9 MBs/sec
+2026-10-08T02:13:07.8570582Z Received 58122914 of 58122914 (100.0%), 41.3 MBs/sec
+2026-10-08T02:13:07.8999580Z Cache Size: ~55 MB (58122914 B)
+2026-10-08T02:13:07.9414829Z [command]/usr/bin/tar -xf /home/runner/work/_temp/0b7e2d4c-1a3f-4e6b-8c9d-5f2a1e0b3c7d/cache.tzst -P -C /home/runner/work/platform-apps/platform-apps --use-compress-program unzstd
+2026-10-08T02:13:07.9570989Z Cache restored successfully
+2026-10-08T02:13:08.0102150Z Cache restored from key: node-cache-Linux-x64-npm-3d9a7e1c64b2f0a85c17e9d4b3a2f6e0c1d8b7a9e5f4c3d2b1a0f9e8d7c6b5a4
+2026-10-08T02:13:08.0753026Z ##[group]Run npm ci
+2026-10-08T02:13:08.0877796Z npm ci
+2026-10-08T02:13:08.1157249Z shell: /usr/bin/bash -e {0}
+2026-10-08T02:13:08.1377105Z env:
+2026-10-08T02:13:08.1768347Z   AWS_REGION: ap-northeast-1
+2026-10-08T02:13:08.2613465Z   APP_DIR: apps/report-batch
+2026-10-08T02:13:08.3166948Z   REPORT_BUCKET: rb-prod-reports-123456789012
+2026-10-08T02:13:08.3452054Z   STAGE: prod
+2026-10-08T02:13:08.3898766Z ##[endgroup]
+2026-10-08T02:13:08.9603791Z npm WARN deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+2026-10-08T02:13:09.3040653Z npm WARN deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2026-10-08T02:13:09.4007726Z npm WARN deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+2026-10-08T02:13:10.1004122Z npm WARN deprecated @humanwhocodes/object-schema@2.0.3: Use @eslint/object-schema instead
+2026-10-08T02:13:10.9544814Z npm WARN deprecated @humanwhocodes/config-array@0.11.14: Use @eslint/config-array instead
+2026-10-08T02:13:11.7040800Z npm WARN deprecated domexception@4.0.0: Use your platform's native DOMException instead
+2026-10-08T02:13:11.9294707Z npm WARN deprecated abab@2.0.6: Use your platform's native atob() and btoa() methods instead
+2026-10-08T02:13:12.5763257Z npm WARN deprecated eslint@8.57.1: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+2026-10-08T02:13:13.4090816Z npm WARN deprecated querystring@0.2.0: The querystring API is considered Legacy. new code should use the URLSearchParams API instead.
+2026-10-08T02:13:13.8684893Z npm WARN deprecated uuid@3.4.0: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.
+2026-10-08T02:13:14.7552660Z npm WARN deprecated lodash.get@4.4.2: This package is deprecated. Use the optional chaining (?.) operator instead.
+2026-10-08T02:13:15.0267202Z npm WARN deprecated sourcemap-codec@1.4.8: Please use @jridgewell/sourcemap-codec instead
+2026-10-08T02:13:15.0287389Z npm WARN ERESOLVE overriding peer dependency
+2026-10-08T02:13:15.0627671Z npm WARN While resolving: aws-cdk-lib@2.215.0
+2026-10-08T02:13:15.1149436Z npm WARN Found: constructs@10.4.2
+2026-10-08T02:13:15.1443848Z npm WARN node_modules/constructs
+2026-10-08T02:13:15.1516833Z npm WARN   constructs@"^10.0.0" from the root project
+2026-10-08T02:13:15.1732039Z npm WARN Could not resolve dependency:
+2026-10-08T02:13:15.2168418Z npm WARN peer constructs@"^10.0.0" from aws-cdk-lib@2.215.0
+2026-10-08T02:13:29.2789428Z 
+2026-10-08T02:13:29.3368660Z > report-batch@1.14.0 prepare
+2026-10-08T02:13:29.3475190Z > husky || true
+2026-10-08T02:13:29.4257391Z 
+2026-10-08T02:13:29.4901118Z HUSKY=0 skip install
+2026-10-08T02:13:29.5240909Z 
+2026-10-08T02:13:29.5425770Z added 842 packages, and audited 843 packages in 19s
+2026-10-08T02:13:29.5903991Z 
+2026-10-08T02:13:29.6592470Z 127 packages are looking for funding
+2026-10-08T02:13:29.6984675Z   run `npm fund` for details
+2026-10-08T02:13:29.7085621Z 
+2026-10-08T02:13:29.7800837Z 6 vulnerabilities (4 moderate, 2 high)
+2026-10-08T02:13:29.8303423Z 
+2026-10-08T02:13:29.8714276Z To address issues that do not require attention, run:
+2026-10-08T02:13:29.9023587Z   npm audit fix
+2026-10-08T02:13:29.9550941Z 
+2026-10-08T02:13:29.9655121Z To address all issues (including breaking changes), run:
+2026-10-08T02:13:30.0472025Z   npm audit fix --force
+2026-10-08T02:13:30.1146736Z 
+2026-10-08T02:13:30.1694847Z Run `npm audit` for details.
+2026-10-08T02:13:30.1785553Z ##[group]Run npm run build
+2026-10-08T02:13:30.2623394Z npm run build
+2026-10-08T02:13:30.3253806Z shell: /usr/bin/bash -e {0}
+2026-10-08T02:13:30.3411698Z env:
+2026-10-08T02:13:30.3634075Z   AWS_REGION: ap-northeast-1
+2026-10-08T02:13:30.3850482Z   APP_DIR: apps/report-batch
+2026-10-08T02:13:30.4049175Z   REPORT_BUCKET: rb-prod-reports-123456789012
+2026-10-08T02:13:30.4700005Z   STAGE: prod
+2026-10-08T02:13:30.5041968Z ##[endgroup]
+2026-10-08T02:13:30.5051352Z 
+2026-10-08T02:13:30.5061644Z > report-batch@1.14.0 build
+2026-10-08T02:13:30.5223178Z > tsc -p tsconfig.json && npm run bundle:lambdas
+2026-10-08T02:13:30.5371447Z 
+2026-10-08T02:13:39.6162177Z 
+2026-10-08T02:13:39.6855011Z > report-batch@1.14.0 bundle:lambdas
+2026-10-08T02:13:39.7540523Z > node scripts/bundle-lambdas.mjs
+2026-10-08T02:13:39.8082454Z 
+2026-10-08T02:13:40.0953063Z   dist/lambdas/start-report/index.js  12.4kb
+2026-10-08T02:13:40.5972612Z   dist/lambdas/collect-metrics/index.js  48.9kb
+2026-10-08T02:13:41.1502190Z   dist/lambdas/render-csv/index.js  31.2kb
+2026-10-08T02:13:41.6050220Z   dist/lambdas/notify-complete/index.js  9.7kb
+2026-10-08T02:13:42.0245935Z   dist/lambdas/cleanup-temp/index.js  6.1kb
+2026-10-08T02:13:42.0962077Z 
+2026-10-08T02:13:42.1710004Z [bundle] 5 lambda entrypoints bundled in 1.84s (esbuild 0.24.2, target node20)
+2026-10-08T02:13:42.2377097Z ##[group]Run aws-actions/configure-aws-credentials@v4
+2026-10-08T02:13:42.3183569Z with:
+2026-10-08T02:13:42.3765986Z   role-to-assume: arn:aws:iam::123456789012:role/gha-cd-report-batch-deploy
+2026-10-08T02:13:42.3953354Z   role-session-name: gha-report-batch-8f3c2a1
+2026-10-08T02:13:42.4738965Z   aws-region: ap-northeast-1
+2026-10-08T02:13:42.5609775Z   audience: sts.amazonaws.com
+2026-10-08T02:13:42.5787426Z env:
+2026-10-08T02:13:42.5898639Z   AWS_REGION: ap-northeast-1
+2026-10-08T02:13:42.6090299Z   APP_DIR: apps/report-batch
+2026-10-08T02:13:42.6326164Z   REPORT_BUCKET: rb-prod-reports-123456789012
+2026-10-08T02:13:42.6816733Z   STAGE: prod
+2026-10-08T02:13:42.7574685Z ##[endgroup]
+2026-10-08T02:13:42.8462379Z Assuming role with OIDC
+2026-10-08T02:13:43.8587871Z Authenticated as assumedRoleId AROAEXAMPLE7Q2RB4N8XZ:gha-report-batch-8f3c2a1
+2026-10-08T02:13:43.9118492Z ##[group]Run npx cdk --version
+2026-10-08T02:13:43.9553565Z npx cdk --version
+2026-10-08T02:13:43.9984732Z shell: /usr/bin/bash -e {0}
+2026-10-08T02:13:44.0381700Z env:
+2026-10-08T02:13:44.1176070Z   AWS_REGION: ap-northeast-1
+2026-10-08T02:13:44.1865801Z   APP_DIR: apps/report-batch
+2026-10-08T02:13:44.2339371Z   REPORT_BUCKET: rb-prod-reports-123456789012
+2026-10-08T02:13:44.2550072Z   STAGE: prod
+2026-10-08T02:13:44.3318757Z   AWS_DEFAULT_REGION: ap-northeast-1
+2026-10-08T02:13:44.4188149Z   AWS_ACCESS_KEY_ID: ***
+2026-10-08T02:13:44.4291931Z   AWS_SECRET_ACCESS_KEY: ***
+2026-10-08T02:13:44.4520407Z   AWS_SESSION_TOKEN: ***
+2026-10-08T02:13:44.5408653Z ##[endgroup]
+2026-10-08T02:13:44.6221504Z 2.1029.2 (build 4c1e0f8)
+2026-10-08T02:13:44.6756799Z ##[group]Run npx cdk synth ReportBatch-Prod --context stage=prod
+2026-10-08T02:13:44.7070997Z npx cdk synth ReportBatch-Prod --context stage=prod
+2026-10-08T02:13:44.7363814Z shell: /usr/bin/bash -e {0}
+2026-10-08T02:13:44.7848653Z env:
+2026-10-08T02:13:44.8279758Z   AWS_REGION: ap-northeast-1
+2026-10-08T02:13:44.9104308Z   APP_DIR: apps/report-batch
+2026-10-08T02:13:44.9699596Z   REPORT_BUCKET: rb-prod-reports-123456789012
+2026-10-08T02:13:45.0366186Z   STAGE: prod
+2026-10-08T02:13:45.0779604Z   AWS_DEFAULT_REGION: ap-northeast-1
+2026-10-08T02:13:45.1357076Z   AWS_ACCESS_KEY_ID: ***
+2026-10-08T02:13:45.2130940Z   AWS_SECRET_ACCESS_KEY: ***
+2026-10-08T02:13:45.2463302Z   AWS_SESSION_TOKEN: ***
+2026-10-08T02:13:45.3174347Z ##[endgroup]
+2026-10-08T02:13:47.3912839Z [Warning at /ReportBatch-Prod] Feature flags: the following flags are not configured and will use their default values:
+2026-10-08T02:13:47.4393326Z     @aws-cdk/aws-ecs:enableImdsBlockingDeprecatedFeature (default: false)
+2026-10-08T02:13:47.4905729Z     @aws-cdk/aws-stepfunctions-tasks:useNewS3UriParametersForBedrockInvokeModelTask (default: false)
+2026-10-08T02:13:47.4945312Z     @aws-cdk/aws-lambda:useCdkManagedLogGroup (default: false)
+2026-10-08T02:13:47.5618481Z   Run 'cdk flags --unstable=flags' to view and configure these flags. [ack: @aws-cdk/core:unconfiguredFeatureFlags]
+2026-10-08T02:13:47.6222045Z 
+2026-10-08T02:13:47.7016454Z NOTICES         (What's this? https://github.com/aws/aws-cdk/wiki/CLI-Notices)
+2026-10-08T02:13:47.7139174Z 
+2026-10-08T02:13:47.7775843Z 34892	CDK CLI will collect telemetry data on command usage starting at version 2.1100.0 (unless opted out)
+2026-10-08T02:13:47.8617627Z 
+2026-10-08T02:13:47.9411801Z 	Overview: We do not collect customer content and we anonymize the
+2026-10-08T02:13:47.9609733Z 	          telemetry we do collect. See the attached issue for more
+2026-10-08T02:13:47.9703274Z 	          information on what data is collected, why, and how to
+2026-10-08T02:13:47.9880120Z 	          opt-out. Telemetry will NOT be collected for any CDK CLI
+2026-10-08T02:13:48.0097186Z 	          version prior to version 2.1100.0 - regardless of
+2026-10-08T02:13:48.0862759Z 	          opt-in/out.
+2026-10-08T02:13:48.1582898Z 
+2026-10-08T02:13:48.1929730Z 	Affected versions: cli: ^2.0.0
+2026-10-08T02:13:48.2620023Z 
+2026-10-08T02:13:48.2829481Z 	More information at: https://github.com/aws/aws-cdk/issues/34892
+2026-10-08T02:13:48.3101810Z 
+2026-10-08T02:13:48.3519671Z 35112	(aws-ecs): FargateTaskDefinition ephemeralStorageGiB default will change in a future major version
+2026-10-08T02:13:48.3682274Z 
+2026-10-08T02:13:48.3765564Z 	Overview: Task definitions that do not set ephemeralStorageGiB
+2026-10-08T02:13:48.4567752Z 	          explicitly may observe a template diff after upgrading.
+2026-10-08T02:13:48.4766306Z 
+2026-10-08T02:13:48.4939681Z 	Affected versions: lib: >=2.200.0 <3.0.0
+2026-10-08T02:13:48.5676625Z 
+2026-10-08T02:13:48.5683028Z 	More information at: https://github.com/aws/aws-cdk/issues/35112
+2026-10-08T02:13:48.5890208Z 
+2026-10-08T02:13:48.6433112Z If you don’t want to see a notice anymore, use "cdk acknowledge <id>". For example, "cdk acknowledge 34892".
+2026-10-08T02:13:48.6717984Z /home/runner/work/platform-apps/platform-apps/apps/report-batch/bin/report-batch.ts:14
+2026-10-08T02:13:48.7355618Z     throw new Error(`Missing required environment variable ${name}`);
+2026-10-08T02:13:48.7447476Z           ^
+2026-10-08T02:13:48.7670712Z 
+2026-10-08T02:13:48.8009348Z Error: Missing required environment variable REPORT_BUCKET_NAME
+2026-10-08T02:13:48.8525258Z     at requireEnv (/home/runner/work/platform-apps/platform-apps/apps/report-batch/bin/report-batch.ts:14:11)
+2026-10-08T02:13:48.9422344Z     at Object.<anonymous> (/home/runner/work/platform-apps/platform-apps/apps/report-batch/bin/report-batch.ts:22:28)
+2026-10-08T02:13:48.9950445Z     at Module._compile (node:internal/modules/cjs/loader:1554:14)
+2026-10-08T02:13:49.0176606Z     at Module.m._compile (/home/runner/work/platform-apps/platform-apps/node_modules/ts-node/src/index.ts:1618:23)
+2026-10-08T02:13:49.0260766Z     at node:internal/modules/cjs/loader:1706:10
+2026-10-08T02:13:49.0300524Z     at Object.require.extensions.<computed> [as .ts] (/home/runner/work/platform-apps/platform-apps/node_modules/ts-node/src/index.ts:1621:12)
+2026-10-08T02:13:49.1189840Z     at Module.load (node:internal/modules/cjs/loader:1289:32)
+2026-10-08T02:13:49.1591292Z     at Function._load (node:internal/modules/cjs/loader:1108:12)
+2026-10-08T02:13:49.1706772Z     at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2026-10-08T02:13:49.1861769Z     at wrapModuleLoad (node:internal/modules/cjs/loader:220:24)
+2026-10-08T02:13:49.1884913Z 
+2026-10-08T02:13:49.2191048Z Node.js v20.19.5
+2026-10-08T02:13:49.2205327Z 
+2026-10-08T02:13:49.2905932Z Subprocess exited with error 1
+2026-10-08T02:13:49.3501776Z ##[error]Process completed with exit code 1.
+2026-10-08T02:13:49.7501775Z Post job cleanup.
+2026-10-08T02:13:49.7730968Z Post job cleanup.
+2026-10-08T02:13:49.8503653Z [command]/usr/bin/git version
+2026-10-08T02:13:49.8647107Z git version 2.51.0
+2026-10-08T02:13:49.9461755Z Temporarily overriding HOME='/home/runner/work/_temp/9a2d4e6f-3b1c-4f8a-b7e5-0c9d2a1f6e3b' before making global git config changes
+2026-10-08T02:13:49.9864716Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-08T02:13:50.0654270Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/platform-apps/platform-apps
+2026-10-08T02:13:50.1485573Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-08T02:13:50.1823689Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-08T02:13:50.2694319Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-08T02:13:50.3100217Z http.https://github.com/.extraheader
+2026-10-08T02:13:50.3922485Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-08T02:13:50.4034673Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http\.https\:\/\/github\.com\/\.extraheader' || :"
+2026-10-08T02:13:50.4451901Z Cleaning up orphan processes

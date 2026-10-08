@@ -1,0 +1,9 @@
+STEP: Deploy native app (snow app deploy)
+2026-10-14T06:33:12Z + snow app run --connection ci
+2026-10-14T06:33:15Z Creating application APP_INSTANCE from package APP_PKG
+2026-10-14T06:33:17Z ╭─ Error ──────────────────────────────────────────────────────╮
+2026-10-14T06:33:17Z │ 000606 (57P03): No active warehouse selected in the current   │
+2026-10-14T06:33:17Z │ session. Select an active warehouse with the 'use warehouse'  │
+2026-10-14T06:33:17Z │ command.                                                      │
+2026-10-14T06:33:17Z ╰──────────────────────────────────────────────────────────────╯
+2026-10-14T06:33:17Z ##[error]Process completed with exit code 1.

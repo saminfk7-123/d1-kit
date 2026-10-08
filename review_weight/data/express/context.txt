@@ -1,0 +1,10 @@
+Repository: Express, a Node.js web framework used by millions of production apps. Every merged change is released to all users through npm.
+
+Impact map:
+- lib/ (application.js, request.js, response.js, router): public API. Any behavior change affects every app that uses Express.
+- package.json "dependencies": installed into every user's app. Version changes here reach all users.
+- package.json "devDependencies": used only by Express maintainers for tests and tooling.
+- .github/workflows/: CI. A workflow that publishes to npm controls what every user installs.
+- History.md: changelog text only.
+- README.md and other docs: affect readers and contributors only.
+- test/, examples/, benchmarks/: no effect on users.

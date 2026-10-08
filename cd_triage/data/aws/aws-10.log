@@ -1,0 +1,248 @@
+2026-10-08T02:10:41.2210394Z Current runner version: '2.328.0'
+2026-10-08T02:10:41.2236120Z ##[group]Runner Image Provisioner
+2026-10-08T02:10:41.2237012Z Hosted Compute Agent
+2026-10-08T02:10:41.2237538Z Version: 20250912.392
+2026-10-08T02:10:41.2238104Z Commit: 0c4a8e7f1d2b9a3e5c6d7f8091a2b3c4d5e6f708
+2026-10-08T02:10:41.2238771Z Build Date: 2025-09-12T18:22:05Z
+2026-10-08T02:10:41.2239301Z ##[endgroup]
+2026-10-08T02:10:41.2239829Z ##[group]Operating System
+2026-10-08T02:10:41.2240387Z Ubuntu
+2026-10-08T02:10:41.2240831Z 24.04.3
+2026-10-08T02:10:41.2241259Z LTS
+2026-10-08T02:10:41.2241712Z ##[endgroup]
+2026-10-08T02:10:41.2242177Z ##[group]Runner Image
+2026-10-08T02:10:41.2242678Z Image: ubuntu-24.04
+2026-10-08T02:10:41.2243174Z Version: 20250928.1.0
+2026-10-08T02:10:41.2244187Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250928.1/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-08T02:10:41.2245712Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250928.1
+2026-10-08T02:10:41.2246614Z ##[endgroup]
+2026-10-08T02:10:41.2248391Z ##[group]GITHUB_TOKEN Permissions
+2026-10-08T02:10:41.2250554Z Contents: read
+2026-10-08T02:10:41.2251051Z IdToken: write
+2026-10-08T02:10:41.2251521Z Metadata: read
+2026-10-08T02:10:41.2252003Z ##[endgroup]
+2026-10-08T02:10:41.2254598Z Secret source: Actions
+2026-10-08T02:10:41.2255365Z Prepare workflow directory
+2026-10-08T02:10:41.2716893Z Prepare all required actions
+2026-10-08T02:10:41.2754207Z Getting action download info
+2026-10-08T02:10:41.6120344Z Download action repository 'actions/checkout@v4' (SHA:08eba0b27e820071cde6df949e0beb9ba4906955)
+2026-10-08T02:10:41.7203819Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+2026-10-08T02:10:41.8411270Z Download action repository 'aws-actions/configure-aws-credentials@v4' (SHA:7474bc4690e29a8392af63c5b98e7449536d5c3a)
+2026-10-08T02:10:42.0839915Z Complete job name: deploy-order-api
+2026-10-08T02:10:42.1502213Z ##[group]Run actions/checkout@v4
+2026-10-08T02:10:42.1503094Z with:
+2026-10-08T02:10:42.1503517Z   repository: example-shop/platform-deploy
+2026-10-08T02:10:42.1504230Z   token: ***
+2026-10-08T02:10:42.1504621Z   ssh-strict: true
+2026-10-08T02:10:42.1505031Z   ssh-user: git
+2026-10-08T02:10:42.1505448Z   persist-credentials: true
+2026-10-08T02:10:42.1505902Z   clean: true
+2026-10-08T02:10:42.1506307Z   fetch-depth: 1
+2026-10-08T02:10:42.1506712Z   lfs: false
+2026-10-08T02:10:42.1507103Z   submodules: false
+2026-10-08T02:10:42.1507511Z ##[endgroup]
+2026-10-08T02:10:42.2589107Z Syncing repository: example-shop/platform-deploy
+2026-10-08T02:10:42.2591276Z ##[group]Getting Git version info
+2026-10-08T02:10:42.2592158Z Working directory is '/home/runner/work/platform-deploy/platform-deploy'
+2026-10-08T02:10:42.2593350Z [command]/usr/bin/git version
+2026-10-08T02:10:42.2648771Z git version 2.51.0
+2026-10-08T02:10:42.2674210Z ##[endgroup]
+2026-10-08T02:10:42.2693118Z Temporarily overriding HOME='/home/runner/work/_temp/5b1c2e9a-3f40-4d1a-9b7e-2a6c8d0f1e33' before making global git config changes
+2026-10-08T02:10:42.2700983Z [command]/usr/bin/git init /home/runner/work/platform-deploy/platform-deploy
+2026-10-08T02:10:42.2789127Z Initialized empty Git repository in /home/runner/work/platform-deploy/platform-deploy/.git/
+2026-10-08T02:10:42.2801422Z [command]/usr/bin/git remote add origin https://github.com/example-shop/platform-deploy
+2026-10-08T02:10:42.2844310Z ##[group]Fetching the repository
+2026-10-08T02:10:42.2852019Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +3f9d2c71a8b04e6d5c2f1a0b9e8d7c6b5a4f3e21:refs/remotes/origin/main
+2026-10-08T02:10:43.1904021Z From https://github.com/example-shop/platform-deploy
+2026-10-08T02:10:43.1905213Z  * [new ref]         3f9d2c71a8b04e6d5c2f1a0b9e8d7c6b5a4f3e21 -> origin/main
+2026-10-08T02:10:43.1931840Z ##[endgroup]
+2026-10-08T02:10:43.1932661Z ##[group]Checking out the ref
+2026-10-08T02:10:43.1937209Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-10-08T02:10:43.2410573Z Switched to a new branch 'main'
+2026-10-08T02:10:43.2412134Z branch 'main' set up to track 'origin/main'.
+2026-10-08T02:10:43.2420917Z ##[endgroup]
+2026-10-08T02:10:43.2468320Z [command]/usr/bin/git log -1 --format=%H
+2026-10-08T02:10:43.2493455Z 3f9d2c71a8b04e6d5c2f1a0b9e8d7c6b5a4f3e21
+2026-10-08T02:10:43.2614088Z ##[group]Run actions/setup-node@v4
+2026-10-08T02:10:43.2614731Z with:
+2026-10-08T02:10:43.2615134Z   node-version: 20
+2026-10-08T02:10:43.2615552Z   cache: npm
+2026-10-08T02:10:43.2615972Z   cache-dependency-path: apps/order-api/package-lock.json
+2026-10-08T02:10:43.2616499Z   always-auth: false
+2026-10-08T02:10:43.2616909Z   check-latest: false
+2026-10-08T02:10:43.2617436Z ##[endgroup]
+2026-10-08T02:10:43.4128730Z Found in cache @ /opt/hostedtoolcache/node/20.19.5/x64
+2026-10-08T02:10:43.4135522Z ##[group]Environment details
+2026-10-08T02:10:43.8020194Z node: v20.19.5
+2026-10-08T02:10:43.8021022Z npm: 10.8.2
+2026-10-08T02:10:43.8021481Z yarn: 1.22.22
+2026-10-08T02:10:43.8022870Z ##[endgroup]
+2026-10-08T02:10:43.8057702Z [command]/opt/hostedtoolcache/node/20.19.5/x64/bin/npm config get cache
+2026-10-08T02:10:44.0111805Z /home/runner/.npm
+2026-10-08T02:10:44.2310425Z Cache hit for: node-cache-Linux-x64-npm-8c1f0e5b2a7d94c36e1b0f7a2d5c8e9b1a3f6d4c7e0b2a5d8f1c4e7a0b3d6f9c
+2026-10-08T02:10:45.0928817Z Received 41943040 of 61204833 (68.5%), 39.9 MBs/sec
+2026-10-08T02:10:45.4472190Z Received 61204833 of 61204833 (100.0%), 45.1 MBs/sec
+2026-10-08T02:10:45.4475031Z Cache Size: ~58 MB (61204833 B)
+2026-10-08T02:10:45.4508924Z [command]/usr/bin/tar -xf /home/runner/work/_temp/0e7d6c41-92b8-4f1a-a3c5-61d2e8f0b7a4/cache.tzst -P -C /home/runner/work/platform-deploy/platform-deploy --use-compress-program unzstd
+2026-10-08T02:10:46.1186610Z Cache restored successfully
+2026-10-08T02:10:46.1427201Z Cache restored from key: node-cache-Linux-x64-npm-8c1f0e5b2a7d94c36e1b0f7a2d5c8e9b1a3f6d4c7e0b2a5d8f1c4e7a0b3d6f9c
+2026-10-08T02:10:46.1561102Z ##[group]Run aws-actions/configure-aws-credentials@v4
+2026-10-08T02:10:46.1561840Z with:
+2026-10-08T02:10:46.1562301Z   role-to-assume: arn:aws:iam::123456789012:role/github-actions-deploy-order-api
+2026-10-08T02:10:46.1563044Z   aws-region: ap-northeast-1
+2026-10-08T02:10:46.1563511Z   role-session-name: gha-cd-order-api
+2026-10-08T02:10:46.1563988Z   audience: sts.amazonaws.com
+2026-10-08T02:10:46.1564440Z ##[endgroup]
+2026-10-08T02:10:46.3009176Z Assuming role with OIDC
+2026-10-08T02:10:46.9927350Z Authenticated as assumedRoleId AROAEXAMPLEROLEID0001:gha-cd-order-api
+2026-10-08T02:10:47.0130584Z ##[group]Run npm ci
+2026-10-08T02:10:47.0131257Z [36;1mnpm ci[0m
+2026-10-08T02:10:47.0153402Z shell: /usr/bin/bash -e {0}
+2026-10-08T02:10:47.0153911Z env:
+2026-10-08T02:10:47.0154340Z   AWS_DEFAULT_REGION: ap-northeast-1
+2026-10-08T02:10:47.0154802Z   AWS_REGION: ap-northeast-1
+2026-10-08T02:10:47.0155290Z   AWS_ACCESS_KEY_ID: ***
+2026-10-08T02:10:47.0155741Z   AWS_SECRET_ACCESS_KEY: ***
+2026-10-08T02:10:47.0156202Z   AWS_SESSION_TOKEN: ***
+2026-10-08T02:10:47.0156643Z ##[endgroup]
+2026-10-08T02:10:49.8812290Z npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+2026-10-08T02:10:50.0417733Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2026-10-08T02:10:58.6043119Z
+2026-10-08T02:10:58.6044088Z added 512 packages, and audited 513 packages in 11s
+2026-10-08T02:10:58.6044610Z
+2026-10-08T02:10:58.6045022Z 61 packages are looking for funding
+2026-10-08T02:10:58.6045533Z   run `npm fund` for details
+2026-10-08T02:10:58.6187451Z
+2026-10-08T02:10:58.6188128Z found 0 vulnerabilities
+2026-10-08T02:10:58.6402557Z ##[group]Run npm run build && npx cdk synth --quiet
+2026-10-08T02:10:58.6403339Z [36;1mnpm run build && npx cdk synth --quiet[0m
+2026-10-08T02:10:58.6424199Z shell: /usr/bin/bash -e {0}
+2026-10-08T02:10:58.6424690Z env:
+2026-10-08T02:10:58.6425114Z   AWS_DEFAULT_REGION: ap-northeast-1
+2026-10-08T02:10:58.6425581Z   AWS_REGION: ap-northeast-1
+2026-10-08T02:10:58.6426047Z   AWS_ACCESS_KEY_ID: ***
+2026-10-08T02:10:58.6426486Z   AWS_SECRET_ACCESS_KEY: ***
+2026-10-08T02:10:58.6426941Z   AWS_SESSION_TOKEN: ***
+2026-10-08T02:10:58.6427360Z ##[endgroup]
+2026-10-08T02:10:58.8410923Z
+2026-10-08T02:10:58.8411701Z > order-api@2.14.0 build
+2026-10-08T02:10:58.8412188Z > tsc -p tsconfig.json && node scripts/bundle-lambdas.mjs
+2026-10-08T02:10:58.8412610Z
+2026-10-08T02:11:04.2207714Z [bundle] src/handlers/create-order.ts -> dist/create-order/index.js (142.3kb)
+2026-10-08T02:11:04.3561920Z [bundle] src/handlers/get-order.ts -> dist/get-order/index.js (98.7kb)
+2026-10-08T02:11:04.4883017Z [bundle] src/workers/order-events-worker.ts -> dist/order-events-worker/index.js (156.0kb)
+2026-10-08T02:11:04.5012268Z [bundle] done in 1.21s
+2026-10-08T02:11:11.9038245Z Successfully synthesized to /home/runner/work/platform-deploy/platform-deploy/apps/order-api/cdk.out
+2026-10-08T02:11:11.9039572Z Supply a stack id (OrderApi-Network, OrderApi-Prod) to display its template.
+2026-10-08T02:11:11.9286041Z ##[group]Run npx cdk deploy --all --require-approval never --progress events
+2026-10-08T02:11:11.9286884Z [36;1mnpx cdk deploy --all --require-approval never --progress events[0m
+2026-10-08T02:11:11.9307610Z shell: /usr/bin/bash -e {0}
+2026-10-08T02:11:11.9308117Z env:
+2026-10-08T02:11:11.9308547Z   AWS_DEFAULT_REGION: ap-northeast-1
+2026-10-08T02:11:11.9309018Z   AWS_REGION: ap-northeast-1
+2026-10-08T02:11:11.9309487Z   AWS_ACCESS_KEY_ID: ***
+2026-10-08T02:11:11.9309929Z   AWS_SECRET_ACCESS_KEY: ***
+2026-10-08T02:11:11.9310392Z   AWS_SESSION_TOKEN: ***
+2026-10-08T02:11:11.9310816Z ##[endgroup]
+2026-10-08T02:11:19.4402187Z
+2026-10-08T02:11:19.4403019Z ✨  Synthesis time: 7.21s
+2026-10-08T02:11:19.4403511Z
+2026-10-08T02:11:19.6120933Z OrderApi-Network:  start: Building OrderApi-Network Template
+2026-10-08T02:11:19.6122480Z OrderApi-Network:  success: Built OrderApi-Network Template
+2026-10-08T02:11:19.6418026Z OrderApi-Network:  start: Publishing OrderApi-Network Template (123456789012-ap-northeast-1-a1b2c3d4)
+2026-10-08T02:11:20.1907713Z OrderApi-Network:  success: Published OrderApi-Network Template (123456789012-ap-northeast-1-a1b2c3d4)
+2026-10-08T02:11:20.2104467Z OrderApi-Network: deploying... [1/2]
+2026-10-08T02:11:20.9015590Z OrderApi-Network: creating CloudFormation changeset...
+2026-10-08T02:11:27.3361772Z OrderApi-Network | 0/4 | 2:11:26 AM | UPDATE_IN_PROGRESS   | AWS::CloudFormation::Stack | OrderApi-Network User Initiated
+2026-10-08T02:11:30.4419018Z OrderApi-Network | 0/4 | 2:11:29 AM | UPDATE_IN_PROGRESS   | AWS::EC2::SecurityGroup | LambdaSg (LambdaSg5E3A1B2C)
+2026-10-08T02:11:33.7712054Z OrderApi-Network | 1/4 | 2:11:33 AM | UPDATE_COMPLETE      | AWS::EC2::SecurityGroup | LambdaSg (LambdaSg5E3A1B2C)
+2026-10-08T02:11:34.1209371Z OrderApi-Network | 1/4 | 2:11:33 AM | UPDATE_IN_PROGRESS   | AWS::CDK::Metadata | CDKMetadata/Default (CDKMetadata)
+2026-10-08T02:11:35.0024418Z OrderApi-Network | 2/4 | 2:11:34 AM | UPDATE_COMPLETE      | AWS::CDK::Metadata | CDKMetadata/Default (CDKMetadata)
+2026-10-08T02:11:36.8830511Z OrderApi-Network | 3/4 | 2:11:36 AM | UPDATE_COMPLETE_CLEA | AWS::CloudFormation::Stack | OrderApi-Network
+2026-10-08T02:11:37.5528207Z OrderApi-Network | 4/4 | 2:11:37 AM | UPDATE_COMPLETE      | AWS::CloudFormation::Stack | OrderApi-Network
+2026-10-08T02:11:38.0127745Z
+2026-10-08T02:11:38.0128631Z  ✅  OrderApi-Network
+2026-10-08T02:11:38.0129092Z
+2026-10-08T02:11:38.0129571Z ✨  Deployment time: 17.81s
+2026-10-08T02:11:38.0130016Z
+2026-10-08T02:11:38.0130517Z Outputs:
+2026-10-08T02:11:38.0131208Z OrderApi-Network.ExportsOutputFnGetAttLambdaSg5E3A1B2CGroupId7F1D0A9B = sg-0a1b2c3d4e5f60789
+2026-10-08T02:11:38.0131963Z OrderApi-Network.VpcId = vpc-0f1e2d3c4b5a69788
+2026-10-08T02:11:38.0132625Z Stack ARN:
+2026-10-08T02:11:38.0133389Z arn:aws:cloudformation:ap-northeast-1:123456789012:stack/OrderApi-Network/4c2d9e10-1a7b-11ef-8a3c-0e5f1b2d3a4c
+2026-10-08T02:11:38.0133890Z
+2026-10-08T02:11:38.0134401Z ✨  Total time: 25.02s
+2026-10-08T02:11:38.0134802Z
+2026-10-08T02:11:38.1420677Z OrderApi-Prod:  start: Building 3c7a2e9f1d4b6a8c0e2f4a6b8d0c2e4f6a8b0d2c4e6f8a0b2c4d6e8f0a2b4c6d:123456789012-ap-northeast-1
+2026-10-08T02:11:38.1422188Z OrderApi-Prod:  success: Built 3c7a2e9f1d4b6a8c0e2f4a6b8d0c2e4f6a8b0d2c4e6f8a0b2c4d6e8f0a2b4c6d:123456789012-ap-northeast-1
+2026-10-08T02:11:38.1530021Z OrderApi-Prod:  start: Building 9e1f3a5c7b9d1e3f5a7c9b1d3e5f7a9c1b3d5e7f9a1c3b5d7e9f1a3c5b7d9e1f:123456789012-ap-northeast-1
+2026-10-08T02:11:38.1531433Z OrderApi-Prod:  success: Built 9e1f3a5c7b9d1e3f5a7c9b1d3e5f7a9c1b3d5e7f9a1c3b5d7e9f1a3c5b7d9e1f:123456789012-ap-northeast-1
+2026-10-08T02:11:38.1612078Z OrderApi-Prod:  start: Building OrderApi-Prod Template
+2026-10-08T02:11:38.1613407Z OrderApi-Prod:  success: Built OrderApi-Prod Template
+2026-10-08T02:11:38.1920566Z OrderApi-Prod:  start: Publishing 3c7a2e9f1d4b6a8c0e2f4a6b8d0c2e4f6a8b0d2c4e6f8a0b2c4d6e8f0a2b4c6d:123456789012-ap-northeast-1
+2026-10-08T02:11:38.1934911Z OrderApi-Prod:  start: Publishing 9e1f3a5c7b9d1e3f5a7c9b1d3e5f7a9c1b3d5e7f9a1c3b5d7e9f1a3c5b7d9e1f:123456789012-ap-northeast-1
+2026-10-08T02:11:38.1951044Z OrderApi-Prod:  start: Publishing OrderApi-Prod Template (123456789012-ap-northeast-1-e5f6a7b8)
+2026-10-08T02:11:39.4011298Z OrderApi-Prod:  success: Published 9e1f3a5c7b9d1e3f5a7c9b1d3e5f7a9c1b3d5e7f9a1c3b5d7e9f1a3c5b7d9e1f:123456789012-ap-northeast-1
+2026-10-08T02:11:39.6607725Z OrderApi-Prod:  success: Published 3c7a2e9f1d4b6a8c0e2f4a6b8d0c2e4f6a8b0d2c4e6f8a0b2c4d6e8f0a2b4c6d:123456789012-ap-northeast-1
+2026-10-08T02:11:39.8820419Z OrderApi-Prod:  success: Published OrderApi-Prod Template (123456789012-ap-northeast-1-e5f6a7b8)
+2026-10-08T02:11:39.9013372Z OrderApi-Prod: deploying... [2/2]
+2026-10-08T02:11:40.6620914Z OrderApi-Prod: creating CloudFormation changeset...
+2026-10-08T02:11:51.2236018Z OrderApi-Prod | 0/27 | 2:11:50 AM | UPDATE_IN_PROGRESS   | AWS::CloudFormation::Stack | OrderApi-Prod User Initiated
+2026-10-08T02:11:54.0187103Z OrderApi-Prod | 0/27 | 2:11:53 AM | UPDATE_IN_PROGRESS   | AWS::Lambda::Function | CreateOrderFn (CreateOrderFn8A1C2D3E)
+2026-10-08T02:11:54.0411820Z OrderApi-Prod | 0/27 | 2:11:53 AM | UPDATE_IN_PROGRESS   | AWS::Lambda::Function | GetOrderFn (GetOrderFn4B5C6D7E)
+2026-10-08T02:11:54.1872264Z OrderApi-Prod | 0/27 | 2:11:53 AM | CREATE_IN_PROGRESS   | AWS::SQS::Queue | OrderEventsDeadLetterQueue (OrderEventsDeadLetterQueue9F2E7A41)
+2026-10-08T02:11:54.2290931Z OrderApi-Prod | 0/27 | 2:11:53 AM | UPDATE_IN_PROGRESS   | AWS::IAM::Policy | OrderEventsWorkerServiceRoleDefaultPolicy (OrderEventsWorkerServiceRoleDefaultPolicyC3D4E5F6)
+2026-10-08T02:11:55.6105372Z OrderApi-Prod | 0/27 | 2:11:55 AM | CREATE_FAILED        | AWS::SQS::Queue | OrderEventsDeadLetterQueue (OrderEventsDeadLetterQueue9F2E7A41) Resource handler returned message: "Resource of type 'AWS::SQS::Queue' with identifier 'order-events-dlq' already exists." (RequestToken: 6d1e8f2a-4b3c-5d6e-9f0a-1b2c3d4e5f60, HandlerErrorCode: AlreadyExists)
+2026-10-08T02:11:56.0841267Z OrderApi-Prod | 1/27 | 2:11:55 AM | UPDATE_FAILED        | AWS::IAM::Policy | OrderEventsWorkerServiceRoleDefaultPolicy (OrderEventsWorkerServiceRoleDefaultPolicyC3D4E5F6) Resource update cancelled
+2026-10-08T02:11:57.4415099Z OrderApi-Prod | 1/27 | 2:11:56 AM | UPDATE_FAILED        | AWS::Lambda::Function | CreateOrderFn (CreateOrderFn8A1C2D3E) Resource update cancelled
+2026-10-08T02:11:57.4732008Z OrderApi-Prod | 1/27 | 2:11:56 AM | UPDATE_FAILED        | AWS::Lambda::Function | GetOrderFn (GetOrderFn4B5C6D7E) Resource update cancelled
+2026-10-08T02:11:57.5019941Z OrderApi-Prod | 1/27 | 2:11:56 AM | CREATE_FAILED        | AWS::CloudWatch::Alarm | OrderEventsDlqDepthAlarm (OrderEventsDlqDepthAlarm2B8C1E07) Resource creation cancelled
+2026-10-08T02:11:58.2201886Z OrderApi-Prod | 1/27 | 2:11:57 AM | UPDATE_ROLLBACK_IN_P | AWS::CloudFormation::Stack | OrderApi-Prod The following resource(s) failed to create: [OrderEventsDeadLetterQueue9F2E7A41, OrderEventsDlqDepthAlarm2B8C1E07]. The following resource(s) failed to update: [CreateOrderFn8A1C2D3E, GetOrderFn4B5C6D7E, OrderEventsWorkerServiceRoleDefaultPolicyC3D4E5F6].
+2026-10-08T02:12:03.9910523Z OrderApi-Prod | 1/27 | 2:12:03 AM | UPDATE_IN_PROGRESS   | AWS::IAM::Policy | OrderEventsWorkerServiceRoleDefaultPolicy (OrderEventsWorkerServiceRoleDefaultPolicyC3D4E5F6)
+2026-10-08T02:12:04.3107162Z OrderApi-Prod | 1/27 | 2:12:03 AM | UPDATE_IN_PROGRESS   | AWS::Lambda::Function | CreateOrderFn (CreateOrderFn8A1C2D3E)
+2026-10-08T02:12:04.3398874Z OrderApi-Prod | 1/27 | 2:12:03 AM | UPDATE_IN_PROGRESS   | AWS::Lambda::Function | GetOrderFn (GetOrderFn4B5C6D7E)
+2026-10-08T02:12:09.7718392Z OrderApi-Prod | 2/27 | 2:12:09 AM | UPDATE_COMPLETE      | AWS::Lambda::Function | GetOrderFn (GetOrderFn4B5C6D7E)
+2026-10-08T02:12:10.0254176Z OrderApi-Prod | 3/27 | 2:12:09 AM | UPDATE_COMPLETE      | AWS::Lambda::Function | CreateOrderFn (CreateOrderFn8A1C2D3E)
+2026-10-08T02:12:20.6631807Z OrderApi-Prod | 4/27 | 2:12:20 AM | UPDATE_COMPLETE      | AWS::IAM::Policy | OrderEventsWorkerServiceRoleDefaultPolicy (OrderEventsWorkerServiceRoleDefaultPolicyC3D4E5F6)
+2026-10-08T02:12:21.4019873Z OrderApi-Prod | 4/27 | 2:12:21 AM | UPDATE_ROLLBACK_COMP | AWS::CloudFormation::Stack | OrderApi-Prod
+2026-10-08T02:12:22.1180640Z OrderApi-Prod | 5/27 | 2:12:21 AM | DELETE_IN_PROGRESS   | AWS::CloudWatch::Alarm | OrderEventsDlqDepthAlarm (OrderEventsDlqDepthAlarm2B8C1E07)
+2026-10-08T02:12:22.1406312Z OrderApi-Prod | 5/27 | 2:12:21 AM | DELETE_IN_PROGRESS   | AWS::SQS::Queue | OrderEventsDeadLetterQueue (OrderEventsDeadLetterQueue9F2E7A41)
+2026-10-08T02:12:22.8873115Z OrderApi-Prod | 6/27 | 2:12:22 AM | DELETE_COMPLETE      | AWS::CloudWatch::Alarm | OrderEventsDlqDepthAlarm (OrderEventsDlqDepthAlarm2B8C1E07)
+2026-10-08T02:12:23.0491177Z OrderApi-Prod | 7/27 | 2:12:22 AM | DELETE_COMPLETE      | AWS::SQS::Queue | OrderEventsDeadLetterQueue (OrderEventsDeadLetterQueue9F2E7A41)
+2026-10-08T02:12:24.5527013Z OrderApi-Prod | 8/27 | 2:12:24 AM | UPDATE_ROLLBACK_COMP | AWS::CloudFormation::Stack | OrderApi-Prod
+2026-10-08T02:12:25.0120837Z
+2026-10-08T02:12:25.0121758Z Failed resources:
+2026-10-08T02:12:25.0124016Z OrderApi-Prod | 2:11:55 AM | CREATE_FAILED        | AWS::SQS::Queue | OrderEventsDeadLetterQueue (OrderEventsDeadLetterQueue9F2E7A41) Resource handler returned message: "Resource of type 'AWS::SQS::Queue' with identifier 'order-events-dlq' already exists." (RequestToken: 6d1e8f2a-4b3c-5d6e-9f0a-1b2c3d4e5f60, HandlerErrorCode: AlreadyExists)
+2026-10-08T02:12:25.0397812Z
+2026-10-08T02:12:25.0399120Z  ❌  OrderApi-Prod failed: _ToolkitError: The stack named OrderApi-Prod failed to deploy: UPDATE_ROLLBACK_COMPLETE: Resource handler returned message: "Resource of type 'AWS::SQS::Queue' with identifier 'order-events-dlq' already exists." (RequestToken: 6d1e8f2a-4b3c-5d6e-9f0a-1b2c3d4e5f60, HandlerErrorCode: AlreadyExists)
+2026-10-08T02:12:25.0402268Z     at FullCloudFormationDeployment.monitorDeployment (/home/runner/work/platform-deploy/platform-deploy/apps/order-api/node_modules/aws-cdk/lib/index.js:1081:12079)
+2026-10-08T02:12:25.0403711Z     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-10-08T02:12:25.0404834Z     at async FullCloudFormationDeployment.performDeployment (/home/runner/work/platform-deploy/platform-deploy/apps/order-api/node_modules/aws-cdk/lib/index.js:1081:8811)
+2026-10-08T02:12:25.0406015Z     at async Object.deployStack2 [as deployStack] (/home/runner/work/platform-deploy/platform-deploy/apps/order-api/node_modules/aws-cdk/lib/index.js:1100:211202)
+2026-10-08T02:12:25.0407219Z     at async /home/runner/work/platform-deploy/platform-deploy/apps/order-api/node_modules/aws-cdk/lib/index.js:1100:193551
+2026-10-08T02:12:25.0408011Z
+2026-10-08T02:12:25.0408623Z ❌ Deployment failed: _ToolkitError: The stack named OrderApi-Prod failed to deploy: UPDATE_ROLLBACK_COMPLETE
+2026-10-08T02:12:25.0409100Z
+2026-10-08T02:12:25.0915546Z NOTICES         (What's this? https://github.com/aws/aws-cdk/wiki/CLI-Notices)
+2026-10-08T02:12:25.0916412Z
+2026-10-08T02:12:25.0917198Z 34892	(cli): upcoming change to default telemetry collection
+2026-10-08T02:12:25.0917712Z
+2026-10-08T02:12:25.0918248Z 	Overview: CDK CLI will begin collecting anonymous usage data. See the linked issue for opt-out options.
+2026-10-08T02:12:25.0918791Z
+2026-10-08T02:12:25.0919360Z 	Affected versions: cli: >=2.1100.0
+2026-10-08T02:12:25.0919845Z
+2026-10-08T02:12:25.0920451Z If you don’t want to see a notice anymore, use "cdk acknowledge <id>". For example, "cdk acknowledge 34892".
+2026-10-08T02:12:25.1638409Z ##[error]Process completed with exit code 1.
+2026-10-08T02:12:25.1720093Z Skipping step 'Run smoke tests against /health' due to previous failure.
+2026-10-08T02:12:25.1721284Z Skipping step 'Notify Slack on success' due to previous failure.
+2026-10-08T02:12:25.1803552Z Post job cleanup.
+2026-10-08T02:12:25.3418827Z Post job cleanup.
+2026-10-08T02:12:25.4891104Z [command]/usr/bin/git version
+2026-10-08T02:12:25.4935827Z git version 2.51.0
+2026-10-08T02:12:25.4981044Z Temporarily overriding HOME='/home/runner/work/_temp/a8d4f1c2-7e3b-4a90-b6d5-0c1e2f3a4b5c' before making global git config changes
+2026-10-08T02:12:25.4987201Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-08T02:12:25.5034418Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-08T02:12:25.5291907Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-08T02:12:25.5320116Z http.https://github.com/.extraheader
+2026-10-08T02:12:25.5331588Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-08T02:12:25.5378011Z Cleaning up orphan processes

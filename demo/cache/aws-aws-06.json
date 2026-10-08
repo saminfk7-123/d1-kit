@@ -1,0 +1,173 @@
+{
+  "kind": "aws",
+  "id": "aws-06",
+  "expected": [
+    "build"
+  ],
+  "cause": {
+    "type": "choice",
+    "choice": "build",
+    "probabilities": {
+      "auth": 0.000004222656162401715,
+      "authorization": 0.000005421997838456921,
+      "config": 0.00002014516587000984,
+      "build": 0.9999541397277109,
+      "transient": 0.000010782930261333473,
+      "runtime": 0.0000025611704279211294,
+      "resource_state": 0.0000027263517288663246
+    },
+    "confidence": 0.999946496348996
+  },
+  "causeCorrect": true,
+  "pick": {
+    "line": 275,
+    "text": "#15 6.571 src/routes/orders.ts(42,17): error TS2339: Property 'customerId' does not exist on type 'OrderDto'.",
+    "confidence": 0.9971267250845445,
+    "candidates": [
+      {
+        "line": 260,
+        "text": "#12 9.574",
+        "probability": 0.000054611471646152786
+      },
+      {
+        "line": 261,
+        "text": "#12 9.574 added 612 packages in 9s",
+        "probability": 0.000012971361477402598
+      },
+      {
+        "line": 275,
+        "text": "#15 6.571 src/routes/orders.ts(42,17): error TS2339: Property 'customerId' does not exist on type 'OrderDto'.",
+        "probability": 0.9972372356582159
+      },
+      {
+        "line": 276,
+        "text": "#15 6.571 src/routes/orders.ts(87,29): error TS2339: Property 'customerId' does not exist on type 'OrderDto'.",
+        "probability": 0.00011561248638214808
+      },
+      {
+        "line": 277,
+        "text": "#15 6.572 src/services/orderSummary.ts(19,34): error TS2551: Property 'customerId' does not exist on type 'OrderDto'. Did you mean 'customerRef'?",
+        "probability": 0.0008025097176015141
+      },
+      {
+        "line": 278,
+        "text": "#15 6.572 src/services/orderSummary.ts(55,9): error TS2353: Object literal may only specify known properties, and 'customerId' does not exist in type 'OrderDto'.",
+        "probability": 0.0001394552782849182
+      },
+      {
+        "line": 279,
+        "text": "#15 6.598",
+        "probability": 0.000024233693642549465
+      },
+      {
+        "line": 280,
+        "text": "#15 6.598 Found 4 errors in 2 files.",
+        "probability": 0.00004253145688270562
+      },
+      {
+        "line": 281,
+        "text": "#15 6.598",
+        "probability": 0.00001075363636721029
+      },
+      {
+        "line": 282,
+        "text": "#15 6.598 Errors  Files",
+        "probability": 0.00000891507767474103
+      },
+      {
+        "line": 283,
+        "text": "#15 6.598      2  src/routes/orders.ts:42",
+        "probability": 0.00006188290461554088
+      },
+      {
+        "line": 284,
+        "text": "#15 6.598      2  src/services/orderSummary.ts:19",
+        "probability": 0.000003716357285083327
+      },
+      {
+        "line": 290,
+        "text": "#15 ERROR: process \"/bin/sh -c npm run build\" did not complete successfully: exit code: 2",
+        "probability": 0.0013231148413531692
+      },
+      {
+        "line": 303,
+        "text": "6.572 src/services/orderSummary.ts(55,9): error TS2353: Object literal may only specify known properties, and 'customerId' does not exist in type 'OrderDto'.",
+        "probability": 0.000024233693642549465
+      },
+      {
+        "line": 304,
+        "text": "6.598",
+        "probability": 0.000004771897211539642
+      },
+      {
+        "line": 305,
+        "text": "6.598 Found 4 errors in 2 files.",
+        "probability": 0.000008374940423648512
+      },
+      {
+        "line": 306,
+        "text": "6.598",
+        "probability": 0.00001887321958553005
+      },
+      {
+        "line": 307,
+        "text": "6.598 Errors  Files",
+        "probability": 0.0000025542125181944948
+      },
+      {
+        "line": 308,
+        "text": "6.598      2  src/routes/orders.ts:42",
+        "probability": 0.0000034911945796893015
+      },
+      {
+        "line": 309,
+        "text": "6.598      2  src/services/orderSummary.ts:19",
+        "probability": 0.000005079658140209534
+      },
+      {
+        "line": 324,
+        "text": "ERROR: failed to solve: process \"/bin/sh -c npm run build\" did not complete successfully: exit code: 2",
+        "probability": 0.0000658740090649857
+      },
+      {
+        "line": 331,
+        "text": "##[error]buildx failed with: ERROR: failed to solve: process \"/bin/sh -c npm run build\" did not complete successfully: exit code: 2",
+        "probability": 0.0000073908589832003316
+      },
+      {
+        "line": 332,
+        "text": "##[error]Process completed with exit code 1.",
+        "probability": 0.000009490050785584143
+      },
+      {
+        "line": 333,
+        "text": "##[notice]Skipping step 'Render ECS task definition' because a previous step failed.",
+        "probability": 0.0000027189450725166723
+      },
+      {
+        "line": 334,
+        "text": "##[notice]Skipping step 'Deploy to Amazon ECS service web-backend' because a previous step failed.",
+        "probability": 0.000003080968402895937
+      },
+      {
+        "line": 335,
+        "text": "##[notice]Skipping step 'Wait for service stability' because a previous step failed.",
+        "probability": 0.000006522410160113824
+      }
+    ]
+  },
+  "rootLines": [
+    275,
+    276,
+    277,
+    278
+  ],
+  "repeatLines": [
+    303
+  ],
+  "lineMark": "ok",
+  "needsHuman": false,
+  "tokens": 21124,
+  "seconds": 1.3175178339999984,
+  "ranAt": "2026-10-08T11:38:27.629Z"
+}

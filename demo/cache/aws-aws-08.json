@@ -1,0 +1,68 @@
+{
+  "kind": "aws",
+  "id": "aws-08",
+  "expected": [
+    "transient"
+  ],
+  "cause": {
+    "type": "choice",
+    "choice": "transient",
+    "probabilities": {
+      "auth": 0.000013002011315847207,
+      "authorization": 0.000013002011315847207,
+      "config": 0.0000258575870837583,
+      "build": 0.000012214259272955495,
+      "transient": 0.9995933889743537,
+      "runtime": 0.000027525258171646718,
+      "resource_state": 0.0003150098984862496
+    },
+    "confidence": 0.9995256204700792
+  },
+  "causeCorrect": true,
+  "pick": {
+    "line": 311,
+    "text": "│ Error: updating Lambda Function (notification-email-sender) configuration: operation error Lambda: UpdateFunctionConfiguration, exceeded maximum number of attempts, 25, https response error StatusCode: 429, RequestID: 7c2e4b91-3a5d-4f8e-b1c6-9d0a2e7f5b38, TooManyRequestsException: Rate exceeded",
+    "confidence": 0.9999155929148114,
+    "candidates": [
+      {
+        "line": 54,
+        "text": "remote: Enumerating objects: 512, done.",
+        "probability": 0.000009515674997104705
+      },
+      {
+        "line": 55,
+        "text": "remote: Counting objects: 100% (512/512), done.",
+        "probability": 0.000010782672402855874
+      },
+      {
+        "line": 57,
+        "text": "remote: Total 512 (delta 61), reused 288 (delta 30), pack-reused 0 (from 0)",
+        "probability": 0.000007888771651740997
+      },
+      {
+        "line": 58,
+        "text": "Receiving objects: 100% (512/512), 1.12 MiB | 9.84 MiB/s, done.",
+        "probability": 0.000008939149393767743
+      },
+      {
+        "line": 311,
+        "text": "│ Error: updating Lambda Function (notification-email-sender) configuration: operation error Lambda: UpdateFunctionConfiguration, exceeded maximum number of attempts, 25, https response error StatusCode: 429, RequestID: 7c2e4b91-3a5d-4f8e-b1c6-9d0a2e7f5b38, TooManyRequestsException: Rate exceeded",
+        "probability": 0.9999296607623428
+      },
+      {
+        "line": 318,
+        "text": "##[error]Process completed with exit code 1.",
+        "probability": 0.00003321296921164014
+      }
+    ]
+  },
+  "rootLines": [
+    311
+  ],
+  "repeatLines": [],
+  "lineMark": "ok",
+  "needsHuman": false,
+  "tokens": 17925,
+  "seconds": 1.2281629589999792,
+  "ranAt": "2026-10-08T11:38:52.863Z"
+}

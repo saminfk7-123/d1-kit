@@ -1,0 +1,64 @@
+{
+  "kind": "aws",
+  "id": "aws-04",
+  "expected": [
+    "config"
+  ],
+  "cause": {
+    "type": "choice",
+    "choice": "config",
+    "probabilities": {
+      "auth": 0.000006960805537352862,
+      "authorization": 0.0000032880517159799377,
+      "config": 0.9997847262823158,
+      "build": 0.00019109968555063058,
+      "transient": 0.0000044942338379429865,
+      "runtime": 0.0000032880517159799377,
+      "resource_state": 0.000006142889326207601
+    },
+    "confidence": 0.9997488473293684
+  },
+  "causeCorrect": true,
+  "pick": {
+    "line": 246,
+    "text": "Error: Missing required environment variable REPORT_BUCKET_NAME",
+    "confidence": 0.9630866154487798,
+    "candidates": [
+      {
+        "line": 112,
+        "text": "npm WARN deprecated domexception@4.0.0: Use your platform's native DOMException instead",
+        "probability": 0.00005314560756498984
+      },
+      {
+        "line": 243,
+        "text": "throw new Error(`Missing required environment variable ${name}`);",
+        "probability": 0.02930563162878573
+      },
+      {
+        "line": 246,
+        "text": "Error: Missing required environment variable REPORT_BUCKET_NAME",
+        "probability": 0.9704692923590238
+      },
+      {
+        "line": 260,
+        "text": "Subprocess exited with error 1",
+        "probability": 0.00009928897179918415
+      },
+      {
+        "line": 261,
+        "text": "##[error]Process completed with exit code 1.",
+        "probability": 0.00007264143282656125
+      }
+    ]
+  },
+  "rootLines": [
+    243,
+    246
+  ],
+  "repeatLines": [],
+  "lineMark": "ok",
+  "needsHuman": false,
+  "tokens": 14028,
+  "seconds": 1.1997946250000096,
+  "ranAt": "2026-10-08T11:37:31.806Z"
+}

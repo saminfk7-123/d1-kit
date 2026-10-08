@@ -1,0 +1,7 @@
+STEP: Deploy schema changes (schemachange)
+2026-10-07T03:00:12Z Traceback (most recent call last):
+2026-10-07T03:00:12Z   File "/home/runner/work/data-platform/scripts/deploy.py", line 18, in <module>
+2026-10-07T03:00:12Z     account = os.environ["SNOWFLAKE_ACCOUNT"]
+2026-10-07T03:00:12Z               ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+2026-10-07T03:00:12Z KeyError: 'SNOWFLAKE_ACCOUNT'
+2026-10-07T03:00:12Z ##[error]Process completed with exit code 1.

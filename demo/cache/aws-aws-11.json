@@ -1,0 +1,142 @@
+{
+  "kind": "aws",
+  "id": "aws-11",
+  "expected": [
+    "authorization",
+    "build"
+  ],
+  "cause": {
+    "type": "choice",
+    "choice": "authorization",
+    "probabilities": {
+      "auth": 0.00012116548793469446,
+      "authorization": 0.9818140355657465,
+      "config": 0.003769347845015419,
+      "build": 0.0009530403855811906,
+      "transient": 0.0007422285985893049,
+      "runtime": 0.00024096634587594796,
+      "resource_state": 0.012359215771257226
+    },
+    "confidence": 0.9787830414933709
+  },
+  "causeCorrect": true,
+  "pick": {
+    "line": 251,
+    "text": "OrderApi-Prod | 16/27 | 2:11:50 AM | CREATE_FAILED        | AWS::Lambda::EventSourceMapping | WorkerFnSqsEventSource (WorkerFnSqsEventSourceOrderApiProdOrderQueue4B9D0F3E81A2C6D7) Resource handler returned message: \"Invalid request provided: The provided execution role does not have permissions to c",
+    "confidence": 0.7145792622284678,
+    "candidates": [
+      {
+        "line": 245,
+        "text": "OrderApi-Prod | 14/27 | 2:11:47 AM | CREATE_IN_PROGRESS   | AWS::CloudWatch::Alarm | WorkerFn/ErrorsAlarm (WorkerFnErrorsAlarm4C8A1F2E)",
+        "probability": 0.000017711663381516142
+      },
+      {
+        "line": 247,
+        "text": "OrderApi-Prod | 14/27 | 2:11:48 AM | CREATE_IN_PROGRESS   | AWS::CloudWatch::Alarm | WorkerFn/ErrorsAlarm (WorkerFnErrorsAlarm4C8A1F2E) Resource creation Initiated",
+        "probability": 0.000048145292721758813
+      },
+      {
+        "line": 249,
+        "text": "OrderApi-Prod | 15/27 | 2:11:48 AM | CREATE_COMPLETE      | AWS::CloudWatch::Alarm | WorkerFn/ErrorsAlarm (WorkerFnErrorsAlarm4C8A1F2E)",
+        "probability": 0.001497756155335337
+      },
+      {
+        "line": 251,
+        "text": "OrderApi-Prod | 16/27 | 2:11:50 AM | CREATE_FAILED        | AWS::Lambda::EventSourceMapping | WorkerFnSqsEventSource (WorkerFnSqsEventSourceOrderApiProdOrderQueue4B9D0F3E81A2C6D7) Resource handler returned message: \"Invalid request provided: The provided execution role does not have permissions to c",
+        "probability": 0.7288502991170444
+      },
+      {
+        "line": 254,
+        "text": "OrderApi-Prod | 16/27 | 2:11:51 AM | CREATE_FAILED        | AWS::Logs::SubscriptionFilter | WorkerFn/LogShipping (WorkerFnLogShipping8E2A4C6B) Resource creation cancelled",
+        "probability": 0.00048625046319300666
+      },
+      {
+        "line": 255,
+        "text": "OrderApi-Prod | 16/27 | 2:11:51 AM | CREATE_FAILED        | AWS::Lambda::Permission | ApiFn/ApiInvokePermission (ApiFnApiInvokePermission1F3B5D7A) Resource creation cancelled",
+        "probability": 0.00009574834761976937
+      },
+      {
+        "line": 256,
+        "text": "OrderApi-Prod | 16/27 | 2:11:51 AM | UPDATE_ROLLBACK_IN_PROGRESS | AWS::CloudFormation::Stack | OrderApi-Prod The following resource(s) failed to create: [WorkerFnSqsEventSourceOrderApiProdOrderQueue4B9D0F3E81A2C6D7, WorkerFnLogShipping8E2A4C6B, ApiFnApiInvokePermission1F3B5D7A].",
+        "probability": 0.0002949256735944743
+      },
+      {
+        "line": 266,
+        "text": "OrderApi-Prod | 10/27 | 2:12:13 AM | DELETE_IN_PROGRESS   | AWS::CloudWatch::Alarm | WorkerFn/ErrorsAlarm (WorkerFnErrorsAlarm4C8A1F2E)",
+        "probability": 0.00003991384956965696
+      },
+      {
+        "line": 270,
+        "text": "OrderApi-Prod |  9/27 | 2:12:14 AM | DELETE_COMPLETE      | AWS::CloudWatch::Alarm | WorkerFn/ErrorsAlarm (WorkerFnErrorsAlarm4C8A1F2E)",
+        "probability": 0.000058074308448213274
+      },
+      {
+        "line": 294,
+        "text": "Failed resources:",
+        "probability": 0.0001788814633714493
+      },
+      {
+        "line": 295,
+        "text": "OrderApi-Prod | 2:11:50 AM | CREATE_FAILED        | AWS::Lambda::EventSourceMapping | WorkerFnSqsEventSource (WorkerFnSqsEventSourceOrderApiProdOrderQueue4B9D0F3E81A2C6D7) Resource handler returned message: \"Invalid request provided: The provided execution role does not have permissions to call Rece",
+        "probability": 0.26812906470942227
+      },
+      {
+        "line": 297,
+        "text": "❌  OrderApi-Prod failed: _ToolkitError: The stack named OrderApi-Prod failed to deploy: UPDATE_ROLLBACK_COMPLETE: Resource handler returned message: \"Invalid request provided: The provided execution role does not have permissions to call ReceiveMessage on SQS (Service: Lambda, Status Code: 400, Requ",
+        "probability": 0.00007937816819444783
+      },
+      {
+        "line": 298,
+        "text": "at FullCloudFormationDeployment.monitorDeployment (/home/runner/work/platform-apps/platform-apps/apps/order-api/node_modules/aws-cdk/lib/index.js:532:10568)",
+        "probability": 0.00005125039732529061
+      },
+      {
+        "line": 300,
+        "text": "at async Object.deployStack2 [as deployStack] (/home/runner/work/platform-apps/platform-apps/apps/order-api/node_modules/aws-cdk/lib/index.js:535:200310)",
+        "probability": 0.00000948037024303782
+      },
+      {
+        "line": 301,
+        "text": "at async /home/runner/work/platform-apps/platform-apps/apps/order-api/node_modules/aws-cdk/lib/index.js:535:181715",
+        "probability": 0.000027432360884500886
+      },
+      {
+        "line": 303,
+        "text": "❌ Deployment failed: _ToolkitError: The stack named OrderApi-Prod failed to deploy: UPDATE_ROLLBACK_COMPLETE",
+        "probability": 0.00004248807170098082
+      },
+      {
+        "line": 305,
+        "text": "##[error]Process completed with exit code 1.",
+        "probability": 0.000029201596156586225
+      },
+      {
+        "line": 306,
+        "text": "##[group]Run echo \"::notice::order-api deploy result: failure\"",
+        "probability": 0.000017711663381516142
+      },
+      {
+        "line": 307,
+        "text": "[36;1mecho \"::notice::order-api deploy result: failure\"[0m",
+        "probability": 0.000027432360884500886
+      },
+      {
+        "line": 310,
+        "text": "##[notice]order-api deploy result: failure",
+        "probability": 0.000018853967527842292
+      }
+    ]
+  },
+  "rootLines": [
+    251
+  ],
+  "repeatLines": [
+    295,
+    297
+  ],
+  "lineMark": "ok",
+  "needsHuman": false,
+  "tokens": 26700,
+  "seconds": 1.6370132510000257,
+  "ranAt": "2026-10-08T11:39:25.525Z"
+}

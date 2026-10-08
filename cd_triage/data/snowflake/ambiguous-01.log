@@ -1,0 +1,5 @@
+STEP: Deploy schema changes (schemachange)
+2026-10-13T01:47:28Z Applying change script V1.45__add_view_customer_ltv.sql
+2026-10-13T01:47:29Z snowflake.connector.errors.ProgrammingError: 002003 (02000): SQL compilation error:
+2026-10-13T01:47:29Z Object 'ANALYTICS.MARTS.CUSTOMERS' does not exist or not authorized.
+2026-10-13T01:47:29Z ##[error]Process completed with exit code 1.

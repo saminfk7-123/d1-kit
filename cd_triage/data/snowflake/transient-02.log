@@ -1,0 +1,8 @@
+STEP: Terraform apply
+2026-10-12T10:20:33Z snowflake_grant_privileges_to_account_role.reader: Creating...
+2026-10-12T10:20:44Z ╷
+2026-10-12T10:20:44Z │ Error: error creating grant
+2026-10-12T10:20:44Z │
+2026-10-12T10:20:44Z │ 000605 (57P03): Snowflake service is temporarily unavailable (HTTP 503). Please retry the request.
+2026-10-12T10:20:44Z ╵
+2026-10-12T10:20:44Z ##[error]Process completed with exit code 1.
